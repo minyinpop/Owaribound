@@ -8,6 +8,7 @@ namespace Player
     {
         [field: Header("Self Components")]
         [field: SerializeField] private Rigidbody2D rig;
+                                public Rigidbody2D Rig => rig;
         [field: SerializeField] private Animator anima;
                                 public Animator Anima => anima;
         

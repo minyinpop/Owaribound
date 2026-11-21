@@ -11,15 +11,11 @@ namespace Player
 
         private PlayerController playerCo;
 
+        private int currentHash;
+
         private void Awake()
         {
             playerCo = GetComponent<PlayerController>();
-        }
-
-        private void OnEnable()
-        {
-            playerCo.Input.WalkStarted += OnWalkStarted;
-            playerCo.Input.WalkCanceled += OnWalkCanceled;
         }
 
         private void Update()
@@ -28,22 +24,17 @@ namespace Player
             {
                 playerCo.Anima.SetFloat(axisXHash, playerCo.Input.WalkDir);
             }
+
+            Play(playerCo.Rig.linearVelocityX is > .05f or < -.05f ? walkHash : idleHash);
         }
 
-        private void OnDisable()
+        private void Play(int hash)
         {
-            playerCo.Input.WalkStarted -= OnWalkStarted;
-            playerCo.Input.WalkCanceled -= OnWalkCanceled;
-        }
+            if (hash == currentHash)
+                return;
 
-        private void OnWalkStarted()
-        {
-            playerCo.Anima.Play(walkHash);
-        }
-        
-        private void OnWalkCanceled()
-        {
-            playerCo.Anima.Play(idleHash);
+            currentHash = hash;
+            playerCo.Anima.Play(currentHash);
         }
     }
 }
