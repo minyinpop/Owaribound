@@ -20,7 +20,7 @@ namespace Player
         [field: SerializeField] private float moveSpeed = 5;
         
         [field: Header("Jump Settings")]
-        [field: SerializeField] private float jumpForce = 125;
+        [field: SerializeField] private float jumpForce = 5;
         
         [field: Header("Floor Detect Settings")]
         [field: SerializeField] private Vector2 offset = new(0, .1f);
@@ -29,8 +29,8 @@ namespace Player
         [field: SerializeField] private LayerMask layerMask;
         [field: SerializeField] private float leaveGroundDelay = .08f;
         
-        public bool IsGrounded { get; set; }
-        public bool IsAirborne { get; set; }
+        public bool IsGrounded { get; private set; }
+        public bool IsAirborne { get; private set; }
 
         private bool jumpRequested;
         private float leaveGroundTime;
