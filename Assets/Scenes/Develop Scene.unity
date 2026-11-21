@@ -479,6 +479,13 @@ MonoBehaviour:
   anima: {fileID: 238487993}
   input: {fileID: 1582127138}
   moveSpeed: 5
+  jumpForce: 125
+  offset: {x: 0, y: 0.1}
+  size: {x: 0.7, y: 0.05}
+  distance: 0.15
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +822,7 @@ GameObject:
   - component: {fileID: 1714780755}
   - component: {fileID: 1714780754}
   - component: {fileID: 1714780753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
