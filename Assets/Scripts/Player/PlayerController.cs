@@ -42,12 +42,12 @@ namespace Player
 
         private void FixedUpdate()
         {
-            #region Floor Detect
+            #region 地板檢測
                 var origin = (Vector2)transform.position + offset;
                 IsGrounded = Physics2D.BoxCast(origin, size, 0, Vector2.down, distance, layerMask);
             #endregion
             
-            #region Airborne Detect
+            #region 空中檢測
                 leaveGroundTime = IsGrounded ? 0 : leaveGroundTime + Time.fixedDeltaTime;
 
                 if (!IsAirborne && leaveGroundTime >= leaveGroundDelay)
@@ -60,11 +60,11 @@ namespace Player
                 }
             #endregion
             
-            #region Move
+            #region 移動
                 rig.linearVelocityX = Input.WalkDir * moveSpeed;
             #endregion
 
-            #region Jump
+            #region 跳躍
                 if (jumpRequested && IsGrounded && !IsAirborne)
                 {
                     IsAirborne = true;
