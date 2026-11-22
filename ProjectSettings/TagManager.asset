@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - Block
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Wall
     uniqueID: 1953159373
+    locked: 0
+  - name: Player
+    uniqueID: 1252974933
     locked: 0
   - name: Block
     uniqueID: 951663331
