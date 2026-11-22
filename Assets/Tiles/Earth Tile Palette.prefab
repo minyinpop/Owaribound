@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4161895449114061612}
   - component: {fileID: 121762938212465705}
   m_Layer: 0
-  m_Name: Ground Tile Palette
+  m_Name: Earth Tile Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,18 +97,34 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 2147483650
+  - first: {x: 0, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483650
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - serializedVersion: 2
     m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 6cf2413d11212ec4695f4ce2c73a3475, type: 2}
+  - serializedVersion: 2
+    m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: aa2392ff63d1eaa42bae1daf8eadf989, type: 2}
   m_TileSpriteArray:
   - serializedVersion: 2
     m_RefCount: 1
     m_Data: {fileID: -66089147, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
-  m_TileMatrixArray:
   - serializedVersion: 2
     m_RefCount: 1
+    m_Data: {fileID: 1633557707, guid: 0fe4f625f2bad5a4cb3a177758d79e67, type: 3}
+  m_TileMatrixArray:
+  - serializedVersion: 2
+    m_RefCount: 2
     m_Data:
       e00: 1
       e01: 0
@@ -128,13 +144,13 @@ Tilemap:
       e33: 1
   m_TileColorArray:
   - serializedVersion: 2
-    m_RefCount: 1
+    m_RefCount: 2
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -2, y: -1, z: 0}
-  m_Size: {x: 2, y: 1, z: 1}
+  m_Size: {x: 3, y: 1, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -165,7 +181,7 @@ TilemapRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
@@ -210,7 +226,7 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
---- !u!114 &4963658019035445392
+--- !u!114 &7514479617853363600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: Ground Dirt Rule Tile
+  m_Script: {fileID: 11500000, guid: 544c1f14411342d39d1115ff442e34a4, type: 3}
+  m_Name: Earth Dirt Rule Tile
   m_EditorClassIdentifier: Unity.2D.Tilemap.Extras::UnityEngine.RuleTile
   m_DefaultSprite: {fileID: -66089147, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
   m_DefaultGameObject: {fileID: 0}
