@@ -4,18 +4,21 @@ using UnityEngine.Tilemaps;
 namespace World.Generator
 {
     public enum Block : byte { Air, Dirt, Stone }
+    public enum Wall : byte { None, Dirt, Stone }
 
     public sealed class PlanetGenerator : MonoBehaviour
     {
         [field: Header("Planet Settings")]
-        [SerializeField] private PlanetConfig config;
-        [SerializeField] private Tilemap tilemap;
-        [SerializeField] private int seed;
+        [field: SerializeField] private PlanetConfig config;
+        [field: SerializeField] private Tilemap blockTilemap;
+        [field: SerializeField] private Tilemap wallTilemap;
+        [field: SerializeField] private int seed;
         
         [field: Header("Player Settings")]
         [field: SerializeField] private Transform player;
 
-        private Block[,] map;  // 整張地圖的資料
+        private Block[,] blocks; // 整張地圖的資料
+        private Wall[,] walls;
         private int[] surface; // 每一欄的地表高度，之後放建築、出生點都會用到
         
         [ContextMenu("Generator")]
@@ -28,7 +31,8 @@ namespace World.Generator
         #region 生成世界
             private void Generate()
             {
-                map = new Block[config.Width, config.Height];
+                blocks = new Block[config.Width, config.Height];
+                walls = new Wall[config.Width, config.Height];
 
                 GenerateSurface(new System.Random(seed));
                 FillLayers();
@@ -63,7 +67,10 @@ namespace World.Generator
                     for (var y = 0; y < surface[x]; y++)
                     {
                         var depth = surface[x] - 1 - y; // 距離地表幾格
-                        map[x, y] = depth < config.DirtDepth ? Block.Dirt : Block.Stone;
+                        var isDirt = depth < config.DirtDepth;
+                        
+                        blocks[x, y]   = isDirt ? Block.Dirt : Block.Stone;
+                        walls[x, y] = isDirt ? Wall.Dirt : Wall.Stone;
                     }
                 }
             #endregion
@@ -85,7 +92,7 @@ namespace World.Generator
                         offsetY + y * config.CaveScale);
 
                     if (noise > config.CaveThreshold)
-                        map[x, y] = Block.Air;
+                        blocks[x, y] = Block.Air;
                 }
             }
             #endregion
@@ -95,20 +102,36 @@ namespace World.Generator
                 {
                     var w = config.Width;
                     var h = config.Height;
-                    var tiles = new TileBase[w * h];
+                    var blockTiles = new TileBase[w * h];
+                    var wallTiles = new TileBase[w * h];
 
                     for (var x = 0; x < w; x++)
                     for (var y = 0; y < h; y++)
-                        tiles[x + y * w] = ToTile(map[x, y]);
+                    {
+                        blockTiles[x + y * w] = ToBlockTile(blocks[x, y]);
+                        wallTiles[x + y * w] = ToWallTile(walls[x, y]);
+                    }
 
-                    tilemap.ClearAllTiles();
-                    tilemap.SetTilesBlock(new BoundsInt(0, 0, 0, w, h, 1), tiles);
+                    var bounds = new BoundsInt(0, 0, 0, w, h, 1);
+
+                    blockTilemap.ClearAllTiles();
+                    blockTilemap.SetTilesBlock(bounds, blockTiles);
+                    
+                    wallTilemap.ClearAllTiles();
+                    wallTilemap.SetTilesBlock(bounds, wallTiles);
                 }
 
-                private TileBase ToTile(Block block) => block switch
+                private TileBase ToBlockTile(Block block) => block switch
                 {
-                    Block.Dirt  => config.DirtTile,
-                    Block.Stone => config.StoneTile,
+                    Block.Dirt  => config.DirtBlockTile,
+                    Block.Stone => config.StoneBlockTile,
+                    _ => null // Air
+                };
+                
+                private TileBase ToWallTile(Wall wall) => wall switch
+                {
+                    Wall.Dirt  => config.DirtWallTile,
+                    Wall.Stone => config.StoneWallTile,
                     _ => null // Air
                 };
             #endregion
@@ -119,7 +142,7 @@ namespace World.Generator
             {
                 // surface[x] 是這一欄的高度，最上面那格實心方塊的頂部就在 y = surface[x]
                 var cell = new Vector3Int(x, surface[x], 0);
-                var pos = tilemap.CellToWorld(cell) + new Vector3(tilemap.cellSize.x / 2f, 0, 0);
+                var pos = blockTilemap.CellToWorld(cell) + new Vector3(blockTilemap.cellSize.x / 2f, 0, 0);
 
                 player.position = pos;
             }

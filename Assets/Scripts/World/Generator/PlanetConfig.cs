@@ -22,11 +22,17 @@ namespace World.Generator
         [field: SerializeField] private int dirtDepth = 5;           // 泥土層厚度
                                 public int DirtDepth => dirtDepth;
 
-        [field: Header("Tiles")]
-        [field: SerializeField] private TileBase dirtTile;
-                                public TileBase DirtTile => dirtTile;
-        [field: SerializeField] private TileBase stoneTile;
-                                public TileBase StoneTile => stoneTile;
+        [field: Header("Block Tiles")]
+        [field: SerializeField] private TileBase dirtBlockTile;
+                                public TileBase DirtBlockTile => dirtBlockTile;
+        [field: SerializeField] private TileBase stoneBlockTile;
+                                public TileBase StoneBlockTile => stoneBlockTile;
+                                
+        [field: Header("Wall Tiles")]
+        [field: SerializeField] private TileBase dirtWallTile;
+                                public TileBase DirtWallTile => dirtWallTile;
+        [field: SerializeField] private TileBase stoneWallTile;
+                                public TileBase StoneWallTile => stoneWallTile;
         
         [field: Header("Canvas")]
         [field: SerializeField] private float caveScale = .08f;                           // 越小洞越大

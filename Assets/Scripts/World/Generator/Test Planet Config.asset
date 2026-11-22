@@ -18,5 +18,10 @@ MonoBehaviour:
   amplitude: 20
   frequency: 0.05
   dirtDepth: 5
-  dirtTile: {fileID: 11400000, guid: 6cf2413d11212ec4695f4ce2c73a3475, type: 2}
-  stoneTile: {fileID: 11400000, guid: aa2392ff63d1eaa42bae1daf8eadf989, type: 2}
+  dirtBlockTile: {fileID: 11400000, guid: 6cf2413d11212ec4695f4ce2c73a3475, type: 2}
+  stoneBlockTile: {fileID: 11400000, guid: aa2392ff63d1eaa42bae1daf8eadf989, type: 2}
+  dirtWallTile: {fileID: 11400000, guid: adf2a4c6b89b98b4494d6f8f60e1b005, type: 2}
+  stoneWallTile: {fileID: 11400000, guid: 97ac60c7c7c646a42bcfb4ba21dfdfa7, type: 2}
+  caveScale: 0.08
+  caveThreshold: 0.65
+  caveStartDepth: 8
