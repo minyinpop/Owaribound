@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace World
+namespace World.Tile
 {
-    [CreateAssetMenu(menuName = "Owaribound/World")]
+    [CreateAssetMenu(menuName = "Owaribound/World/Tile/Ground Rule Tile")]
     public sealed class GroundRuleTile : RuleTile
     {
         public override bool RuleMatch(int neighbor, TileBase other)
