@@ -19,7 +19,7 @@ namespace World.Generator
                                 public int Amplitude => amplitude;
         [field: SerializeField] private float frequency = .03f;      // 越小越平緩
                                 public float Frequency => frequency;
-        [field: SerializeField] private int grassDepth = 5;           // 泥土層厚度
+        [field: SerializeField] private int grassDepth = 5;          // 泥土層厚度
                                 public int GrassDepth => grassDepth;
                                 
         [field: Header("Spawn Area")]

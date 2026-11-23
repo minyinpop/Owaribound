@@ -21,10 +21,10 @@ MonoBehaviour:
   spawnFlatRadius: 12
   spawnBlendWidth: 20
   spawnFlatness: 0.1
-  grassBlockTile: {fileID: 11400000, guid: 6cf2413d11212ec4695f4ce2c73a3475, type: 2}
-  stoneBlockTile: {fileID: 11400000, guid: aa2392ff63d1eaa42bae1daf8eadf989, type: 2}
-  grassWallTile: {fileID: 11400000, guid: 92655a3fdd57211478e2f1f17db3a7ed, type: 2}
-  stoneWallTile: {fileID: 11400000, guid: 4fc3da7319c436546875b5e8a2777b69, type: 2}
+  grassBlockTile: {fileID: 11400000, guid: 10b76a59d517a03438fbbab3526ae23f, type: 2}
+  stoneBlockTile: {fileID: 11400000, guid: f0ce6366ca93b3940837003d16f5c233, type: 2}
+  grassWallTile: {fileID: 11400000, guid: 43e4d7330cb29764591d90e34cb11f07, type: 2}
+  stoneWallTile: {fileID: 11400000, guid: 8d25f67cf33362940bbbf222eaf694b4, type: 2}
   entranceCount: 6
   entranceLength: 80
   entranceRadius: 1.5

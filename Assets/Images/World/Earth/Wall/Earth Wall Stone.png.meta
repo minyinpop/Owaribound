@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ff519fb7f0c92094d86d2af778825dfb
+guid: e806c4e56e76eff4087faffb19d694f9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7788782449748798064
-    second: Earth_Dirt_Wall_0
+      213: 1773798681662549223
+    second: Earth_Stone_Wall_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,7 +102,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_0
+      name: Earth Wall Stone_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,14 +117,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 964dd3a4f660d51468fd5dc3fa200362
-      internalID: -151564341
+      spriteID: a12f3a9a4f279694ba5e4663762d6279
+      internalID: -1116989466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_1
+      name: Earth Wall Stone_1
       rect:
         serializedVersion: 2
         x: 16
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b07aa42cded3da4f86c8a03d72068e2
-      internalID: -1514276409
+      spriteID: c18a4b75035cc9f48a0b6ff2de5f65cf
+      internalID: -1905203239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_2
+      name: Earth Wall Stone_2
       rect:
         serializedVersion: 2
         x: 32
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebdd16468d0f09c4b9dbd3dd6dd4366a
-      internalID: 1467493007
+      spriteID: 35bcb82925ca5d5488fbf71ae88b85ed
+      internalID: -2063405157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_3
+      name: Earth Wall Stone_3
       rect:
         serializedVersion: 2
         x: 48
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43e103d0f09b69b469578285f8536744
-      internalID: 1012012650
+      spriteID: b823a3f1fdd9ef64180e3ec83f1c3e27
+      internalID: 764979502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_4
+      name: Earth Wall Stone_4
       rect:
         serializedVersion: 2
         x: 64
@@ -205,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ae929cb4b6b3394ba5971f8096198b2
-      internalID: -1687717028
+      spriteID: 4151957eed0b6a44bbad249cefd02485
+      internalID: 1517806571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_5
+      name: Earth Wall Stone_5
       rect:
         serializedVersion: 2
         x: 80
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14cfcbb2a98ebb645867cc28d090681d
-      internalID: 1667898267
+      spriteID: c7cd0b63d185682418f948a371889946
+      internalID: 797694331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_6
+      name: Earth Wall Stone_6
       rect:
         serializedVersion: 2
         x: 96
@@ -249,14 +249,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 678f46e2bb6770340be83d71cc10e6d7
-      internalID: -1203307855
+      spriteID: 7cadc43df0e2de04b9824174a3392b0f
+      internalID: 637362729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_7
+      name: Earth Wall Stone_7
       rect:
         serializedVersion: 2
         x: 112
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a17a6e690440674b98c45c62154f09b
-      internalID: -1932995314
+      spriteID: 74916e80d576d1842b7067649af1e463
+      internalID: 604387237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_8
+      name: Earth Wall Stone_8
       rect:
         serializedVersion: 2
         x: 128
@@ -293,14 +293,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dcf0a5b86cdd1542a3e6578346610f1
-      internalID: -2100168844
+      spriteID: a1b90253c8f34c5479509e1c00efdb13
+      internalID: -116061411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_9
+      name: Earth Wall Stone_9
       rect:
         serializedVersion: 2
         x: 144
@@ -315,14 +315,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1eaf4720d12550349b80ef2c2a8c4b5b
-      internalID: 1882985687
+      spriteID: b5f61e86e84428c44ae0d74d473c52ed
+      internalID: 1590410961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_10
+      name: Earth Wall Stone_10
       rect:
         serializedVersion: 2
         x: 160
@@ -337,14 +337,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ee88483572d0e04fb7a0935ec565195
-      internalID: 1815036923
+      spriteID: 71888bf533ce8ab48871052cf257e2bb
+      internalID: 532427359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_11
+      name: Earth Wall Stone_11
       rect:
         serializedVersion: 2
         x: 176
@@ -359,14 +359,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c35e9b90ca522f46a73924582156295
-      internalID: -1086396723
+      spriteID: b190b466e39690e4ab52c7a7ea66baa1
+      internalID: -409926075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_12
+      name: Earth Wall Stone_12
       rect:
         serializedVersion: 2
         x: 192
@@ -381,14 +381,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a49ea3796f92dfc4f89e7ffc68eb03af
-      internalID: 936819497
+      spriteID: 676822d09f1b639469ba51c3fb7f723a
+      internalID: 646525142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_13
+      name: Earth Wall Stone_13
       rect:
         serializedVersion: 2
         x: 208
@@ -403,14 +403,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82ef06d31d7c7b54e84895b5de4d60b1
-      internalID: 1294507234
+      spriteID: dd33e1c0fbe1dec449110983a68667c3
+      internalID: -668211336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_14
+      name: Earth Wall Stone_14
       rect:
         serializedVersion: 2
         x: 224
@@ -425,14 +425,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b894b2b8d5bac7343b50abe150294eb0
-      internalID: -1977436736
+      spriteID: ab0981e9a5ad44e4080bff7b0e6e1403
+      internalID: -1407646712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_15
+      name: Earth Wall Stone_15
       rect:
         serializedVersion: 2
         x: 240
@@ -447,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e65f4305fd13ae54a9906eec525a9d65
-      internalID: -1623407546
+      spriteID: ba4b8e64c0e85f648bdfda505f3730bc
+      internalID: -22873978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_16
+      name: Earth Wall Stone_16
       rect:
         serializedVersion: 2
         x: 0
@@ -469,14 +469,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b3d53aedbf04aa4292404d52cf44fdc
-      internalID: -2023866392
+      spriteID: 43bfe97bf6a0b0140a82ffdd49820db3
+      internalID: -660517961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_17
+      name: Earth Wall Stone_17
       rect:
         serializedVersion: 2
         x: 16
@@ -491,14 +491,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90c4e634fbcce98488275e2266ca0d56
-      internalID: -896683100
+      spriteID: 884a401a38e9ae045831af8eeedf4c3f
+      internalID: 825051020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Dirt_18
+      name: Earth Wall Stone_18
       rect:
         serializedVersion: 2
         x: 32
@@ -513,8 +513,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 929a920be1da6e74ab84670f57cd48cf
-      internalID: 275032644
+      spriteID: 39cf1fc69d660c24fac5f000f14f0a45
+      internalID: 1882019386
       vertices: []
       indices: 
       edges: []
@@ -523,7 +523,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 90431021a99862c418354509b5abe074
+    spriteID: a1b815a0d37b36b4286b4bd6cd4fb3c5
     internalID: 0
     vertices: []
     indices: 
@@ -535,25 +535,25 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":16.0,"y":2.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Earth_Wall_Dirt_0: -151564341
-      Earth_Wall_Dirt_1: -1514276409
-      Earth_Wall_Dirt_10: 1815036923
-      Earth_Wall_Dirt_11: -1086396723
-      Earth_Wall_Dirt_12: 936819497
-      Earth_Wall_Dirt_13: 1294507234
-      Earth_Wall_Dirt_14: -1977436736
-      Earth_Wall_Dirt_15: -1623407546
-      Earth_Wall_Dirt_16: -2023866392
-      Earth_Wall_Dirt_17: -896683100
-      Earth_Wall_Dirt_18: 275032644
-      Earth_Wall_Dirt_2: 1467493007
-      Earth_Wall_Dirt_3: 1012012650
-      Earth_Wall_Dirt_4: -1687717028
-      Earth_Wall_Dirt_5: 1667898267
-      Earth_Wall_Dirt_6: -1203307855
-      Earth_Wall_Dirt_7: -1932995314
-      Earth_Wall_Dirt_8: -2100168844
-      Earth_Wall_Dirt_9: 1882985687
+      Earth Wall Stone_0: -1116989466
+      Earth Wall Stone_1: -1905203239
+      Earth Wall Stone_10: 532427359
+      Earth Wall Stone_11: -409926075
+      Earth Wall Stone_12: 646525142
+      Earth Wall Stone_13: -668211336
+      Earth Wall Stone_14: -1407646712
+      Earth Wall Stone_15: -22873978
+      Earth Wall Stone_16: -660517961
+      Earth Wall Stone_17: 825051020
+      Earth Wall Stone_18: 1882019386
+      Earth Wall Stone_2: -2063405157
+      Earth Wall Stone_3: 764979502
+      Earth Wall Stone_4: 1517806571
+      Earth Wall Stone_5: 797694331
+      Earth Wall Stone_6: 637362729
+      Earth Wall Stone_7: 604387237
+      Earth Wall Stone_8: -116061411
+      Earth Wall Stone_9: 1590410961
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

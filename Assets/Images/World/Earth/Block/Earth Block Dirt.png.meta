@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0fe4f625f2bad5a4cb3a177758d79e67
+guid: 8c60a182287eb6949b07b940f56b8bad
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1562568828049286956
-    second: Ground_Stone_0
+      213: 4336883373099469362
+    second: Ground_Dirt_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,7 +102,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Earth_Block_Stone_0
+      name: Earth Block Dirt_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,14 +117,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2dcb498261857b49bef0b6652996b49
-      internalID: 1521339323
+      spriteID: c65690f7ab9ed8b429c545a055462d2c
+      internalID: 1929058745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_1
+      name: Earth Block Dirt_1
       rect:
         serializedVersion: 2
         x: 16
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 110fdec3ff3f4d146af2a31c02227ae7
-      internalID: 1808848588
+      spriteID: 8f7fd2876087eb741836a90cc618e6ab
+      internalID: -34032329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_2
+      name: Earth Block Dirt_2
       rect:
         serializedVersion: 2
         x: 32
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9873ba1c45fcb874fb36403368c2617b
-      internalID: 1892888300
+      spriteID: d69c610491abd4d48a2c77c36b4a2874
+      internalID: 695530670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_3
+      name: Earth Block Dirt_3
       rect:
         serializedVersion: 2
         x: 48
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 354d1a93e06056144a7088b3ac8f9b9e
-      internalID: 1748743
+      spriteID: 530ad434fc31ed048ab1d84b8869ca38
+      internalID: -1322805378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_4
+      name: Earth Block Dirt_4
       rect:
         serializedVersion: 2
         x: 64
@@ -205,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec6891255574ef44899b26d04f5c4e33
-      internalID: 834331431
+      spriteID: 9ec8130f43172b6449408ad2e1dc6607
+      internalID: 1078240571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_5
+      name: Earth Block Dirt_5
       rect:
         serializedVersion: 2
         x: 80
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46557bf933c694441a344da6ba922b25
-      internalID: -1960153927
+      spriteID: b6e1bce9a74007d4cbc64c90cbf0b83a
+      internalID: 478836213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_6
+      name: Earth Block Dirt_6
       rect:
         serializedVersion: 2
         x: 96
@@ -249,14 +249,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d87ff243da9a7d047affc149e6320c3f
-      internalID: -354418791
+      spriteID: da2c1f7457d61064f816f5e75c2e12f7
+      internalID: -360605982
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_7
+      name: Earth Block Dirt_7
       rect:
         serializedVersion: 2
         x: 112
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 528f3ca20b68aa642b0559a75496a2b4
-      internalID: 1492151078
+      spriteID: 8c11db703cc44ad43b5995612181dd52
+      internalID: -292556994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_8
+      name: Earth Block Dirt_8
       rect:
         serializedVersion: 2
         x: 128
@@ -293,14 +293,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b798de95fa6984d4aaca758250b71ebe
-      internalID: 1101526327
+      spriteID: 3b64c2c22a910dc479e7a6663de094e3
+      internalID: 1221426621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_9
+      name: Earth Block Dirt_9
       rect:
         serializedVersion: 2
         x: 144
@@ -315,14 +315,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af367da7adaafd043a6321e887668cff
-      internalID: -1083502313
+      spriteID: 63c4c8ace0276ff43a8fc6fe159f8151
+      internalID: -1109457690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_10
+      name: Earth Block Dirt_10
       rect:
         serializedVersion: 2
         x: 160
@@ -337,14 +337,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e59a1f33c9747ef44a068d3a055bf26d
-      internalID: -1890238738
+      spriteID: 7c14b4e5237ef6441842e84025acb079
+      internalID: 185532374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_11
+      name: Earth Block Dirt_11
       rect:
         serializedVersion: 2
         x: 176
@@ -359,14 +359,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36cf7fd29001d824a93dc75c3e70a9fc
-      internalID: 71112543
+      spriteID: 7af7418dbdb889c45b1a28092501a9e3
+      internalID: -1185427773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_12
+      name: Earth Block Dirt_12
       rect:
         serializedVersion: 2
         x: 192
@@ -381,14 +381,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f3b1ac76e455a6469ea6c4b0d1b0947
-      internalID: -1649305780
+      spriteID: ee36314d4fc1eca4d9b7b9614bfee5f9
+      internalID: 1626682511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_13
+      name: Earth Block Dirt_13
       rect:
         serializedVersion: 2
         x: 208
@@ -403,14 +403,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2082eb36b6efee4ba07bca2bd655e15
-      internalID: -1097401779
+      spriteID: 7e67d5d62b42927429870a924e47c0cc
+      internalID: -545745185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_14
+      name: Earth Block Dirt_14
       rect:
         serializedVersion: 2
         x: 224
@@ -425,14 +425,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4faa3e83bac2850429a7df3c048945b3
-      internalID: -1163577443
+      spriteID: 764647d9dbb238e47a1fb2634f7992a9
+      internalID: 1344163489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_15
+      name: Earth Block Dirt_15
       rect:
         serializedVersion: 2
         x: 240
@@ -447,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5318c78f9bf6df844a904517bd8c5c80
-      internalID: 1293749255
+      spriteID: 18cc186b93f2d734da7960a5c30bce59
+      internalID: 371492297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_16
+      name: Earth Block Dirt_16
       rect:
         serializedVersion: 2
         x: 0
@@ -469,14 +469,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5dd8fea41d4cfd4cb6fceff1f0db49f
-      internalID: 265872997
+      spriteID: 8d3da57c4376dde448c80229c717f394
+      internalID: 915550596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Block_Stone_17
+      name: Earth Block Dirt_17
       rect:
         serializedVersion: 2
         x: 16
@@ -491,8 +491,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44000d7af5fcd4d4cac38fc78f5371a0
-      internalID: 740562271
+      spriteID: 4c567b36afae5ef4b93d6bf7f15ad660
+      internalID: -1483232042
       vertices: []
       indices: 
       edges: []
@@ -501,7 +501,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 773d86cfcde01134d88efe8c6e8262f6
+    spriteID: 797e5e98a8aed9c4c9032ff64bf9891a
     internalID: 0
     vertices: []
     indices: 
@@ -513,24 +513,24 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":16.0,"y":2.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Earth_Block_Stone_0: 1521339323
-      Earth_Block_Stone_1: 1808848588
-      Earth_Block_Stone_10: -1890238738
-      Earth_Block_Stone_11: 71112543
-      Earth_Block_Stone_12: -1649305780
-      Earth_Block_Stone_13: -1097401779
-      Earth_Block_Stone_14: -1163577443
-      Earth_Block_Stone_15: 1293749255
-      Earth_Block_Stone_16: 265872997
-      Earth_Block_Stone_17: 740562271
-      Earth_Block_Stone_2: 1892888300
-      Earth_Block_Stone_3: 1748743
-      Earth_Block_Stone_4: 834331431
-      Earth_Block_Stone_5: -1960153927
-      Earth_Block_Stone_6: -354418791
-      Earth_Block_Stone_7: 1492151078
-      Earth_Block_Stone_8: 1101526327
-      Earth_Block_Stone_9: -1083502313
+      Earth Block Dirt_0: 1929058745
+      Earth Block Dirt_1: -34032329
+      Earth Block Dirt_10: 185532374
+      Earth Block Dirt_11: -1185427773
+      Earth Block Dirt_12: 1626682511
+      Earth Block Dirt_13: -545745185
+      Earth Block Dirt_14: 1344163489
+      Earth Block Dirt_15: 371492297
+      Earth Block Dirt_16: 915550596
+      Earth Block Dirt_17: -1483232042
+      Earth Block Dirt_2: 695530670
+      Earth Block Dirt_3: -1322805378
+      Earth Block Dirt_4: 1078240571
+      Earth Block Dirt_5: 478836213
+      Earth Block Dirt_6: -360605982
+      Earth Block Dirt_7: -292556994
+      Earth Block Dirt_8: 1221426621
+      Earth Block Dirt_9: -1109457690
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

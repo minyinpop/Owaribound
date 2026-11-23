@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 18ee120f8c75038459b7245a87dff384
+guid: 64b5dbb0ccb716d4481b0a21602e7a25
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7687926542571320906
-    second: Earth_Grass_Wall_0
+      213: -3881395257939397159
+    second: Earth_Ore_Silver_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,7 +102,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Earth_Wall_Grass_0
+      name: Earth Block Ore Silver_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,14 +117,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d8b81bad61f32145861bcc764a0d651
-      internalID: -854895735
+      spriteID: d0641a95696a50746ad90a37a603b8c0
+      internalID: 1961362555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_1
+      name: Earth Block Ore Silver_1
       rect:
         serializedVersion: 2
         x: 16
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 178c06027e4a5004b9d6f4f8292c905d
-      internalID: 1104677607
+      spriteID: 9160a416c12ba27478b8a838112ed92e
+      internalID: -102451701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_2
+      name: Earth Block Ore Silver_2
       rect:
         serializedVersion: 2
         x: 32
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a977491524aacee479510d66d5ecf366
-      internalID: -1500965434
+      spriteID: 1330afee22a0d554da2b8977786601a6
+      internalID: -576664351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_3
+      name: Earth Block Ore Silver_3
       rect:
         serializedVersion: 2
         x: 48
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adfd85fbee97c5c4480322cd81e4bba5
-      internalID: 66832304
+      spriteID: 3214e9a636548e348b41b31a8616c3a9
+      internalID: 32548116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_4
+      name: Earth Block Ore Silver_4
       rect:
         serializedVersion: 2
         x: 64
@@ -205,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bb8130a2d07e7346a6c9278bf7d86e5
-      internalID: -1196617725
+      spriteID: b4bfca8c5bb8cbb48a06e6383217eb13
+      internalID: -1013918095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_5
+      name: Earth Block Ore Silver_5
       rect:
         serializedVersion: 2
         x: 80
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c4e3ace9106b684ab57136e88cc77c8
-      internalID: 590424518
+      spriteID: a5bdca07e06705944a37d965afeae62c
+      internalID: 1492462418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_6
+      name: Earth Block Ore Silver_6
       rect:
         serializedVersion: 2
         x: 96
@@ -249,14 +249,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a42f944d4fc88db4d9f081e52ca4d21e
-      internalID: 1792530565
+      spriteID: 3db2c7de6bf9b6344b05988951d38989
+      internalID: -344114448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_7
+      name: Earth Block Ore Silver_7
       rect:
         serializedVersion: 2
         x: 112
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31c2c4e68447afa4aa5119f3958fa6d6
-      internalID: 1719411100
+      spriteID: e0789651932b9544ea065cb7c963bcd0
+      internalID: -1255923051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_8
+      name: Earth Block Ore Silver_8
       rect:
         serializedVersion: 2
         x: 128
@@ -293,14 +293,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13d5b9a0fd1d42643a53d3d2478365bd
-      internalID: 800501425
+      spriteID: 28212be2669e4aa49b26cb21669bbce4
+      internalID: 1205296663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_9
+      name: Earth Block Ore Silver_9
       rect:
         serializedVersion: 2
         x: 144
@@ -315,14 +315,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a99a7c361ba4eca41977a5718fa28c34
-      internalID: -450744858
+      spriteID: 8e38a4b2589dd5e429009faf75c9fb21
+      internalID: -1056185496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_10
+      name: Earth Block Ore Silver_10
       rect:
         serializedVersion: 2
         x: 160
@@ -337,14 +337,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bf2df713bd37374db0a9fc711cc96d1
-      internalID: -873688810
+      spriteID: de785d1645afed643b45e3924139cc27
+      internalID: 2021190294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_11
+      name: Earth Block Ore Silver_11
       rect:
         serializedVersion: 2
         x: 176
@@ -359,14 +359,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acf21f4288efb494c827a7ee2bf45986
-      internalID: -43203644
+      spriteID: dd04555af5393a84eb98db64990f6042
+      internalID: 274342985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_12
+      name: Earth Block Ore Silver_12
       rect:
         serializedVersion: 2
         x: 192
@@ -381,14 +381,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34c7f85554e97ed45ab4f3cc9309bca7
-      internalID: 1488202154
+      spriteID: b20dafb65a482f14286f7adefb9ae7c1
+      internalID: 111867583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_13
+      name: Earth Block Ore Silver_13
       rect:
         serializedVersion: 2
         x: 208
@@ -403,14 +403,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa72d2e2958ed8f4289556027b373d6c
-      internalID: -1883677689
+      spriteID: fa964c6e70c1b714398abc4eab1b1091
+      internalID: -802258463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_14
+      name: Earth Block Ore Silver_14
       rect:
         serializedVersion: 2
         x: 224
@@ -425,14 +425,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c6ebaec098a0084fa70ab97d63f3520
-      internalID: 1503216167
+      spriteID: a16318b6d2497fd449e7d71ac8c88fd4
+      internalID: -640072905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_15
+      name: Earth Block Ore Silver_15
       rect:
         serializedVersion: 2
         x: 240
@@ -447,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 034b6df8837f1574ab387fa271f9b6e4
-      internalID: -1913062915
+      spriteID: 5592ddbe0124c374a8376fdedc12d2b3
+      internalID: -2007856298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_16
+      name: Earth Block Ore Silver_16
       rect:
         serializedVersion: 2
         x: 0
@@ -469,14 +469,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21adcf35314590746902e0a87db4ebce
-      internalID: 814201664
+      spriteID: 1dc750494b3170d428eb52257a35e8f5
+      internalID: 1801630348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Earth_Wall_Grass_17
+      name: Earth Block Ore Silver_17
       rect:
         serializedVersion: 2
         x: 16
@@ -491,30 +491,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55552e82ff39f364191e3623468cdea8
-      internalID: -829287425
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Earth_Wall_Grass_18
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02109661cd6a57846b9ef3d5eba334cb
-      internalID: -1877878260
+      spriteID: 431890a267f969f4d8dd103333484cb1
+      internalID: 211653192
       vertices: []
       indices: 
       edges: []
@@ -523,7 +501,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 044b9c3310ce7d540a84e9441c24a75c
+    spriteID: 07873fa317513954d9315c1acf7d40be
     internalID: 0
     vertices: []
     indices: 
@@ -535,25 +513,24 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":16.0,"y":2.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Earth_Wall_Grass_0: -854895735
-      Earth_Wall_Grass_1: 1104677607
-      Earth_Wall_Grass_10: -873688810
-      Earth_Wall_Grass_11: -43203644
-      Earth_Wall_Grass_12: 1488202154
-      Earth_Wall_Grass_13: -1883677689
-      Earth_Wall_Grass_14: 1503216167
-      Earth_Wall_Grass_15: -1913062915
-      Earth_Wall_Grass_16: 814201664
-      Earth_Wall_Grass_17: -829287425
-      Earth_Wall_Grass_18: -1877878260
-      Earth_Wall_Grass_2: -1500965434
-      Earth_Wall_Grass_3: 66832304
-      Earth_Wall_Grass_4: -1196617725
-      Earth_Wall_Grass_5: 590424518
-      Earth_Wall_Grass_6: 1792530565
-      Earth_Wall_Grass_7: 1719411100
-      Earth_Wall_Grass_8: 800501425
-      Earth_Wall_Grass_9: -450744858
+      Earth Block Ore Silver_0: 1961362555
+      Earth Block Ore Silver_1: -102451701
+      Earth Block Ore Silver_10: 2021190294
+      Earth Block Ore Silver_11: 274342985
+      Earth Block Ore Silver_12: 111867583
+      Earth Block Ore Silver_13: -802258463
+      Earth Block Ore Silver_14: -640072905
+      Earth Block Ore Silver_15: -2007856298
+      Earth Block Ore Silver_16: 1801630348
+      Earth Block Ore Silver_17: 211653192
+      Earth Block Ore Silver_2: -576664351
+      Earth Block Ore Silver_3: 32548116
+      Earth Block Ore Silver_4: -1013918095
+      Earth Block Ore Silver_5: 1492462418
+      Earth Block Ore Silver_6: -344114448
+      Earth Block Ore Silver_7: -1255923051
+      Earth Block Ore Silver_8: 1205296663
+      Earth Block Ore Silver_9: -1056185496
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
