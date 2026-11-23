@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 544c1f14411342d39d1115ff442e34a4, type: 3}
+  m_Script: {fileID: 11500000, guid: a4d4bce4fb204cd08615c2acc27ab23d, type: 3}
   m_Name: Earth Grass Wall Rule Tile
   m_EditorClassIdentifier: Unity.2D.Tilemap.Extras::UnityEngine.RuleTile
   m_DefaultSprite: {fileID: -1913062915, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
