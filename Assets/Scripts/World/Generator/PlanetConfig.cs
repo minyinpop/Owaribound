@@ -6,7 +6,7 @@ namespace World.Generator
     [CreateAssetMenu(menuName = "Owaribound/World/Generator/Planet Config")]
     public sealed class PlanetConfig : ScriptableObject
     {
-        [field: Header("Size")]
+        [field: Header("World Size")]
         [field: SerializeField] private int width = 200;
                                 public int Width => width;
         [field: SerializeField] private int height = 100;
@@ -21,6 +21,14 @@ namespace World.Generator
                                 public float Frequency => frequency;
         [field: SerializeField] private int dirtDepth = 5;           // 泥土層厚度
                                 public int DirtDepth => dirtDepth;
+                                
+        [field: Header("Spawn Area")]
+        [field: SerializeField] private int spawnFlatRadius = 12;               // 中間多寬是平的（左右各幾格）
+                                public int SpawnFlatRadius => spawnFlatRadius;
+        [field: SerializeField] private int spawnBlendWidth = 20;               // 從平地過渡到正常地形的寬度
+                                public int SpawnBlendWidth => spawnBlendWidth;
+        [field: SerializeField, Range(0, 1)] private float spawnFlatness = .1f; // 平地區保留多少起伏（0 = 完全平）
+                                public float SpawnFlatness => spawnFlatness;
 
         [field: Header("Block Tiles")]
         [field: SerializeField] private TileBase dirtBlockTile;

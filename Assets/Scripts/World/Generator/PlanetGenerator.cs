@@ -52,10 +52,17 @@ namespace World.Generator
 
                     for (var x = 0; x < config.Width; x++)
                     {
-                        var big   = Mathf.PerlinNoise(offset + x * config.Frequency, 0f);        // 大山丘
-                        var small = Mathf.PerlinNoise(offset + x * config.Frequency * 4f, 100f); // 小起伏（頻率 4 倍）
-                        var noise = big * .8f + small * .2f;                                     // 大的佔 80%
-                        var h = config.BaseHeight + Mathf.RoundToInt((noise * 2f - 1f) * config.Amplitude);
+                        var big   = Mathf.PerlinNoise(offset + x * config.Frequency, 0f);
+                        var small = Mathf.PerlinNoise(offset + x * config.Frequency * 4f, 100f);
+                        var noise = big * .8f + small * .2f;
+
+                        // 離中間越近，起伏越小
+                        var dist = Mathf.Abs(x - config.Width / 2);
+                        var t = Mathf.InverseLerp(config.SpawnFlatRadius,
+                            config.SpawnFlatRadius + config.SpawnBlendWidth, dist);
+                        var amp = config.Amplitude * Mathf.Lerp(config.SpawnFlatness, 1f, t);
+
+                        var h = config.BaseHeight + Mathf.RoundToInt((noise * 2f - 1f) * amp);
                         surface[x] = Mathf.Clamp(h, 1, config.Height - 1);
                     }
                 }
