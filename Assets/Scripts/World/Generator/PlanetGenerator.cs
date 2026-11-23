@@ -1,20 +1,21 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace World.Generator
 {
-    public enum Block : byte { Air, Dirt, Stone }
-    public enum Wall : byte { None, Dirt, Stone }
+    public enum Block : byte { Air, Dirt, Stone, Copper, Iron, Silver }
+    public enum Wall  : byte { None, Dirt, Stone, Copper, Iron, Silver }
 
     public sealed class PlanetGenerator : MonoBehaviour
     {
-        [field: Header("Planet Settings")]
+        [field: Header("世界設定")]
         [field: SerializeField] private PlanetConfig config;
         [field: SerializeField] private Tilemap blockTilemap;
         [field: SerializeField] private Tilemap wallTilemap;
         [field: SerializeField] private int seed;
         
-        [field: Header("Player Settings")]
+        [field: Header("玩家設定")]
         [field: SerializeField] private Transform player;
 
         private Block[,] blocks; // 整張地圖的資料
@@ -38,8 +39,7 @@ namespace World.Generator
                 FillLayers();
                 CarveCaves(new System.Random(seed + 1));
                 CarveCaveEntrances(new System.Random(seed + 2));
-                // 之後的步驟加在這裡：
-                // PlaceOres(new System.Random(seed + 3));
+                PlaceOres(new System.Random(seed + 3));
 
                 Render();
             }
@@ -157,10 +157,57 @@ namespace World.Generator
                     }
                 }
             #endregion
+            
+            #region 步驟 5：在岩石層放礦脈（方塊和背景牆一起換）
+            private void PlaceOres(System.Random rng)
+            {
+                foreach (var ore in config.Ores)
+                {
+                    var offsetX = (float)(rng.NextDouble() * 10000);
+                    var offsetY = (float)(rng.NextDouble() * 10000);
+
+                    for (var x = 0; x < config.Width; x++)
+                    for (var y = 0; y < surface[x]; y++)
+                    {
+                        // 只看原本是岩石層的地方（用牆判斷，挖空的洞穴也算）
+                        if (walls[x, y] != Wall.Stone)
+                            continue;
+
+                        var depth = surface[x] - 1 - y;
+                        if (depth < ore.MinDepth || depth > ore.MaxDepth)
+                            continue;
+
+                        var noise = Mathf.PerlinNoise(offsetX + x * ore.Scale, offsetY + y * ore.Scale);
+                        if (noise < ore.threshold)
+                            continue;
+
+                        walls[x, y] = ore.Wall;                // 背景一定換
+                        if (blocks[x, y] == Block.Stone)
+                            blocks[x, y] = ore.Block;          // 前景還在才換
+                    }
+                }
+            }
+            #endregion
 
             #region 最後：把資料轉成 Tile，一次打進 Tilemap
                 private void Render()
                 {
+                    var blockLookup = new Dictionary<Block, TileBase>
+                    {
+                        { Block.Dirt,  config.GrassBlockTile },
+                        { Block.Stone, config.StoneBlockTile },
+                    };
+                    var wallLookup = new Dictionary<Wall, TileBase>
+                    {
+                        { Wall.Dirt,  config.GrassWallTile },
+                        { Wall.Stone, config.StoneWallTile },
+                    };
+                    foreach (var ore in config.Ores)
+                    {
+                        blockLookup[ore.Block] = ore.BlockTile;
+                        wallLookup[ore.Wall]   = ore.WallTile;
+                    }
+                    
                     var w = config.Width;
                     var h = config.Height;
                     var blockTiles = new TileBase[w * h];
@@ -169,8 +216,8 @@ namespace World.Generator
                     for (var x = 0; x < w; x++)
                     for (var y = 0; y < h; y++)
                     {
-                        blockTiles[x + y * w] = ToBlockTile(blocks[x, y]);
-                        wallTiles[x + y * w] = ToWallTile(walls[x, y]);
+                        blockTiles[x + y * w] = blockLookup.GetValueOrDefault(blocks[x, y]);
+                        wallTiles[x + y * w]  = wallLookup.GetValueOrDefault(walls[x, y]);
                     }
 
                     var bounds = new BoundsInt(0, 0, 0, w, h, 1);
@@ -181,20 +228,6 @@ namespace World.Generator
                     wallTilemap.ClearAllTiles();
                     wallTilemap.SetTilesBlock(bounds, wallTiles);
                 }
-
-                private TileBase ToBlockTile(Block block) => block switch
-                {
-                    Block.Dirt  => config.GrassBlockTile,
-                    Block.Stone => config.StoneBlockTile,
-                    _ => null // Air
-                };
-                
-                private TileBase ToWallTile(Wall wall) => wall switch
-                {
-                    Wall.Dirt  => config.GrassWallTile,
-                    Wall.Stone => config.StoneWallTile,
-                    _ => null // Air
-                };
             #endregion
         #endregion
         
