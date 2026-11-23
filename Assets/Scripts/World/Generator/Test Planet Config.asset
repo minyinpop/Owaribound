@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2660dd9ce1c4a0688caa7ba8fd84e71, type: 3}
   m_Name: Test Planet Config
   m_EditorClassIdentifier: Assembly-CSharp::World.Generator.PlanetConfig
-  width: 250
-  height: 100
+  width: 300
+  height: 200
   baseHeight: 60
   amplitude: 20
   frequency: 0.05
   dirtDepth: 5
+  spawnFlatRadius: 12
+  spawnBlendWidth: 20
+  spawnFlatness: 0.1
   dirtBlockTile: {fileID: 11400000, guid: 6cf2413d11212ec4695f4ce2c73a3475, type: 2}
   stoneBlockTile: {fileID: 11400000, guid: aa2392ff63d1eaa42bae1daf8eadf989, type: 2}
   dirtWallTile: {fileID: 11400000, guid: adf2a4c6b89b98b4494d6f8f60e1b005, type: 2}
