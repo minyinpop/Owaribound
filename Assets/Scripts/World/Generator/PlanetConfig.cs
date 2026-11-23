@@ -33,8 +33,20 @@ namespace World.Generator
                                 public TileBase DirtWallTile => dirtWallTile;
         [field: SerializeField] private TileBase stoneWallTile;
                                 public TileBase StoneWallTile => stoneWallTile;
+                                
+        [field: Header("Cave Entrance")]
+        [field: SerializeField] private int entranceCount = 3;
+                                public int EntranceCount => entranceCount;
+        [field: SerializeField] private int entranceLength = 40;
+                                public int EntranceLength => entranceLength;
+        [field: SerializeField] private float entranceRadius = 1.5f;
+                                public float EntranceRadius => entranceRadius;
+        [field: SerializeField] private Vector2 entranceSlope = new(15f, 75f); // 往下傾斜的角度範圍（最緩, 最陡）
+                                public Vector2 EntranceSlope => entranceSlope;
+        [field: SerializeField] private float entranceWobble = 15f;            // 擺動幅度
+                                public float EntranceWobble => entranceWobble;
         
-        [field: Header("Canvas")]
+        [field: Header("Cave")]
         [field: SerializeField] private float caveScale = .08f;                           // 越小洞越大
                                 public float CaveScale => caveScale;
         [field: SerializeField, Range(0, 1)] private float caveThreshold = .65f;          // 越低洞越多
