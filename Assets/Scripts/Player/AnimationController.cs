@@ -5,11 +5,11 @@ namespace Player
     [RequireComponent(typeof(PlayerController))]
     public sealed class AnimationController : MonoBehaviour
     {
-        private static readonly int axisXHash = Animator.StringToHash("AxisX");
-        private static readonly int idleHash = Animator.StringToHash("Idle");
-        private static readonly int walkHash = Animator.StringToHash("Walk");
-        private static readonly int jumpHash = Animator.StringToHash("Jump");
-        private static readonly int fallHash = Animator.StringToHash("Fall");
+        private static readonly int AxisXHash = Animator.StringToHash("AxisX");
+        private static readonly int IdleHash = Animator.StringToHash("Idle");
+        private static readonly int WalkHash = Animator.StringToHash("Walk");
+        private static readonly int JumpHash = Animator.StringToHash("Jump");
+        private static readonly int FallHash = Animator.StringToHash("Fall");
 
         private PlayerController playerCo;
 
@@ -24,16 +24,16 @@ namespace Player
         {
             if (playerCo.Input.WalkDir is > 0 or < 0)
             {
-                playerCo.Anima.SetFloat(axisXHash, playerCo.Input.WalkDir);
+                playerCo.Anima.SetFloat(AxisXHash, playerCo.Input.WalkDir);
             }
 
             if (playerCo.IsAirborne)
             {
-                Play(playerCo.Rig.linearVelocityY > 0 ? jumpHash : fallHash);
+                Play(playerCo.Rig.linearVelocityY > 0 ? JumpHash : FallHash);
                 return;
             }
 
-            Play(playerCo.Rig.linearVelocityX is > .05f or < -.05f ? walkHash : idleHash);
+            Play(playerCo.Rig.linearVelocityX is > .05f or < -.05f ? WalkHash : IdleHash);
         }
 
         private void Play(int hash)

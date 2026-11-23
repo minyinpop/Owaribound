@@ -6,23 +6,23 @@ namespace Player
     [RequireComponent(typeof(AnimationController))]
     public sealed class PlayerController : MonoBehaviour
     {
-        [field: Header("Self Components")]
+        [field: Header("自身組件")]
         [field: SerializeField] private Rigidbody2D rig;
                                 public Rigidbody2D Rig => rig;
         [field: SerializeField] private Animator anima;
                                 public Animator Anima => anima;
         
-        [field: Header("Other Components")]
+        [field: Header("其它組件")]
         [field: SerializeField] private InputHandler input;
                                 public InputHandler Input => input;
         
-        [field: Header("Move Settings")]
+        [field: Header("移動設定")]
         [field: SerializeField] private float moveSpeed = 5;
         
-        [field: Header("Jump Settings")]
+        [field: Header("跳躍設定")]
         [field: SerializeField] private float jumpForce = 5;
         
-        [field: Header("Floor Detect Settings")]
+        [field: Header("地板偵測設定")]
         [field: SerializeField] private Vector2 offset = new(0, .1f);
         [field: SerializeField] private Vector2 size = new(.7f, .05f);
         [field: SerializeField] private float distance = .15f;
