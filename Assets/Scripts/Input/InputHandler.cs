@@ -9,8 +9,11 @@ namespace Input
         private InputActions input;
 
         public float WalkDir => input.Player.Move.ReadValue<Vector2>().normalized.x;
-
+        
         public event Action OnJumpPerformed;
+        
+        public bool IsMining => input.Mouse.Mine.IsPressed();
+        public Vector2 MousePos => input.Mouse.Position.ReadValue<Vector2>();
 
         private void Awake()
         {
