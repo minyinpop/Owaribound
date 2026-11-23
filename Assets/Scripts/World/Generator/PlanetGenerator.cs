@@ -39,7 +39,7 @@ namespace World.Generator
                 CarveCaves(new System.Random(seed + 1));
                 CarveCaveEntrances(new System.Random(seed + 2));
                 // 之後的步驟加在這裡：
-                // PlaceOres(new System.Random(seed + 2));
+                // PlaceOres(new System.Random(seed + 3));
 
                 Render();
             }
