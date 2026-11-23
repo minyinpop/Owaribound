@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4
+guid: ff519fb7f0c92094d86d2af778825dfb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4805872035113843537
-    second: Ground_Earth_0
+      213: 7788782449748798064
+    second: Earth_Dirt_Wall_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,7 +102,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Normal_Grass_0
+      name: Earth_Wall_Dirt_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,14 +117,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92d811b815234194cb33f3839a4c40f8
-      internalID: -1047069439
+      spriteID: 964dd3a4f660d51468fd5dc3fa200362
+      internalID: -151564341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_1
+      name: Earth_Wall_Dirt_1
       rect:
         serializedVersion: 2
         x: 16
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 517ff473183860c4d93534d06e840e99
-      internalID: -2032662897
+      spriteID: 1b07aa42cded3da4f86c8a03d72068e2
+      internalID: -1514276409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_2
+      name: Earth_Wall_Dirt_2
       rect:
         serializedVersion: 2
         x: 32
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce5896a1ac230ce45b83436fd6470889
-      internalID: -837511070
+      spriteID: ebdd16468d0f09c4b9dbd3dd6dd4366a
+      internalID: 1467493007
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_3
+      name: Earth_Wall_Dirt_3
       rect:
         serializedVersion: 2
         x: 48
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb267715f0f9083458af4a46e1c9e775
-      internalID: -490022322
+      spriteID: 43e103d0f09b69b469578285f8536744
+      internalID: 1012012650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_4
+      name: Earth_Wall_Dirt_4
       rect:
         serializedVersion: 2
         x: 64
@@ -205,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dd5960f42a287f4bbdaa41e67ae5ac4
-      internalID: 1244290990
+      spriteID: 3ae929cb4b6b3394ba5971f8096198b2
+      internalID: -1687717028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_5
+      name: Earth_Wall_Dirt_5
       rect:
         serializedVersion: 2
         x: 80
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b128344d4de5fec4a86356ffe892666f
-      internalID: 806187983
+      spriteID: 14cfcbb2a98ebb645867cc28d090681d
+      internalID: 1667898267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_6
+      name: Earth_Wall_Dirt_6
       rect:
         serializedVersion: 2
         x: 96
@@ -249,14 +249,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37939f3b305310d4d922b4a0557d7745
-      internalID: 348193232
+      spriteID: 678f46e2bb6770340be83d71cc10e6d7
+      internalID: -1203307855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_7
+      name: Earth_Wall_Dirt_7
       rect:
         serializedVersion: 2
         x: 112
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 275029be32fda6a48b92eea201526ced
-      internalID: 939436185
+      spriteID: 2a17a6e690440674b98c45c62154f09b
+      internalID: -1932995314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_8
+      name: Earth_Wall_Dirt_8
       rect:
         serializedVersion: 2
         x: 128
@@ -293,14 +293,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a9f3c8978b43504ea3e6566ce34edd8
-      internalID: 757363350
+      spriteID: 1dcf0a5b86cdd1542a3e6578346610f1
+      internalID: -2100168844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_9
+      name: Earth_Wall_Dirt_9
       rect:
         serializedVersion: 2
         x: 144
@@ -315,14 +315,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d5f698d4f36e8f42a7ccc00bbf944f9
-      internalID: 1244727685
+      spriteID: 1eaf4720d12550349b80ef2c2a8c4b5b
+      internalID: 1882985687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_10
+      name: Earth_Wall_Dirt_10
       rect:
         serializedVersion: 2
         x: 160
@@ -337,14 +337,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e649c89e4e21a444b92cb68cbf9589ed
-      internalID: 146913894
+      spriteID: 7ee88483572d0e04fb7a0935ec565195
+      internalID: 1815036923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_11
+      name: Earth_Wall_Dirt_11
       rect:
         serializedVersion: 2
         x: 176
@@ -359,14 +359,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f76e6d0b0109e340b16352c3abdec58
-      internalID: -1044951725
+      spriteID: 7c35e9b90ca522f46a73924582156295
+      internalID: -1086396723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_12
+      name: Earth_Wall_Dirt_12
       rect:
         serializedVersion: 2
         x: 192
@@ -381,14 +381,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d07de4fdabb16a4ba6453db3b629a68
-      internalID: -1250486776
+      spriteID: a49ea3796f92dfc4f89e7ffc68eb03af
+      internalID: 936819497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_13
+      name: Earth_Wall_Dirt_13
       rect:
         serializedVersion: 2
         x: 208
@@ -403,14 +403,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cffa7518a33dcd4cb5f1cfa6a3b1f31
-      internalID: -537537110
+      spriteID: 82ef06d31d7c7b54e84895b5de4d60b1
+      internalID: 1294507234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_14
+      name: Earth_Wall_Dirt_14
       rect:
         serializedVersion: 2
         x: 224
@@ -425,14 +425,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8684dbe056612e742b39feacb0ffb3db
-      internalID: -1675545932
+      spriteID: b894b2b8d5bac7343b50abe150294eb0
+      internalID: -1977436736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_15
+      name: Earth_Wall_Dirt_15
       rect:
         serializedVersion: 2
         x: 240
@@ -447,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4efee5201dcbc93459b35dc51c2f84bf
-      internalID: -66089147
+      spriteID: e65f4305fd13ae54a9906eec525a9d65
+      internalID: -1623407546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_16
+      name: Earth_Wall_Dirt_16
       rect:
         serializedVersion: 2
         x: 0
@@ -469,14 +469,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40ddfc6f37101f44bb81b7f69ab205e1
-      internalID: 948420489
+      spriteID: 1b3d53aedbf04aa4292404d52cf44fdc
+      internalID: -2023866392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_17
+      name: Earth_Wall_Dirt_17
       rect:
         serializedVersion: 2
         x: 16
@@ -491,14 +491,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83fa4e12150933549ae740ea50cbc54a
-      internalID: 217431081
+      spriteID: 90c4e634fbcce98488275e2266ca0d56
+      internalID: -896683100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal_Grass_18
+      name: Earth_Wall_Dirt_18
       rect:
         serializedVersion: 2
         x: 32
@@ -513,8 +513,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb131dd440e388a43b19255f3b7e431f
-      internalID: -104981841
+      spriteID: 929a920be1da6e74ab84670f57cd48cf
+      internalID: 275032644
       vertices: []
       indices: 
       edges: []
@@ -523,7 +523,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 78ae88750cc64d8469d80d00c0780814
+    spriteID: 90431021a99862c418354509b5abe074
     internalID: 0
     vertices: []
     indices: 
@@ -535,25 +535,25 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":16.0,"y":2.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Normal_Grass_0: -1047069439
-      Normal_Grass_1: -2032662897
-      Normal_Grass_10: 146913894
-      Normal_Grass_11: -1044951725
-      Normal_Grass_12: -1250486776
-      Normal_Grass_13: -537537110
-      Normal_Grass_14: -1675545932
-      Normal_Grass_15: -66089147
-      Normal_Grass_16: 948420489
-      Normal_Grass_17: 217431081
-      Normal_Grass_18: -104981841
-      Normal_Grass_2: -837511070
-      Normal_Grass_3: -490022322
-      Normal_Grass_4: 1244290990
-      Normal_Grass_5: 806187983
-      Normal_Grass_6: 348193232
-      Normal_Grass_7: 939436185
-      Normal_Grass_8: 757363350
-      Normal_Grass_9: 1244727685
+      Earth_Wall_Dirt_0: -151564341
+      Earth_Wall_Dirt_1: -1514276409
+      Earth_Wall_Dirt_10: 1815036923
+      Earth_Wall_Dirt_11: -1086396723
+      Earth_Wall_Dirt_12: 936819497
+      Earth_Wall_Dirt_13: 1294507234
+      Earth_Wall_Dirt_14: -1977436736
+      Earth_Wall_Dirt_15: -1623407546
+      Earth_Wall_Dirt_16: -2023866392
+      Earth_Wall_Dirt_17: -896683100
+      Earth_Wall_Dirt_18: 275032644
+      Earth_Wall_Dirt_2: 1467493007
+      Earth_Wall_Dirt_3: 1012012650
+      Earth_Wall_Dirt_4: -1687717028
+      Earth_Wall_Dirt_5: 1667898267
+      Earth_Wall_Dirt_6: -1203307855
+      Earth_Wall_Dirt_7: -1932995314
+      Earth_Wall_Dirt_8: -2100168844
+      Earth_Wall_Dirt_9: 1882985687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

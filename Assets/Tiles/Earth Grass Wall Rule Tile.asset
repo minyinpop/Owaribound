@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 544c1f14411342d39d1115ff442e34a4, type: 3}
-  m_Name: Earth Dirt Block Rule Tile
+  m_Name: Earth Grass Wall Rule Tile
   m_EditorClassIdentifier: Unity.2D.Tilemap.Extras::UnityEngine.RuleTile
-  m_DefaultSprite: {fileID: -66089147, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+  m_DefaultSprite: {fileID: -1913062915, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 2
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: -66089147, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: -1913062915, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -36,7 +36,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 1
     m_Sprites:
-    - {fileID: 1244727685, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: -450744858, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 2
     m_Sprites:
-    - {fileID: -2032662897, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: 1104677607, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -72,7 +72,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 3
     m_Sprites:
-    - {fileID: -490022322, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: 66832304, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -90,7 +90,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 4
     m_Sprites:
-    - {fileID: 757363350, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: 800501425, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -108,9 +108,10 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 5
     m_Sprites:
-    - {fileID: -1047069439, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
-    - {fileID: 948420489, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
-    - {fileID: 217431081, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: -854895735, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
+    - {fileID: 814201664, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
+    - {fileID: -829287425, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
+    - {fileID: -1877878260, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -128,7 +129,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 6
     m_Sprites:
-    - {fileID: -837511070, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: -1500965434, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -146,7 +147,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 7
     m_Sprites:
-    - {fileID: -1250486776, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: 1488202154, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -164,7 +165,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 8
     m_Sprites:
-    - {fileID: 1244290990, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: -1196617725, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -182,7 +183,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 9
     m_Sprites:
-    - {fileID: 348193232, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: 1792530565, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -200,7 +201,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 10
     m_Sprites:
-    - {fileID: -1044951725, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: -43203644, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -218,7 +219,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 11
     m_Sprites:
-    - {fileID: 146913894, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: -873688810, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -236,7 +237,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 12
     m_Sprites:
-    - {fileID: -1675545932, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: 1503216167, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -254,7 +255,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 13
     m_Sprites:
-    - {fileID: -537537110, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: -1883677689, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -272,7 +273,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 14
     m_Sprites:
-    - {fileID: 806187983, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: 590424518, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -290,7 +291,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 15
     m_Sprites:
-    - {fileID: 939436185, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+    - {fileID: 1719411100, guid: 18ee120f8c75038459b7245a87dff384, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1

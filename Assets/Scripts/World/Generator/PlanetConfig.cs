@@ -19,8 +19,8 @@ namespace World.Generator
                                 public int Amplitude => amplitude;
         [field: SerializeField] private float frequency = .03f;      // 越小越平緩
                                 public float Frequency => frequency;
-        [field: SerializeField] private int dirtDepth = 5;           // 泥土層厚度
-                                public int DirtDepth => dirtDepth;
+        [field: SerializeField] private int grassDepth = 5;           // 泥土層厚度
+                                public int GrassDepth => grassDepth;
                                 
         [field: Header("Spawn Area")]
         [field: SerializeField] private int spawnFlatRadius = 12;               // 中間多寬是平的（左右各幾格）
@@ -31,14 +31,14 @@ namespace World.Generator
                                 public float SpawnFlatness => spawnFlatness;
 
         [field: Header("Block Tiles")]
-        [field: SerializeField] private TileBase dirtBlockTile;
-                                public TileBase DirtBlockTile => dirtBlockTile;
+        [field: SerializeField] private TileBase grassBlockTile;
+                                public TileBase GrassBlockTile => grassBlockTile;
         [field: SerializeField] private TileBase stoneBlockTile;
                                 public TileBase StoneBlockTile => stoneBlockTile;
                                 
         [field: Header("Wall Tiles")]
-        [field: SerializeField] private TileBase dirtWallTile;
-                                public TileBase DirtWallTile => dirtWallTile;
+        [field: SerializeField] private TileBase grassWallTile;
+                                public TileBase GrassWallTile => grassWallTile;
         [field: SerializeField] private TileBase stoneWallTile;
                                 public TileBase StoneWallTile => stoneWallTile;
                                 

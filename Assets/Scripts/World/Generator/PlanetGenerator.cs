@@ -75,7 +75,7 @@ namespace World.Generator
                     for (var y = 0; y < surface[x]; y++)
                     {
                         var depth = surface[x] - 1 - y; // 距離地表幾格
-                        var isDirt = depth < config.DirtDepth;
+                        var isDirt = depth < config.GrassDepth;
                         
                         blocks[x, y]   = isDirt ? Block.Dirt : Block.Stone;
                         walls[x, y] = isDirt ? Wall.Dirt : Wall.Stone;
@@ -184,14 +184,14 @@ namespace World.Generator
 
                 private TileBase ToBlockTile(Block block) => block switch
                 {
-                    Block.Dirt  => config.DirtBlockTile,
+                    Block.Dirt  => config.GrassBlockTile,
                     Block.Stone => config.StoneBlockTile,
                     _ => null // Air
                 };
                 
                 private TileBase ToWallTile(Wall wall) => wall switch
                 {
-                    Wall.Dirt  => config.DirtWallTile,
+                    Wall.Dirt  => config.GrassWallTile,
                     Wall.Stone => config.StoneWallTile,
                     _ => null // Air
                 };

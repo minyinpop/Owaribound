@@ -17,14 +17,14 @@ MonoBehaviour:
   baseHeight: 60
   amplitude: 20
   frequency: 0.05
-  dirtDepth: 5
+  grassDepth: 5
   spawnFlatRadius: 12
   spawnBlendWidth: 20
   spawnFlatness: 0.1
-  dirtBlockTile: {fileID: 11400000, guid: 6cf2413d11212ec4695f4ce2c73a3475, type: 2}
+  grassBlockTile: {fileID: 11400000, guid: 6cf2413d11212ec4695f4ce2c73a3475, type: 2}
   stoneBlockTile: {fileID: 11400000, guid: aa2392ff63d1eaa42bae1daf8eadf989, type: 2}
-  dirtWallTile: {fileID: 11400000, guid: adf2a4c6b89b98b4494d6f8f60e1b005, type: 2}
-  stoneWallTile: {fileID: 11400000, guid: 97ac60c7c7c646a42bcfb4ba21dfdfa7, type: 2}
+  grassWallTile: {fileID: 11400000, guid: 92655a3fdd57211478e2f1f17db3a7ed, type: 2}
+  stoneWallTile: {fileID: 11400000, guid: 4fc3da7319c436546875b5e8a2777b69, type: 2}
   entranceCount: 6
   entranceLength: 80
   entranceRadius: 1.5
