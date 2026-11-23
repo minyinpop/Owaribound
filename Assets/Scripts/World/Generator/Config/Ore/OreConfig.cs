@@ -3,8 +3,8 @@ using UnityEngine.Tilemaps;
 
 namespace World.Generator
 {
-    [System.Serializable]
-    public class OreSettings
+    [CreateAssetMenu(menuName = "Owaribound/World/Generator/Ore Configs", fileName = "New Name")]
+    public sealed class OreConfig : ScriptableObject
     {
         [field: Header("方塊種類")]
         [field: SerializeField] private Block block;

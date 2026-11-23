@@ -34,27 +34,6 @@ MonoBehaviour:
   caveThreshold: 0.65
   caveStartDepth: 8
   ores:
-  - block: 3
-    blockTile: {fileID: 11400000, guid: 18cf0d5c9d42c6048a5de5f09a2c11b0, type: 2}
-    wall: 3
-    wallTile: {fileID: 11400000, guid: a7eef7ade27afae478fb60525f8dc452, type: 2}
-    minDepth: 5
-    maxDepth: 30
-    scale: 0.15
-    threshold: 0.75
-  - block: 4
-    blockTile: {fileID: 11400000, guid: 3e57f41567fdf1349b54f0768a50252a, type: 2}
-    wall: 4
-    wallTile: {fileID: 11400000, guid: 85890d7fe0656154b971333e662fd026, type: 2}
-    minDepth: 5
-    maxDepth: 30
-    scale: 0.15
-    threshold: 0.75
-  - block: 5
-    blockTile: {fileID: 11400000, guid: 3e57f41567fdf1349b54f0768a50252a, type: 2}
-    wall: 5
-    wallTile: {fileID: 11400000, guid: 85890d7fe0656154b971333e662fd026, type: 2}
-    minDepth: 5
-    maxDepth: 30
-    scale: 0.15
-    threshold: 0.75
+  - {fileID: 11400000, guid: 73dd9bc61f1ace54ea6c942de33c7c91, type: 2}
+  - {fileID: 11400000, guid: e017dd80d0ff2bb4abe4844b62ff0bb8, type: 2}
+  - {fileID: 11400000, guid: 576b5f45b0377b247a40f4426d0384c7, type: 2}

@@ -3,7 +3,7 @@ using UnityEngine.Tilemaps;
 
 namespace World.Generator
 {
-    [CreateAssetMenu(menuName = "Owaribound/World/Generator/Planet Config")]
+    [CreateAssetMenu(menuName = "Owaribound/World/Generator/Planet Configs")]
     public sealed class PlanetConfig : ScriptableObject
     {
         [field: Header("世界大小")]
@@ -63,7 +63,7 @@ namespace World.Generator
                                 public int CaveStartDepth => caveStartDepth;
                                 
         [field: Header("礦物")]
-        [field: SerializeField] private OreSettings[] ores;
-                                public OreSettings[] Ores => ores;
+        [field: SerializeField] private OreConfig[] ores;
+                                public OreConfig[] Ores => ores;
     }
 }
