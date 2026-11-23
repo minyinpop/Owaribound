@@ -27,7 +27,7 @@ namespace World.Generator
         [field: Header("礦物設定")]
         [field: SerializeField] private float scale = .15f; // 越大礦脈越小、越零碎
                                 public float Scale => scale;
-        [field: SerializeField, Range(0, 1)] public float threshold = .75f; // 越高越稀有
+        [field: SerializeField, Range(0, 1)] private float threshold = .75f; // 越高越稀有
                                              public float Threshold => threshold;
     }
 }

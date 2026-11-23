@@ -178,7 +178,7 @@ namespace World.Generator
                             continue;
 
                         var noise = Mathf.PerlinNoise(offsetX + x * ore.Scale, offsetY + y * ore.Scale);
-                        if (noise < ore.threshold)
+                        if (noise < ore.Threshold)
                             continue;
 
                         walls[x, y] = ore.Wall;                // 背景一定換

@@ -647,7 +647,7 @@ MonoBehaviour:
   config: {fileID: 11400000, guid: 4011c272991e825418fbedc62123b75d, type: 2}
   blockTilemap: {fileID: 1714780757}
   wallTilemap: {fileID: 72005180}
-  seed: 0
+  seed: 87
   player: {fileID: 238487989}
 --- !u!4 &288021475
 Transform:
