@@ -20,7 +20,7 @@ namespace World.Generator
                 var baseAngle = goRight ? -slope : -180f + slope;
                 var angle = baseAngle;
 
-                var pos = new Vector2(x, surface[x]);
+                var pos = new Vector2(x, WorldData.Surface[x]);
 
                 for (var step = 0; step < config.EntranceLength; step++)
                 {
@@ -51,7 +51,7 @@ namespace World.Generator
                     continue;   // 超出地圖
 
                 if ((new Vector2(x, y) - center).sqrMagnitude <= radius * radius)
-                    blocks[x, y] = Block.Air;
+                    WorldData.Blocks[x, y] = Block.Air;
             }
         }
     }

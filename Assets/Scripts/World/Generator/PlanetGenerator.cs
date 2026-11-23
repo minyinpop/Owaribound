@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using World.Generator.Config.Planet;
+using World.Generator.Data;
 
 namespace World.Generator
 {
@@ -17,10 +19,8 @@ namespace World.Generator
         [field: Header("玩家設定")]
         [field: SerializeField] private Transform player;
 
-        private Block[,] blocks; // 整張地圖的資料
-        private Wall[,] walls;
-        private int[] surface; // 每一欄的地表高度，之後放建築、出生點都會用到
-        
+        public WorldData WorldData { get; private set; }
+
         [ContextMenu("預先生成地形 ( 測試用 )")]
         private void Start()
         {
@@ -31,9 +31,8 @@ namespace World.Generator
         #region 生成世界
             private void GenerateWorld()
             {
-                blocks = new Block[config.Width, config.Height];
-                walls = new Wall[config.Width, config.Height];
-
+                WorldData = new WorldData(config.Width, config.Height);
+                
                 // 步驟 1：用雜訊算出每一欄的地表高度
                 GenerateSurface(new System.Random(seed));
                 
@@ -58,7 +57,7 @@ namespace World.Generator
             private void SpawnPlayer(int x)
             {
                 // surface[x] 是這一欄的高度，最上面那格實心方塊的頂部就在 y = surface[x]
-                var cell = new Vector3Int(x, surface[x], 0);
+                var cell = new Vector3Int(x, WorldData.Surface[x], 0);
                 var pos = blockTilemap.CellToWorld(cell) + new Vector3(blockTilemap.cellSize.x / 2f, 0, 0);
 
                 player.position = pos;

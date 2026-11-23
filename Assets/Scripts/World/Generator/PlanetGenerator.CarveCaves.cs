@@ -10,9 +10,9 @@ namespace World.Generator
             var offsetY = (float)(rng.NextDouble() * 10000);
 
             for (var x = 0; x < config.Width; x++)
-            for (var y = 0; y < surface[x]; y++)
+            for (var y = 0; y < WorldData.Surface[x]; y++)
             {
-                var depth = surface[x] - 1 - y;
+                var depth = WorldData.Surface[x] - 1 - y;
                 if (depth < config.CaveStartDepth)
                     continue; // 太靠近地表，不挖
 
@@ -20,7 +20,7 @@ namespace World.Generator
                     offsetY + y * config.CaveScale);
 
                 if (noise > config.CaveThreshold)
-                    blocks[x, y] = Block.Air;
+                    WorldData.Blocks[x, y] = Block.Air;
             }
         }
     }

@@ -23,7 +23,7 @@ namespace World.Generator
                 blockLookup[ore.Block] = ore.BlockTile;
                 wallLookup[ore.Wall]   = ore.WallTile;
             }
-                    
+            
             var w = config.Width;
             var h = config.Height;
             var blockTiles = new TileBase[w * h];
@@ -32,8 +32,8 @@ namespace World.Generator
             for (var x = 0; x < w; x++)
             for (var y = 0; y < h; y++)
             {
-                blockTiles[x + y * w] = blockLookup.GetValueOrDefault(blocks[x, y]);
-                wallTiles[x + y * w]  = wallLookup.GetValueOrDefault(walls[x, y]);
+                blockTiles[x + y * w] = blockLookup.GetValueOrDefault(WorldData.Blocks[x, y]);
+                wallTiles[x + y * w]  = wallLookup.GetValueOrDefault(WorldData.Walls[x, y]);
             }
 
             var bounds = new BoundsInt(0, 0, 0, w, h, 1);

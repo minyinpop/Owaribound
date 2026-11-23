@@ -6,7 +6,6 @@ namespace World.Generator
     {
         private void GenerateSurface(System.Random rng)
         {
-            surface = new int[config.Width];
             var offset = (float)(rng.NextDouble() * 10000);
 
             for (var x = 0; x < config.Width; x++)
@@ -22,7 +21,7 @@ namespace World.Generator
                 var amp = config.Amplitude * Mathf.Lerp(config.SpawnFlatness, 1f, t);
 
                 var h = config.BaseHeight + Mathf.RoundToInt((noise * 2f - 1f) * amp);
-                surface[x] = Mathf.Clamp(h, 1, config.Height - 1);
+                WorldData.Surface[x] = Mathf.Clamp(h, 1, config.Height - 1);
             }
         }
     }

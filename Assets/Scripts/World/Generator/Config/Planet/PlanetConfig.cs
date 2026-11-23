@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using World.Generator.Config.Ore;
 
-namespace World.Generator
+namespace World.Generator.Config.Planet
 {
     [CreateAssetMenu(menuName = "Owaribound/World/Generator/Planet Configs")]
     public sealed class PlanetConfig : ScriptableObject

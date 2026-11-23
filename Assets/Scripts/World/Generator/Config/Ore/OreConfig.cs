@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace World.Generator
+namespace World.Generator.Config.Ore
 {
     [CreateAssetMenu(menuName = "Owaribound/World/Generator/Ore Configs", fileName = "New Name")]
     public sealed class OreConfig : ScriptableObject
