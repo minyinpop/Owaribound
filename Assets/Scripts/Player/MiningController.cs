@@ -42,6 +42,7 @@ namespace Player
             miningCursor.transform.position = cellCenter;
             miningCursor.color = inReach ? inReachColor : outOfReachColor;
             
+            // 角色沒有按按鍵就取消挖掘
             if (!playerCo.Input.IsMining)
             {
                 ResetProgress();
@@ -49,7 +50,7 @@ namespace Player
             }
             
             // 角色離太遠就取消挖掘
-            if (Vector2.Distance(body, cellCenter) > reach)
+            if (!inReach)
             {
                 ResetProgress();
                 return;
