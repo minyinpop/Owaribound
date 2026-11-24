@@ -21,10 +21,10 @@ MonoBehaviour:
   spawnFlatRadius: 12
   spawnBlendWidth: 20
   spawnFlatness: 0.1
-  grassBlockTile: {fileID: 11400000, guid: 10b76a59d517a03438fbbab3526ae23f, type: 2}
-  stoneBlockTile: {fileID: 11400000, guid: f0ce6366ca93b3940837003d16f5c233, type: 2}
-  grassWallTile: {fileID: 11400000, guid: 43e4d7330cb29764591d90e34cb11f07, type: 2}
-  stoneWallTile: {fileID: 11400000, guid: 8d25f67cf33362940bbbf222eaf694b4, type: 2}
+  grass: {fileID: 11400000, guid: d192f36d677286c4f88e1d4caf9e26d4, type: 2}
+  stone: {fileID: 11400000, guid: 033f9f99abdf8ac40ab7516e8fc480ea, type: 2}
+  ores:
+  - {fileID: 11400000, guid: 73dd9bc61f1ace54ea6c942de33c7c91, type: 2}
   entranceCount: 6
   entranceLength: 80
   entranceRadius: 1.5
@@ -33,7 +33,3 @@ MonoBehaviour:
   caveScale: 0.08
   caveThreshold: 0.65
   caveStartDepth: 8
-  ores:
-  - {fileID: 11400000, guid: 73dd9bc61f1ace54ea6c942de33c7c91, type: 2}
-  - {fileID: 11400000, guid: e017dd80d0ff2bb4abe4844b62ff0bb8, type: 2}
-  - {fileID: 11400000, guid: 576b5f45b0377b247a40f4426d0384c7, type: 2}

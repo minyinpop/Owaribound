@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21957853190c4b2992173152a3fa06ec, type: 3}
+  m_Name: Eatrh Grass
+  m_EditorClassIdentifier: Assembly-CSharp::World.Configs.Block.Grass.GrassConfig
+  blockType: 1
+  blockTile: {fileID: 11400000, guid: 10b76a59d517a03438fbbab3526ae23f, type: 2}
+  wallType: 1
+  wallTile: {fileID: 11400000, guid: 43e4d7330cb29764591d90e34cb11f07, type: 2}
+  miningTime: 0.2

@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using World.Configs.Block;
+using World.Configs.Block.Grass;
 using World.Configs.Block.Ore;
+using World.Configs.Block.Stone;
 
 namespace World.Configs.Planet
 {
@@ -31,17 +34,13 @@ namespace World.Configs.Planet
         [field: SerializeField, Range(0, 1)] private float spawnFlatness = .1f; // 平地區保留多少起伏（0 = 完全平）
                                 public float SpawnFlatness => spawnFlatness;
 
-        [field: Header("方塊")]
-        [field: SerializeField] private TileBase grassBlockTile;
-                                public TileBase GrassBlockTile => grassBlockTile;
-        [field: SerializeField] private TileBase stoneBlockTile;
-                                public TileBase StoneBlockTile => stoneBlockTile;
-                                
-        [field: Header("背景")]
-        [field: SerializeField] private TileBase grassWallTile;
-                                public TileBase GrassWallTile => grassWallTile;
-        [field: SerializeField] private TileBase stoneWallTile;
-                                public TileBase StoneWallTile => stoneWallTile;
+        [field: Header("方塊資料")]
+        [field: SerializeField] private GrassConfig grass;
+                                public GrassConfig Grass => grass;
+        [field: SerializeField] private StoneConfig stone;
+                                public StoneConfig Stone => stone;
+        [field: SerializeField] private OreConfig[] ores;
+                                public OreConfig[] Ores => ores;
                                 
         [field: Header("洞穴入口")]
         [field: SerializeField] private int entranceCount = 3;
@@ -62,9 +61,5 @@ namespace World.Configs.Planet
                                              public float CaveThreshold => caveThreshold;
         [field: SerializeField] private int caveStartDepth = 8;                           // 地表往下幾格才開始挖，避免地表被挖穿
                                 public int CaveStartDepth => caveStartDepth;
-                                
-        [field: Header("礦物")]
-        [field: SerializeField] private OreConfig[] ores;
-                                public OreConfig[] Ores => ores;
     }
 }

@@ -10,10 +10,10 @@ namespace World.Generator
             for (var y = 0; y < WorldData.Surface[x]; y++)
             {
                 var depth = WorldData.Surface[x] - 1 - y; // 距離地表幾格
-                var isDirt = depth < config.GrassDepth;
+                var isGrass = depth < config.GrassDepth;
                         
-                WorldData.Blocks[x, y]   = isDirt ? BlockType.Dirt : BlockType.Stone;
-                WorldData.Walls[x, y] = isDirt ? WallType.Dirt : WallType.Stone;
+                WorldData.Blocks[x, y] = isGrass ? BlockType.Grass : BlockType.Stone;
+                WorldData.Walls[x, y] = isGrass ? WallType.Grass : WallType.Stone;
             }
         }
     }

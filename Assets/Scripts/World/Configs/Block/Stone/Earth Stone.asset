@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc17f4cf943458982562803ccd0ad73, type: 3}
+  m_Name: Earth Stone
+  m_EditorClassIdentifier: Assembly-CSharp::World.Configs.Block.Stone.StoneConfig
+  blockType: 3
+  blockTile: {fileID: 11400000, guid: f0ce6366ca93b3940837003d16f5c233, type: 2}
+  wallType: 3
+  wallTile: {fileID: 11400000, guid: 8d25f67cf33362940bbbf222eaf694b4, type: 2}
+  miningTime: 0.75

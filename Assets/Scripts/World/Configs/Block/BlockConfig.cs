@@ -7,8 +7,8 @@ namespace World.Configs.Block
     public class BlockConfig : ScriptableObject
     {
         [field: Header("方塊種類")]
-        [field: SerializeField] private Data.BlockType blockType;
-                                public Data.BlockType BlockType => blockType;
+        [field: SerializeField] private BlockType blockType;
+                                public BlockType BlockType => blockType;
         [field: SerializeField] private TileBase blockTile;
                                 public TileBase BlockTile => blockTile;
                                 

@@ -11,13 +11,13 @@ namespace World.Generator
         {
             var blockLookup = new Dictionary<BlockType, TileBase>
             {
-                { BlockType.Dirt,  config.GrassBlockTile },
-                { BlockType.Stone, config.StoneBlockTile },
+                { BlockType.Grass,  config.Grass.BlockTile },
+                { BlockType.Stone, config.Stone.BlockTile },
             };
             var wallLookup = new Dictionary<WallType, TileBase>
             {
-                { WallType.Dirt,  config.GrassWallTile },
-                { WallType.Stone, config.StoneWallTile },
+                { WallType.Grass,  config.Grass.WallTile },
+                { WallType.Stone, config.Stone.WallTile },
             };
             foreach (var ore in config.Ores)
             {
