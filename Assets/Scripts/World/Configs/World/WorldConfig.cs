@@ -8,7 +8,7 @@ using World.Configs.Block.Stone;
 namespace World.Configs.Planet
 {
     [CreateAssetMenu(menuName = "Owaribound/World/Generator/Planet Configs", fileName = "New Planet Config")]
-    public sealed class PlanetConfig : ScriptableObject
+    public sealed class WorldConfig : ScriptableObject
     {
         [field: Header("世界大小")]
         [field: SerializeField] private int width = 200;

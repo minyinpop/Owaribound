@@ -629,9 +629,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109776b932224bf58ab1bab4ec798973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.MiningController
-  planet: {fileID: 288021474}
+  world: {fileID: 0}
+  damage: {fileID: 0}
   reach: 4
-  mineTime: 0.4
+  miningPower: 1
   miningCursor: {fileID: 1728223939}
   inReachColor: {r: 1, g: 1, b: 1, a: 1}
   outOfReachColor: {r: 1, g: 0, b: 0, a: 1}
@@ -644,7 +645,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 288021475}
-  - component: {fileID: 288021474}
+  - component: {fileID: 288021478}
+  - component: {fileID: 288021477}
+  - component: {fileID: 288021476}
   m_Layer: 0
   m_Name: Planet Generator
   m_TagString: Untagged
@@ -652,23 +655,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &288021474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288021473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd73a9febb5b480894f4c51a552baca6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::World.Generator.PlanetGenerator
-  config: {fileID: 11400000, guid: 4011c272991e825418fbedc62123b75d, type: 2}
-  blockTilemap: {fileID: 1714780757}
-  wallTilemap: {fileID: 72005180}
-  seed: 0
-  player: {fileID: 238487989}
 --- !u!4 &288021475
 Transform:
   m_ObjectHideFlags: 0
@@ -684,6 +670,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &288021476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288021473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54feec5b13b248d5b02dde6d5a65c0ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.Damage.WorldDamageSystem
+--- !u!114 &288021477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288021473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd73a9febb5b480894f4c51a552baca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.Generator.WorldGenerator
+--- !u!114 &288021478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288021473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c455dcbbd51d97449b006790e4fa99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.WorldSystem
+  worldGenerator: {fileID: 288021477}
+  worldDamageSystem: {fileID: 288021476}
+  worldConfig: {fileID: 11400000, guid: 4011c272991e825418fbedc62123b75d, type: 2}
+  blockTilemap: {fileID: 1714780757}
+  wallTilemap: {fileID: 72005180}
+  worldSeed: 0
+  player: {fileID: 238487989}
+  crackTilemap: {fileID: 586162852}
+  crackTiles:
+  - {fileID: 11400000, guid: 8ca8aec28e4f2174e8cc054da3799580, type: 2}
+  - {fileID: 11400000, guid: 317c9051e03cec6429d76b954ce993e0, type: 2}
+  - {fileID: 11400000, guid: 6d52fc4ad9a1b324c8f2b0f66c95e437, type: 2}
+  recoverDelay: 3
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
