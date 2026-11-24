@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using World.Generator.Data;
+using World.Data;
 
-namespace World.Generator.Block_Config
+namespace World.Configs.Block
 {
-    public class BlockConfig : ScriptableObject
+    public class BlockConfigs : ScriptableObject
     {
         [field: Header("方塊種類")]
-        [field: SerializeField] private Block block;
-                                public Block Block => block;
+        [field: SerializeField] private Data.Block block;
+                                public Data.Block Block => block;
         [field: SerializeField] private TileBase blockTile;
                                 public TileBase BlockTile => blockTile;
                                 

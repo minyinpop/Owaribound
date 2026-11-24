@@ -1,4 +1,4 @@
-namespace World.Generator.Data
+namespace World.Data
 {
     public sealed class WorldData
     {

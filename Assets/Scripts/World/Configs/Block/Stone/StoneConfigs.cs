@@ -1,9 +1,9 @@
 using UnityEngine;
 
-namespace World.Generator.Block_Config.Stone
+namespace World.Configs.Block.Stone
 {
     [CreateAssetMenu(menuName = "Owaribound/World/Generator/Stone Configs", fileName = "New Stone Config")]
-    public sealed class StoneConfig : BlockConfig
+    public sealed class StoneConfigs : BlockConfigs
     {
     }
 }

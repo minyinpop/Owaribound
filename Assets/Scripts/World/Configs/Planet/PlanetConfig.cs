@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using World.Generator.Block_Config.Ore;
+using World.Configs.Block.Ore;
 
-namespace World.Generator.Planet_Config
+namespace World.Configs.Planet
 {
     [CreateAssetMenu(menuName = "Owaribound/World/Generator/Planet Configs", fileName = "New Planet Config")]
     public sealed class PlanetConfig : ScriptableObject
@@ -64,7 +64,7 @@ namespace World.Generator.Planet_Config
                                 public int CaveStartDepth => caveStartDepth;
                                 
         [field: Header("礦物")]
-        [field: SerializeField] private OreConfig[] ores;
-                                public OreConfig[] Ores => ores;
+        [field: SerializeField] private OreConfigs[] ores;
+                                public OreConfigs[] Ores => ores;
     }
 }

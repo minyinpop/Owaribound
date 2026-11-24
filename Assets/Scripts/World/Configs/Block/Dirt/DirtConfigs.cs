@@ -1,9 +1,9 @@
 using UnityEngine;
 
-namespace World.Generator.Block_Config.Dirt
+namespace World.Configs.Block.Dirt
 {
     [CreateAssetMenu(menuName = "Owaribound/World/Generator/Dirt Configs", fileName = "New Dirt Config")]
-    public sealed class DirtConfig : BlockConfig
+    public sealed class DirtConfigs : BlockConfigs
     {
     }
 }

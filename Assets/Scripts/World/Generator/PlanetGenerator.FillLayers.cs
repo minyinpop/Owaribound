@@ -1,4 +1,4 @@
-using World.Generator.Data;
+using World.Data;
 
 namespace World.Generator
 {

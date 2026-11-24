@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using World.Generator.Data;
+using World.Data;
 
 namespace World.Generator
 {

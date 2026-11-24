@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using World.Generator.Data;
-using World.Generator.Planet_Config;
+using World.Configs.Planet;
+using World.Data;
 
 namespace World.Generator
 {
