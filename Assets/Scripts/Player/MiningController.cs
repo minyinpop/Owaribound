@@ -9,7 +9,12 @@ namespace Player
         [field: Header("挖掘設定")]
         [field: SerializeField] private PlanetGenerator planet;
         [field: SerializeField] private float reach = 4;     // 能挖多遠
-        [field: SerializeField] private float mineTime = .4f; // 挖掘時間 
+        [field: SerializeField] private float mineTime = .4f; // 挖掘時間
+        
+        [field: Header("游標顯示")]
+        [field: SerializeField] private SpriteRenderer miningCursor;
+        [field: SerializeField] private Color inReachColor = new Color(1, 1, 1, 1);
+        [field: SerializeField] private Color outOfReachColor = new Color(1, 0, 0, 1);
 
         private PlayerController playerCo;
         private Camera cam;
@@ -25,19 +30,24 @@ namespace Player
 
         private void Update()
         {
-            if (!playerCo.Input.IsMining)
-            {
-                ResetProgress();
-                return;
-            }
-
             var worldPos = cam.ScreenToWorldPoint(playerCo.Input.MousePos);
             worldPos.z = 0;
             
             var cell = planet.BlockTilemap.WorldToCell(worldPos);
             var cellCenter = planet.BlockTilemap.GetCellCenterWorld(cell);
             var body = transform.position + Vector3.up;
+            var inReach = Vector2.Distance(body, cellCenter) <= reach;
 
+            // 更新游標位置與狀態
+            miningCursor.transform.position = cellCenter;
+            miningCursor.color = inReach ? inReachColor : outOfReachColor;
+            
+            if (!playerCo.Input.IsMining)
+            {
+                ResetProgress();
+                return;
+            }
+            
             // 角色離太遠就取消挖掘
             if (Vector2.Distance(body, cellCenter) > reach)
             {
