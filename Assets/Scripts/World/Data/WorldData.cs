@@ -4,16 +4,16 @@ namespace World.Data
     {
         public int Width { get; }
         public int Height { get; }
-        public Block[,] Blocks { get; }   // 整張地圖的資料
-        public Wall[,] Walls { get; }
+        public BlockType[,] Blocks { get; }   // 整張地圖的資料
+        public WallType[,] Walls { get; }
         public int[] Surface { get; }     // 每一欄的地表高度
 
         public WorldData(int width, int height)
         {
             Width = width;
             Height = height;
-            Blocks = new Block[width, height];
-            Walls = new Wall[width, height];
+            Blocks = new BlockType[width, height];
+            Walls = new WallType[width, height];
             Surface = new int[width];
         }
 

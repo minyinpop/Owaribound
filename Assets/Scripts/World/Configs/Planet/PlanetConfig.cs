@@ -64,7 +64,7 @@ namespace World.Configs.Planet
                                 public int CaveStartDepth => caveStartDepth;
                                 
         [field: Header("礦物")]
-        [field: SerializeField] private OreConfigs[] ores;
-                                public OreConfigs[] Ores => ores;
+        [field: SerializeField] private OreConfig[] ores;
+                                public OreConfig[] Ores => ores;
     }
 }

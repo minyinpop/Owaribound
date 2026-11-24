@@ -21,7 +21,7 @@ namespace World.Generator
                     offsetY + y * config.CaveScale);
 
                 if (noise > config.CaveThreshold)
-                    WorldData.Blocks[x, y] = Block.Air;
+                    WorldData.Blocks[x, y] = BlockType.Air;
             }
         }
     }

@@ -16,7 +16,7 @@ namespace World.Generator
                 for (var y = 0; y < WorldData.Surface[x]; y++)
                 {
                     // 只看原本是岩石層的地方（用牆判斷，挖空的洞穴也算）
-                    if (WorldData.Walls[x, y] != Wall.Stone)
+                    if (WorldData.Walls[x, y] != WallType.Stone)
                         continue;
 
                     var depth = WorldData.Surface[x] - 1 - y;
@@ -27,9 +27,9 @@ namespace World.Generator
                     if (noise < ore.Threshold)
                         continue;
 
-                    WorldData.Walls[x, y] = ore.Wall;                // 背景一定換
-                    if (WorldData.Blocks[x, y] == Block.Stone)
-                        WorldData.Blocks[x, y] = ore.Block;          // 前景還在才換
+                    WorldData.Walls[x, y] = ore.WallType;                // 背景一定換
+                    if (WorldData.Blocks[x, y] == BlockType.Stone)
+                        WorldData.Blocks[x, y] = ore.BlockType;          // 前景還在才換
                 }
             }
         }

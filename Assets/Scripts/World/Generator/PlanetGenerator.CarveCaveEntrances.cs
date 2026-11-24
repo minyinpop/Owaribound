@@ -52,7 +52,7 @@ namespace World.Generator
                     continue;   // 超出地圖
 
                 if ((new Vector2(x, y) - center).sqrMagnitude <= radius * radius)
-                    WorldData.Blocks[x, y] = Block.Air;
+                    WorldData.Blocks[x, y] = BlockType.Air;
             }
         }
     }

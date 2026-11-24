@@ -9,20 +9,20 @@ namespace World.Generator
     {
         private void Render()
         {
-            var blockLookup = new Dictionary<Block, TileBase>
+            var blockLookup = new Dictionary<BlockType, TileBase>
             {
-                { Block.Dirt,  config.GrassBlockTile },
-                { Block.Stone, config.StoneBlockTile },
+                { BlockType.Dirt,  config.GrassBlockTile },
+                { BlockType.Stone, config.StoneBlockTile },
             };
-            var wallLookup = new Dictionary<Wall, TileBase>
+            var wallLookup = new Dictionary<WallType, TileBase>
             {
-                { Wall.Dirt,  config.GrassWallTile },
-                { Wall.Stone, config.StoneWallTile },
+                { WallType.Dirt,  config.GrassWallTile },
+                { WallType.Stone, config.StoneWallTile },
             };
             foreach (var ore in config.Ores)
             {
-                blockLookup[ore.Block] = ore.BlockTile;
-                wallLookup[ore.Wall]   = ore.WallTile;
+                blockLookup[ore.BlockType] = ore.BlockTile;
+                wallLookup[ore.WallType]   = ore.WallTile;
             }
             
             var w = config.Width;

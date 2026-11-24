@@ -3,7 +3,7 @@ using UnityEngine;
 namespace World.Configs.Block.Stone
 {
     [CreateAssetMenu(menuName = "Owaribound/World/Generator/Stone Configs", fileName = "New Stone Config")]
-    public sealed class StoneConfigs : BlockConfigs
+    public sealed class StoneConfig : BlockConfig
     {
     }
 }

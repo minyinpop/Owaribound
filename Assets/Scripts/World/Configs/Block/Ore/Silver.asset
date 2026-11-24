@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e854d9f70f489cb02db2ff24ccd1b9, type: 3}
   m_Name: Silver
   m_EditorClassIdentifier: Assembly-CSharp::World.Generator.OreConfig
-  block: 5
+  blockType: 5
   blockTile: {fileID: 11400000, guid: 3e57f41567fdf1349b54f0768a50252a, type: 2}
-  wall: 5
+  wallType: 5
   wallTile: {fileID: 11400000, guid: 85890d7fe0656154b971333e662fd026, type: 2}
+  miningTime: 0
   minDepth: 5
   maxDepth: 60
   scale: 0.15

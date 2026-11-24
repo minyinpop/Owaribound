@@ -10,10 +10,10 @@ namespace World.Generator
             if (!WorldData.InBounds(cell.x, cell.y))
                 return false;
 
-            if (WorldData.Blocks[cell.x, cell.y] == Block.Air)
+            if (WorldData.Blocks[cell.x, cell.y] == BlockType.Air)
                 return false;
 
-            WorldData.Blocks[cell.x, cell.y] = Block.Air;
+            WorldData.Blocks[cell.x, cell.y] = BlockType.Air;
             blockTilemap.SetTile(cell, null);
 
             return true;

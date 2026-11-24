@@ -1,6 +1,6 @@
 namespace World.Data
 {
-    public enum Block : byte
+    public enum BlockType : byte
     {
         Air,
         Dirt,

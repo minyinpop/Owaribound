@@ -12,8 +12,8 @@ namespace World.Generator
                 var depth = WorldData.Surface[x] - 1 - y; // 距離地表幾格
                 var isDirt = depth < config.GrassDepth;
                         
-                WorldData.Blocks[x, y]   = isDirt ? Block.Dirt : Block.Stone;
-                WorldData.Walls[x, y] = isDirt ? Wall.Dirt : Wall.Stone;
+                WorldData.Blocks[x, y]   = isDirt ? BlockType.Dirt : BlockType.Stone;
+                WorldData.Walls[x, y] = isDirt ? WallType.Dirt : WallType.Stone;
             }
         }
     }

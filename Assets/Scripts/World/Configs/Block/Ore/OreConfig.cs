@@ -3,7 +3,7 @@ using UnityEngine;
 namespace World.Configs.Block.Ore
 {
     [CreateAssetMenu(menuName = "Owaribound/World/Generator/Ore Configs", fileName = "New Ore Config")]
-    public sealed class OreConfigs : BlockConfigs
+    public sealed class OreConfig : BlockConfig
     {
         [field: Header("生成範圍")]
         [field: SerializeField] private int minDepth = 5;

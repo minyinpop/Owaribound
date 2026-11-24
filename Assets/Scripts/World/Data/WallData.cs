@@ -1,6 +1,6 @@
 namespace World.Data
 {
-    public enum Wall : byte
+    public enum WallType : byte
     {
         None,
         Dirt,

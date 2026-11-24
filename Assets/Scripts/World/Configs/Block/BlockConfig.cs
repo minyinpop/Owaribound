@@ -4,17 +4,17 @@ using World.Data;
 
 namespace World.Configs.Block
 {
-    public class BlockConfigs : ScriptableObject
+    public class BlockConfig : ScriptableObject
     {
         [field: Header("方塊種類")]
-        [field: SerializeField] private Data.Block block;
-                                public Data.Block Block => block;
+        [field: SerializeField] private Data.BlockType blockType;
+                                public Data.BlockType BlockType => blockType;
         [field: SerializeField] private TileBase blockTile;
                                 public TileBase BlockTile => blockTile;
                                 
         [field: Header("牆壁種類")]
-        [field: SerializeField] private Wall wall;
-                                public Wall Wall => wall;
+        [field: SerializeField] private WallType wallType;
+                                public WallType WallType => wallType;
         [field: SerializeField] private TileBase wallTile;
                                 public TileBase WallTile => wallTile;
 
