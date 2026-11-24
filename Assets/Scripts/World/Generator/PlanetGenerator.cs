@@ -1,13 +1,10 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using World.Generator.Config.Planet;
 using World.Generator.Data;
+using World.Generator.Planet_Config;
 
 namespace World.Generator
 {
-    public enum Block : byte { Air, Dirt, Stone, Copper, Iron, Silver }
-    public enum Wall  : byte { None, Dirt, Stone, Copper, Iron, Silver }
-
     public sealed partial class PlanetGenerator : MonoBehaviour
     {
         [field: Header("世界設定")]

@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using World.Generator.Config.Ore;
+using World.Generator.Block_Config.Ore;
 
-namespace World.Generator.Config.Planet
+namespace World.Generator.Planet_Config
 {
-    [CreateAssetMenu(menuName = "Owaribound/World/Generator/Planet Configs")]
+    [CreateAssetMenu(menuName = "Owaribound/World/Generator/Planet Configs", fileName = "New Planet Config")]
     public sealed class PlanetConfig : ScriptableObject
     {
         [field: Header("世界大小")]

@@ -1,3 +1,5 @@
+using World.Generator.Data;
+
 namespace World.Generator
 {
     public sealed partial class PlanetGenerator
