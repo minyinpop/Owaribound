@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73e854d9f70f489cb02db2ff24ccd1b9, type: 3}
-  m_Name: Copper
+  m_Name: Earth Copper
   m_EditorClassIdentifier: Assembly-CSharp::World.Generator.OreConfig
-  blockType: 4
+  blockType: 11001
   blockTile: {fileID: 11400000, guid: 18cf0d5c9d42c6048a5de5f09a2c11b0, type: 2}
-  wallType: 4
+  wallType: 11001
   wallTile: {fileID: 11400000, guid: a7eef7ade27afae478fb60525f8dc452, type: 2}
-  miningTime: 0.5
+  miningTime: 1.5
   minDepth: 5
   maxDepth: 60
   scale: 0.15

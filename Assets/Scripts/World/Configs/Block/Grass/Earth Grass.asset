@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21957853190c4b2992173152a3fa06ec, type: 3}
-  m_Name: Eatrh Grass
+  m_Name: Earth Grass
   m_EditorClassIdentifier: Assembly-CSharp::World.Configs.Block.Grass.GrassConfig
-  blockType: 1
+  blockType: 1001
   blockTile: {fileID: 11400000, guid: 10b76a59d517a03438fbbab3526ae23f, type: 2}
-  wallType: 1
+  wallType: 1001
   wallTile: {fileID: 11400000, guid: 43e4d7330cb29764591d90e34cb11f07, type: 2}
-  miningTime: 0.2
+  miningTime: 0.5

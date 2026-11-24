@@ -1,13 +1,13 @@
 namespace World.Data
 {
-    public enum BlockType : byte
+    public enum BlockType : ushort
     {
-        Air,
-        Grass,
-        Dirt,
-        Stone,
-        Copper,
-        Iron,
-        Silver
+        Air    = 0,
+        Grass  = 1001,
+        Dirt   = 2001,
+        Stone  = 3001,
+        Copper = 11001,
+        Iron   = 12001,
+        Silver = 13001
     }
 }

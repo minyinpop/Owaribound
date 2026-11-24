@@ -9,7 +9,6 @@ namespace Player
         [field: Header("挖掘設定")]
         [field: SerializeField] private PlanetGenerator planet;
         [field: SerializeField] private float reach = 4;     // 能挖多遠
-        [field: SerializeField] private float mineTime = .4f; // 挖掘時間
         
         [field: Header("游標顯示")]
         [field: SerializeField] private SpriteRenderer miningCursor;
@@ -37,6 +36,7 @@ namespace Player
             var cellCenter = planet.BlockTilemap.GetCellCenterWorld(cell);
             var body = transform.position + Vector3.up;
             var inReach = Vector2.Distance(body, cellCenter) <= reach;
+            var miningTime = planet.GetBlockConfig(cell).MiningTime;
 
             // 更新游標位置與狀態
             miningCursor.transform.position = cellCenter;
@@ -66,7 +66,7 @@ namespace Player
             progress += Time.deltaTime;
             
             // 挖掘成功
-            if (progress >= mineTime)
+            if (progress >= miningTime)
             {
                 planet.TryBreakBlock(cell);
                 ResetProgress();
