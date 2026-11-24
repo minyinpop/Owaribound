@@ -36,7 +36,7 @@ namespace Player
             var cellCenter = planet.BlockTilemap.GetCellCenterWorld(cell);
             var body = transform.position + Vector3.up;
             var inReach = Vector2.Distance(body, cellCenter) <= reach;
-            var miningTime = planet.GetBlockConfig(cell).MiningTime;
+            var miningTime = planet.GetBlockConfig(cell)?.MiningTime;
 
             // 更新游標位置與狀態
             miningCursor.transform.position = cellCenter;
@@ -55,7 +55,7 @@ namespace Player
                 ResetProgress();
                 return;
             }
-
+            
             // 換了目標就重新計算
             if (target != cell)
             {
