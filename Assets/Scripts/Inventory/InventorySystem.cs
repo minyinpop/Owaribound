@@ -59,7 +59,7 @@ namespace Inventory
         /// </summary>
         /// <param name="item"> 物品資料 </param>
         /// <param name="count"> 物品數量 </param>
-        /// <returns> 回傳是否移除成功（數量不夠就直接回傳 flase） </returns>
+        /// <returns> 回傳是否移除成功（數量不夠就直接回傳 false） </returns>
         public bool TryRemove(ItemConfig item, int count)
         {
             if (item == null || count <= 0)
@@ -76,6 +76,9 @@ namespace Inventory
                 var remove = Math.Min(count, slots[i].count);
                 slots[i].count -= remove;
                 count -= remove;
+
+                if (slots[i].count <= 0)
+                    slots[i] = ItemSlot.Empty;
 
                 OnSlotChanged?.Invoke(i);
             }

@@ -10,5 +10,7 @@ namespace Inventory.Data
         public int count;
 
         public bool IsEmpty => item == null || count <= 0;
+
+        public static readonly ItemSlot Empty = default;
     }
 }
