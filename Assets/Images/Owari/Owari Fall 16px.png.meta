@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: 1283547af1732014ab61a7409ce93dcc
+guid: f85d36ad8df9b8e468990783364602e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2247896076125763105
-    second: Owari_Walk_16px_0
+      213: 2209181734644564511
+    second: Owari_Fall_16px_0
   - first:
-      213: 4948716643454835294
-    second: Owari_Walk_16px_1
+      213: -4367900793363901380
+    second: Owari_Fall_16px_1
   - first:
-      213: 5088809368883309605
-    second: Owari_Walk_16px_2
+      213: 6583195557752758527
+    second: Owari_Fall_16px_2
   - first:
-      213: -8459903670107641843
-    second: Owari_Walk_16px_3
+      213: -6436706862580060909
+    second: Owari_Fall_16px_3
+  - first:
+      213: 6941812937250444545
+    second: Owari_Fall_16px_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -111,7 +114,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Owari_Walk_16px_0
+      name: Owari Fall 16px_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,16 +127,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 12678754291223f10800000000000000
-      internalID: 2247896076125763105
+      spriteID: b56dc5dca9dff0749ac5ab6a32dc5777
+      internalID: -1976296725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owari_Walk_16px_1
+      name: Owari Fall 16px_1
       rect:
         serializedVersion: 2
         x: 32
@@ -146,16 +149,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e5a503b519f5da440800000000000000
-      internalID: 4948716643454835294
+      spriteID: a1b6b122de2eae04e8402b02eec5cbdf
+      internalID: -1264303369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owari_Walk_16px_2
+      name: Owari Fall 16px_2
       rect:
         serializedVersion: 2
         x: 64
@@ -168,38 +171,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 52c28f9c8251f9640800000000000000
-      internalID: 5088809368883309605
+      spriteID: 1961d62d8c2eead4a9a9e32960f5a31c
+      internalID: 1282830345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owari_Walk_16px_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d08e53d3f62689a80800000000000000
-      internalID: -8459903670107641843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Owari_Walk_16px_4
+      name: Owari Fall 16px_3
       rect:
         serializedVersion: 2
         x: 0
@@ -214,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 891cd5cd58312aa43ac453538d63b6e1
-      internalID: -255913942
+      spriteID: 19caeeae883c74b4181535085762bc51
+      internalID: -168758939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owari_Walk_16px_5
+      name: Owari Fall 16px_4
       rect:
         serializedVersion: 2
         x: 32
@@ -236,14 +217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43d6816a95e75f54da9df2d42e23a758
-      internalID: 522632838
+      spriteID: ba81fcb66ae559c4c85485ddf2df688c
+      internalID: -1542045430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owari_Walk_16px_6
+      name: Owari Fall 16px_5
       rect:
         serializedVersion: 2
         x: 64
@@ -258,30 +239,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70764348c0f408a44846917fbbb59e98
-      internalID: -1269401064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Owari_Walk_16px_7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68036e149c1dd284e9d0ec861f7001c9
-      internalID: 2090152944
+      spriteID: cd7855998e66b1843bcac31789170897
+      internalID: -104895869
       vertices: []
       indices: 
       edges: []
@@ -290,7 +249,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 86837f27b71bbf341be9210bdc6f2d6c
+    spriteID: 7574b4389f158c54f8a6d2f52aee3997
     internalID: 0
     vertices: []
     indices: 
@@ -300,16 +259,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":2.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Owari_Walk_16px_0: 2247896076125763105
-      Owari_Walk_16px_1: 4948716643454835294
-      Owari_Walk_16px_2: 5088809368883309605
-      Owari_Walk_16px_3: -8459903670107641843
-      Owari_Walk_16px_4: -255913942
-      Owari_Walk_16px_5: 522632838
-      Owari_Walk_16px_6: -1269401064
-      Owari_Walk_16px_7: 2090152944
+      Owari Fall 16px_0: -1976296725
+      Owari Fall 16px_1: -1264303369
+      Owari Fall 16px_2: 1282830345
+      Owari Fall 16px_3: -168758939
+      Owari Fall 16px_4: -1542045430
+      Owari Fall 16px_5: -104895869
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

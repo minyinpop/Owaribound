@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: d17931c55dabb4e4a84f6453228b08a9
+guid: d6e98901f3e6cc549825e361a2369bc7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 885048394722033529
-    second: Owari_Jump_16px_0
+      213: 2162522523529847152
+    second: Owari_Idle_16px_0
   - first:
-      213: -8285779421398485335
-    second: Owari_Jump_16px_1
+      213: -6615764509447363387
+    second: Owari_Idle_16px_1
+  - first:
+      213: -9154519771942881518
+    second: Owari_Idle_16px_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,7 +108,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Owari_Jump_16px_0
+      name: Owari Idle 16px_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,16 +121,38 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 97fbf6863d2584c00800000000000000
-      internalID: 885048394722033529
+      spriteID: 3e45588a7cf229f429fdf5f1ac09cd60
+      internalID: -508974368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owari_Jump_16px_1
+      name: Owari Idle 16px_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1960717f364c934bbc4e46187002913
+      internalID: 926697662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Owari Idle 16px_2
       rect:
         serializedVersion: 2
         x: 0
@@ -140,10 +165,32 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9a63d44248ff20d80800000000000000
-      internalID: -8285779421398485335
+      spriteID: 7a22293d47218404e900a40200f7f82d
+      internalID: 1973573689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Owari Idle 16px_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6155de3b5a3d3e845b6ba8d08d4373fd
+      internalID: -214120166
       vertices: []
       indices: 
       edges: []
@@ -152,7 +199,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a65abcb0aabb2d14e8fa6efda8d55581
+    spriteID: 99c0cbad57404ad458bf91bf991d9c81
     internalID: 0
     vertices: []
     indices: 
@@ -162,10 +209,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":2.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Owari_Jump_16px_0: 885048394722033529
-      Owari_Jump_16px_1: -8285779421398485335
+      Owari Idle 16px_0: -508974368
+      Owari Idle 16px_1: 926697662
+      Owari Idle 16px_2: 1973573689
+      Owari Idle 16px_3: -214120166
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
