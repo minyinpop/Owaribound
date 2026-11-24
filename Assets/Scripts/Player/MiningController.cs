@@ -36,7 +36,7 @@ namespace Player
             var cellCenter = planet.BlockTilemap.GetCellCenterWorld(cell);
             var body = transform.position + Vector3.up;
             var inReach = Vector2.Distance(body, cellCenter) <= reach;
-            var miningTime = planet.GetBlockConfig(cell)?.MiningTime;
+            var blockConfig = planet.GetBlockConfig(cell);
 
             // 更新游標位置與狀態
             miningCursor.transform.position = cellCenter;
@@ -56,6 +56,13 @@ namespace Player
                 return;
             }
             
+            // 游標指到的格子沒有方塊
+            if (!blockConfig)
+            {
+                ResetProgress();
+                return;
+            }
+
             // 換了目標就重新計算
             if (target != cell)
             {
@@ -66,7 +73,7 @@ namespace Player
             progress += Time.deltaTime;
             
             // 挖掘成功
-            if (progress >= miningTime)
+            if (progress >= blockConfig.MiningTime)
             {
                 planet.TryBreakBlock(cell);
                 ResetProgress();
