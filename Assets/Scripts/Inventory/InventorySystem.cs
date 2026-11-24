@@ -26,26 +26,27 @@ namespace Inventory
         /// <returns> 放不下的數量（0 表示全部放進去了） </returns>
         public int TryAdd(ItemConfig item, int count)
         {
-            // 第 1 輪：先疊到已經有同樣物品、還沒滿的格子
+            if (item == null || count <= 0)
+                return count;
+            
             for (var i = 0; i < slots.Length && count > 0; i++)
             {
-                if (slots[i].Item != item || slots[i].Count >= item.MaxStack)
+                if (slots[i].item != item || slots[i].count >= item.MaxStack)
                     continue;
 
-                var add = Math.Min(count, item.MaxStack - slots[i].Count);
-                slots[i].Count += add;
+                var add = Math.Min(count, item.MaxStack - slots[i].count);
+                slots[i].count += add;
                 count -= add;
                 OnSlotChanged?.Invoke(i);
             }
 
-            // 第 2 輪：放到空格
             for (var i = 0; i < slots.Length && count > 0; i++)
             {
                 if (!slots[i].IsEmpty)
                     continue;
 
                 var add = Math.Min(count, item.MaxStack);
-                slots[i] = new ItemSlot { Item = item, Count = add };
+                slots[i] = new ItemSlot { item = item, count = add };
                 count -= add;
                 OnSlotChanged?.Invoke(i);
             }
@@ -61,20 +62,20 @@ namespace Inventory
         /// <returns> 回傳是否移除成功（數量不夠就直接回傳 flase） </returns>
         public bool TryRemove(ItemConfig item, int count)
         {
+            if (item == null || count <= 0)
+                return false;
+            
             if (CountOf(item) < count)
                 return false;
 
             for (var i = slots.Length - 1; i >= 0 && count > 0; i--)
             {
-                if (slots[i].Item != item)
+                if (slots[i].item != item)
                     continue;
 
-                var remove = Math.Min(count, slots[i].Count);
-                slots[i].Count -= remove;
+                var remove = Math.Min(count, slots[i].count);
+                slots[i].count -= remove;
                 count -= remove;
-
-                if (slots[i].Count <= 0)
-                    slots[i] = ItemSlot.Empty;
 
                 OnSlotChanged?.Invoke(i);
             }
@@ -91,8 +92,8 @@ namespace Inventory
         {
             var total = 0;
             foreach (var slot in slots)
-                if (slot.Item == item)
-                    total += slot.Count;
+                if (slot.item == item)
+                    total += slot.count;
             return total;
         }
     }
