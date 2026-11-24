@@ -50,6 +50,9 @@ TagManager:
   - name: Block
     uniqueID: 951663331
     locked: 0
+  - name: Crack
+    uniqueID: 2941430469
+    locked: 0
   - name: Mining Cursor
     uniqueID: 155303367
     locked: 0
