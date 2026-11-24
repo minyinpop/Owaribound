@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 8385998627861767067}
   - component: {fileID: 680763901035404833}
   - component: {fileID: 4460886681745370384}
+  - component: {fileID: 7692353686339226664}
   m_Layer: 5
   m_Name: Item Slot
   m_TagString: Untagged
@@ -215,6 +216,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.25
+--- !u!114 &7692353686339226664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057937161487379795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2999049bcf4570a97f8af8936b6634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Inventory.ItemSlotUI
+  slotImage: {fileID: 4460886681745370384}
+  selectedFrame: {fileID: 21300000, guid: 92091e44c818ce44bb9a9cf071a91d62, type: 3}
+  unselectedFrame: {fileID: 21300000, guid: faf0e8f392434774c8a80cbed216705d, type: 3}
+  itemImage: {fileID: 7479744959879675387}
+  itemAmount: {fileID: 786435629078760372}
+  slotNumber: {fileID: 3626979961253467661}
 --- !u!1 &5913451508446249830
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2890005228564384813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -280,7 +299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd0ba1c21c7c92243a4c3bcf5939e5c8, type: 2}
   m_sharedMaterial: {fileID: 2436794570136838528, guid: dd0ba1c21c7c92243a4c3bcf5939e5c8, type: 2}
