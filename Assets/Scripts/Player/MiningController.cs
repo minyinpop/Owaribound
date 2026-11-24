@@ -1,17 +1,13 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 using World;
-using World.Damage;
 
 namespace Player
 {
     [RequireComponent(typeof(PlayerController))]
     public sealed class MiningController : MonoBehaviour
     {
-        [FormerlySerializedAs("planet")]
         [field: Header("挖掘設定")]
         [field: SerializeField] private WorldSystem world;
-        [field: SerializeField] private WorldDamageSystem damage;
         [field: SerializeField] private float reach = 4; // 能挖多遠
         [field: SerializeField] private float miningPower = 1;
         
@@ -51,7 +47,7 @@ namespace Player
             if (!inReach)
                 return;
 
-            damage.ApplyDamage(cell, miningPower * Time.deltaTime);
+            world.WorldDamageSystem.ApplyDamage(cell, miningPower * Time.deltaTime);
         }
     }
 }

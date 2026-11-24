@@ -1,5 +1,4 @@
 using UnityEngine;
-using World.Data;
 
 namespace World.Generator
 {

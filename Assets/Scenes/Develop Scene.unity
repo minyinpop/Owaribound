@@ -629,8 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109776b932224bf58ab1bab4ec798973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.MiningController
-  world: {fileID: 0}
-  damage: {fileID: 0}
+  world: {fileID: 288021478}
   reach: 4
   miningPower: 1
   miningCursor: {fileID: 1728223939}
