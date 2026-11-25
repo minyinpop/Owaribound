@@ -410,6 +410,7 @@ GameObject:
   - component: {fileID: 238487994}
   - component: {fileID: 238487996}
   - component: {fileID: 238487997}
+  - component: {fileID: 238487998}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -654,6 +655,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.InventoryController
   size: 40
+--- !u!114 &238487998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238487988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8387f57a38dc4a209a7328dc41428816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.ItemPickupController
+  dropSystem: {fileID: 288021479}
+  pickupRadius: 2
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1001 &285955298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -778,8 +796,9 @@ GameObject:
   - component: {fileID: 288021478}
   - component: {fileID: 288021477}
   - component: {fileID: 288021476}
+  - component: {fileID: 288021479}
   m_Layer: 0
-  m_Name: Planet Generator
+  m_Name: World System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,6 +868,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 317c9051e03cec6429d76b954ce993e0, type: 2}
   - {fileID: 11400000, guid: 6d52fc4ad9a1b324c8f2b0f66c95e437, type: 2}
   recoverDelay: 3
+--- !u!114 &288021479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288021473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506eb2c9f7f249229e56a9b0008e1d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::World.WorldItemDropSystem
+  worldSystem: {fileID: 288021478}
+  dropPrefab: {fileID: 419092430948688528, guid: fae728f99e95b1d498c9d3254022e91a, type: 3}
 --- !u!224 &426740931 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8385998627861767067, guid: f08d0498f6d9dab4bbb4a1fd9cc5c3ad, type: 3}
@@ -1220,7 +1253,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1353536827
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -1309,7 +1342,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000e33ab938cdd86a7455e1ae4ac7bd4109c5aa52afi
+  m_ApplyToSortingLayers: 00000000e33ab938cdd86a7455e1ae4ac7bd4109c5aa52af016135d9i
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -2612,7 +2645,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 155303367
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 2a3ae8b64e82795429aba27858c9a0dc, type: 3}

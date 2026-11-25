@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Block
-  - 
+  - Item Drop
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: Block
     uniqueID: 951663331
+    locked: 0
+  - name: Item Drop
+    uniqueID: 3644154113
     locked: 0
   - name: Crack
     uniqueID: 2941430469

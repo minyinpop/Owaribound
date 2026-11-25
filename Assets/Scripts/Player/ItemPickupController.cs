@@ -36,11 +36,11 @@ namespace Player
 
             foreach (var hit in hits)
             {
-                if (!hit.TryGetComponent(out ItemDrop dropItem)) return;
+                if (!hit.TryGetComponent(out ItemDrop dropItem)) continue;
 
                 var left = inventoryController.InventorySystem.TryAdd(dropItem.ItemConfig, dropItem.Count);
                 
-                if (left > 0)
+                if (left == 0)
                     dropSystem.Despawn(dropItem);
                 else
                     dropItem.SetCount(left);

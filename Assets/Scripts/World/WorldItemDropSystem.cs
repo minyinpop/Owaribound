@@ -7,7 +7,7 @@ namespace World
 {
     public sealed class WorldItemDropSystem : MonoBehaviour
     {
-        [field: Header("")]
+        [field: Header("系統組件")]
         [field: SerializeField] private WorldSystem worldSystem;
         [field: SerializeField] private ItemDrop dropPrefab;
 
@@ -21,9 +21,10 @@ namespace World
             worldSystem.OnBlockBroken -= BlockBroken;
         }
 
-        private void BlockBroken(Vector3Int cell, BlockConfig config)
+        private void BlockBroken(Vector3Int cell, BlockConfig blockConfig)
         {
-            if (!config.DropItem) return;
+            if (!blockConfig.DropItem) return;
+            Spawn(blockConfig.DropItem, blockConfig.DropAmount, worldSystem.BlockTilemap.GetCellCenterWorld(cell));
         }
 
         public ItemDrop Spawn(ItemConfig itemConfig, int count, Vector3 position)
