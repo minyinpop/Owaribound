@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.ItemPickupController
   dropSystem: {fileID: 288021479}
-  pickupRadius: 2
+  pickupRadius: 1
   dropLayer:
     serializedVersion: 2
     m_Bits: 128
