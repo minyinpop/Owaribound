@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51ff5b97f43d4897a5fb576898f3c10e, type: 3}
-  m_Name: Earth Grass
+  m_Name: Earth Dirt
   m_EditorClassIdentifier: Assembly-CSharp::Item.Configs.ItemConfig
-  displayName: "\u8349\u5730"
-  icon: {fileID: -773259393, guid: 9e30e87d5f2fcc64ab9d5d247c31f8b4, type: 3}
+  displayName: "\u6CE5\u571F"
+  icon: {fileID: 371492297, guid: 8c60a182287eb6949b07b940f56b8bad, type: 3}
   maxStack: 64
