@@ -1,3 +1,4 @@
+using Item.Configs;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using World.Data;
@@ -21,5 +22,11 @@ namespace World.Configs.Block
         [field: Header("方塊屬性")]
         [field: SerializeField] private float miningTime;
                                 public float MiningTime => miningTime;
+                                
+        [field: Header("掉落物種類")]
+        [field: SerializeField] private ItemConfig dropItem;
+                                public ItemConfig DropItem => dropItem;
+        [field: SerializeField] private int dropAmount;
+                                public int DropAmount => dropAmount;
     }
 }

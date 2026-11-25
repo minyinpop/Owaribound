@@ -1,11 +1,9 @@
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using World.Configs.Block;
 using World.Configs.Block.Grass;
 using World.Configs.Block.Ore;
 using World.Configs.Block.Stone;
 
-namespace World.Configs.Planet
+namespace World.Configs.World
 {
     [CreateAssetMenu(menuName = "Owaribound/World/Generator/Planet Configs", fileName = "New Planet Config")]
     public sealed class WorldConfig : ScriptableObject

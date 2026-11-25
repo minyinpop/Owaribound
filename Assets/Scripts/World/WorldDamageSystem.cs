@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-using World.Data;
 
-namespace World.Damage
+namespace World
 {
     [RequireComponent(typeof(WorldSystem))]
     public sealed class WorldDamageSystem : MonoBehaviour

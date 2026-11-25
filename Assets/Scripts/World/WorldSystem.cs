@@ -1,9 +1,9 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using World.Configs.Block;
-using World.Configs.Planet;
-using World.Damage;
+using World.Configs.World;
 using World.Data;
 using World.Generator;
 
@@ -49,31 +49,32 @@ namespace World
 
         public readonly Dictionary<BlockType, BlockConfig> BlockConfigs = new();
         public readonly Dictionary<WallType, BlockConfig> WallConfigs = new();
+
+        public event Action<Vector3Int, BlockConfig> OnBlockBroken;
         
         private void Start()
         {
             WorldData = new WorldData(WorldConfig.Width, WorldConfig.Height);
-            
             WorldGenerator.Generator();
         }
         
         // 查詢：某一格是什麼方塊，空氣或地圖外回傳 null
         public BlockConfig GetBlockConfig(Vector3Int cell)
         {
-            if (!WorldData.InBounds(cell.x, cell.y))
-                return null;
-
+            if (!WorldData.InBounds(cell.x, cell.y)) return null;
             return BlockConfigs.GetValueOrDefault(WorldData.Blocks[cell.x, cell.y]);
         }
 
         // 修改：挖掉一格方塊（所有挖掉方塊的方式都走這裡）
         public bool TryBreakBlock(Vector3Int cell)
         {
-            if (!GetBlockConfig(cell))
-                return false;
-
+            var config = GetBlockConfig(cell);
+            if (!config) return false;
+            
             WorldData.Blocks[cell.x, cell.y] = BlockType.Air;
             blockTilemap.SetTile(cell, null);
+            
+            OnBlockBroken?.Invoke(cell, config);
             return true;
         }
     }

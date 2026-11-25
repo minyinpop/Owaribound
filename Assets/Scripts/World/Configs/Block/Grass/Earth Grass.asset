@@ -17,3 +17,5 @@ MonoBehaviour:
   wallType: 1001
   wallTile: {fileID: 11400000, guid: 43e4d7330cb29764591d90e34cb11f07, type: 2}
   miningTime: 0.5
+  dropItem: {fileID: 11400000, guid: 558a9736f31f75840a6f866b8e24441a, type: 2}
+  dropAmount: 1
