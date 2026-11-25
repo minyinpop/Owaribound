@@ -24,6 +24,8 @@ namespace World.Generator
             
             CarveCaveEntrances(new System.Random(world.WorldSeed + 2));
             
+            GrowGrass();
+            
             PlaceOres(new System.Random(world.WorldSeed + 3));
 
             Render();

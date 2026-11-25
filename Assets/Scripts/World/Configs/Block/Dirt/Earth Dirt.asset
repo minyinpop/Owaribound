@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72450be94504b099d1dca36316bb3a2, type: 3}
+  m_Name: Earth Dirt
+  m_EditorClassIdentifier: Assembly-CSharp::World.Configs.Block.Dirt.DirtConfig
+  blockType: 2001
+  blockTile: {fileID: 11400000, guid: c5a67a1902f03d54981046bffcb051a7, type: 2}
+  wallType: 2001
+  wallTile: {fileID: 11400000, guid: 740935e58f893664eb8283859a7055e5, type: 2}
+  miningTime: 0.3
+  dropItem: {fileID: 11400000, guid: 558a9736f31f75840a6f866b8e24441a, type: 2}
+  dropAmount: 1

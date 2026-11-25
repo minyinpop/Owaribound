@@ -1,4 +1,5 @@
 using UnityEngine;
+using World.Configs.Block.Dirt;
 using World.Configs.Block.Grass;
 using World.Configs.Block.Ore;
 using World.Configs.Block.Stone;
@@ -21,8 +22,8 @@ namespace World.Configs.World
                                 public int Amplitude => amplitude;
         [field: SerializeField] private float frequency = .03f;      // 越小越平緩
                                 public float Frequency => frequency;
-        [field: SerializeField] private int grassDepth = 5;          // 泥土層厚度
-                                public int GrassDepth => grassDepth;
+        [field: SerializeField] private int dirtDepth = 5;          // 泥土層厚度
+                                public int DirtDepth => dirtDepth;
                                 
         [field: Header("玩家出生點")]
         [field: SerializeField] private int spawnFlatRadius = 12;               // 中間多寬是平的（左右各幾格）
@@ -35,6 +36,8 @@ namespace World.Configs.World
         [field: Header("方塊資料")]
         [field: SerializeField] private GrassConfig grass;
                                 public GrassConfig Grass => grass;
+        [field: SerializeField] private DirtConfig dirt;
+                                public DirtConfig Dirt => dirt;
         [field: SerializeField] private StoneConfig stone;
                                 public StoneConfig Stone => stone;
         [field: SerializeField] private OreConfig[] ores;

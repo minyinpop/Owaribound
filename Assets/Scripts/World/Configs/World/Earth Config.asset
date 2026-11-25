@@ -17,11 +17,12 @@ MonoBehaviour:
   baseHeight: 60
   amplitude: 20
   frequency: 0.05
-  grassDepth: 5
+  dirtDepth: 5
   spawnFlatRadius: 12
   spawnBlendWidth: 20
   spawnFlatness: 0.1
   grass: {fileID: 11400000, guid: d192f36d677286c4f88e1d4caf9e26d4, type: 2}
+  dirt: {fileID: 11400000, guid: dffabc6968f503a4ba7e12724410067d, type: 2}
   stone: {fileID: 11400000, guid: 033f9f99abdf8ac40ab7516e8fc480ea, type: 2}
   ores:
   - {fileID: 11400000, guid: 73dd9bc61f1ace54ea6c942de33c7c91, type: 2}

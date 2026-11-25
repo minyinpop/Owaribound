@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using UnityEngine;
 using World.Configs.Block;
 
 namespace World.Generator
@@ -12,6 +10,7 @@ namespace World.Generator
             world.WallConfigs.Clear();
 
             Register(world.WorldConfig.Grass);
+            Register(world.WorldConfig.Dirt);
             Register(world.WorldConfig.Stone);
             foreach (var ore in world.WorldConfig.Ores)
                 Register(ore);
