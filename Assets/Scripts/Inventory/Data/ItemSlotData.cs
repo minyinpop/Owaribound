@@ -3,7 +3,7 @@ using Item.Configs;
 namespace Inventory.Data
 {
     [System.Serializable]
-    public struct ItemSlot
+    public struct ItemSlotData
     {
         public ItemConfig item;
         
@@ -11,6 +11,6 @@ namespace Inventory.Data
 
         public bool IsEmpty => item == null || count <= 0;
 
-        public static readonly ItemSlot Empty = default;
+        public static readonly ItemSlotData Empty = default;
     }
 }

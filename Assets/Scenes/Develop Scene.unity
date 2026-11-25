@@ -1129,7 +1129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649a646ec6554d8da671756321afd0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.Inventory.InventoryUI
-  inventoryCo: {fileID: 238487997}
+  inventoryController: {fileID: 238487997}
   itemSlotUIs:
   - {fileID: 6012890319012381770}
   - {fileID: 1379395329}
@@ -2876,6 +2876,10 @@ PrefabInstance:
     - target: {fileID: 4057937161487379795, guid: f08d0498f6d9dab4bbb4a1fd9cc5c3ad, type: 3}
       propertyPath: m_Name
       value: Hotbar Slot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913451508446249830, guid: f08d0498f6d9dab4bbb4a1fd9cc5c3ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8385998627861767067, guid: f08d0498f6d9dab4bbb4a1fd9cc5c3ad, type: 3}
       propertyPath: m_Pivot.x

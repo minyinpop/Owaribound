@@ -17,9 +17,9 @@ namespace UI.Inventory
         [field: SerializeField] private TextMeshProUGUI itemAmount;
         [field: SerializeField] private TextMeshProUGUI slotNumber;
 
-        public void Refresh(ItemSlot slot)
+        public void Refresh(ItemSlotData slotData)
         {
-            if (slot.IsEmpty)
+            if (slotData.IsEmpty)
             {
                 itemImage.gameObject.SetActive(false);
                 itemImage.sprite = null;
@@ -30,16 +30,17 @@ namespace UI.Inventory
                 return;
             }
 
-            itemImage.sprite = slot.item.Icon;
+            itemImage.sprite = slotData.item.Icon;
             itemImage.gameObject.SetActive(true);
             
-            itemAmount.text = slot.count.ToString();
+            itemAmount.text = slotData.count.ToString();
             itemAmount.gameObject.SetActive(true);
         }
 
         public void SetNumber(int number)
         {
             slotNumber.text = number.ToString();
+            slotNumber.gameObject.SetActive(true);
         }
 
         public void SetSelected(bool selected)

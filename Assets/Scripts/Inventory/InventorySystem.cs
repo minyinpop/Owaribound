@@ -6,16 +6,16 @@ namespace Inventory
 {
     public sealed class InventorySystem
     {
-        private readonly ItemSlot[] slots;
+        private readonly ItemSlotData[] slots;
 
         public int Size => slots.Length;
-        public ItemSlot this[int index] => slots[index];
+        public ItemSlotData this[int index] => slots[index];
 
         public event Action<int> OnSlotChanged; // 參數是哪一格變了
 
         public InventorySystem(int size)
         {
-            slots = new ItemSlot[size];
+            slots = new ItemSlotData[size];
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Inventory
                     continue;
 
                 var add = Math.Min(count, item.MaxStack);
-                slots[i] = new ItemSlot { item = item, count = add };
+                slots[i] = new ItemSlotData { item = item, count = add };
                 count -= add;
                 OnSlotChanged?.Invoke(i);
             }
@@ -78,7 +78,7 @@ namespace Inventory
                 count -= remove;
 
                 if (slots[i].count <= 0)
-                    slots[i] = ItemSlot.Empty;
+                    slots[i] = ItemSlotData.Empty;
 
                 OnSlotChanged?.Invoke(i);
             }
