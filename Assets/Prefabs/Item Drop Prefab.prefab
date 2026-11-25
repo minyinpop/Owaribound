@@ -135,10 +135,10 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 183
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -180,6 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fbabcc881b5470094d62841308bd6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item.ItemDrop
-  spriteRenderer: {fileID: 1188355702316275469}
-  rigidbody: {fileID: 5764163000265857661}
+  spr: {fileID: 1188355702316275469}
+  rig: {fileID: 5764163000265857661}
   popForce: 3

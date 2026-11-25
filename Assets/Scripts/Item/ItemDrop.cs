@@ -6,8 +6,8 @@ namespace Item
     public sealed class ItemDrop : MonoBehaviour
     {
         [field: Header("自身組件")]
-        [field: SerializeField] private SpriteRenderer spriteRenderer;
-        [field: SerializeField] private Rigidbody2D rigidbody;
+        [field: SerializeField] private SpriteRenderer spr;
+        [field: SerializeField] private Rigidbody2D rig;
         
         [field: Header("屬性設定")]
         [field: SerializeField] private float popForce = 3;
@@ -20,8 +20,8 @@ namespace Item
             ItemConfig = itemConfig;
             Count = count;
 
-            spriteRenderer.sprite = ItemConfig.Icon;
-            rigidbody.linearVelocity = new Vector2(Random.Range(-.5f, .5f), 1) * popForce;
+            spr.sprite = ItemConfig.Icon;
+            rig.linearVelocity = new Vector2(Random.Range(-.5f, .5f), 1) * popForce;
         }
 
         public void SetCount(int count)
