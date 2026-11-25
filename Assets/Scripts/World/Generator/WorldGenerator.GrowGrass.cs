@@ -2,7 +2,7 @@ using World.Data;
 
 namespace World.Generator
 {
-    public partial class WorldGenerator
+    public sealed partial class WorldGenerator
     {
         private void GrowGrass()
         {
