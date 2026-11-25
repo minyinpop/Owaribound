@@ -18,11 +18,12 @@ namespace UI.Inventory
 
         private void OnEnable()
         {
-            if (!started)
-                return;
+            if (!started) return;
             
             inventorySystem.OnSlotChanged += RefreshSlot;
             inventoryController.OnSelectedChanged += RefreshSelected;
+            
+            RefreshSelected(inventoryController.SelectedIndex);
             
             for (var i = 0; i < itemSlotUIs.Length; i ++)
                 itemSlotUIs[i].Refresh(inventorySystem[i]);
@@ -31,7 +32,6 @@ namespace UI.Inventory
         private void Start()
         {
             inventorySystem = inventoryController.InventorySystem;
-            RefreshSelected(inventoryController.SelectedIndex);
             
             for (var i = 0; i < itemSlotUIs.Length; i ++)
                 itemSlotUIs[i].SetNumber((i + 1) % 10);
@@ -42,6 +42,8 @@ namespace UI.Inventory
 
         private void OnDisable()
         {
+            if (!started) return;
+            
             inventorySystem.OnSlotChanged -= RefreshSlot;
             inventoryController.OnSelectedChanged -= RefreshSelected;
         }
