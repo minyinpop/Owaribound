@@ -1,8 +1,10 @@
 using UnityEngine;
 using World;
 
-namespace Player.Cursor
+namespace Player.Interaction
 {
+    [RequireComponent(typeof(PlayerController))]
+    [RequireComponent(typeof(InventoryController))]
     [RequireComponent(typeof(CursorController))]
     public sealed class MiningController : MonoBehaviour
     {

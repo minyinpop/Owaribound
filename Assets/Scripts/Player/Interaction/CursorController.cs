@@ -1,7 +1,7 @@
 using UnityEngine;
 using World;
 
-namespace Player.Cursor
+namespace Player.Interaction
 {
     [DefaultExecutionOrder((-10))]
     [RequireComponent(typeof(PlayerController))]
@@ -25,7 +25,7 @@ namespace Player.Cursor
         
         // ================================
         
-        public Vector3Int Cell { get; set; }
+        public Vector3Int Cell { get; private set; }
         public bool InReach { get; private set; }
 
         private PlayerController playerCo;
