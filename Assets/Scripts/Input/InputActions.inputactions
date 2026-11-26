@@ -232,9 +232,19 @@
             "id": "d06a1aec-5263-40f9-8967-55bfaad45752",
             "actions": [
                 {
-                    "name": "Mine",
+                    "name": "Primary Mouse",
                     "type": "Button",
                     "id": "66f45f53-e04a-4f3b-925f-58efc0cf56b0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Hold",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Secondary Mouse",
+                    "type": "Button",
+                    "id": "7fd3745a-5afd-41bb-ae30-5c1c0355dbf5",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "Hold",
@@ -270,7 +280,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Mine",
+                    "action": "Primary Mouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "efed02cc-7b5f-4051-94f4-7e07a0daab96",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Secondary Mouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

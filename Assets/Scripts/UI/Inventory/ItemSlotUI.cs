@@ -30,7 +30,7 @@ namespace UI.Inventory
                 return;
             }
 
-            itemImage.sprite = slotData.item.Icon;
+            itemImage.sprite = slotData.itemConfig.Icon;
             itemImage.gameObject.SetActive(true);
             
             itemAmount.text = slotData.count.ToString();

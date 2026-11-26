@@ -16,8 +16,12 @@ namespace Player
         public InventorySystem InventorySystem { get; private set; }
 
         private const int HotbarSize = 10;
+        
         public int SelectedIndex { get; private set; }
         public ItemSlotData SelectedSlot => InventorySystem[SelectedIndex];
+        
+        public bool IsHoldingPlaceable => !SelectedSlot.IsEmpty && SelectedSlot.itemConfig.CanPlace;
+
         public event Action<int> OnSelectedChanged;
 
         private void Awake()

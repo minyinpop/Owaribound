@@ -5,12 +5,12 @@ namespace Inventory.Data
     [System.Serializable]
     public struct ItemSlotData
     {
-        public ItemConfig item;
+        public ItemConfig itemConfig;
         
         public int count;
 
-        public bool IsEmpty => item == null || count <= 0;
+        public bool IsEmpty => itemConfig == null || count <= 0;
 
-        public static readonly ItemSlotData Empty = default;
+        public static readonly ItemSlotData Empty;
     }
 }

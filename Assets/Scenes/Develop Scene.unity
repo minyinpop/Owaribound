@@ -408,9 +408,11 @@ GameObject:
   - component: {fileID: 238487993}
   - component: {fileID: 238487995}
   - component: {fileID: 238487994}
-  - component: {fileID: 238487996}
   - component: {fileID: 238487997}
   - component: {fileID: 238487998}
+  - component: {fileID: 238487996}
+  - component: {fileID: 238488000}
+  - component: {fileID: 238487999}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -636,10 +638,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109776b932224bf58ab1bab4ec798973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.MiningController
-  world: {fileID: 288021478}
-  reach: 4
-  miningPower: 1
-  miningCursor: {fileID: 1728223939}
+  worldSystem: {fileID: 288021478}
+  reach: 3
+  cursorRenderer: {fileID: 1728223939}
   inReachColor: {r: 1, g: 1, b: 1, a: 1}
   outOfReachColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &238487997
@@ -672,6 +673,34 @@ MonoBehaviour:
   dropLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &238487999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238487988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c2bdaa64fc411a8dea0ef9fcb4fb78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.Cursor.PlacementController
+  worldSystem: {fileID: 288021478}
+  placeCooldown: 0.12
+--- !u!114 &238488000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238487988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4195c4837ab48cf9b0f1dd6ce916178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.Cursor.MiningController
+  worldSystem: {fileID: 288021478}
+  miningPower: 1
 --- !u!1001 &285955298
 PrefabInstance:
   m_ObjectHideFlags: 0

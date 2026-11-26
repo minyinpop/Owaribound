@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace Input
 {
+    [DefaultExecutionOrder(-90)]
     public sealed class InputHandler : MonoBehaviour
     {
         private InputActions input;
@@ -12,7 +13,8 @@ namespace Input
         
         public event Action OnJumpPerformed;
         
-        public bool IsMining => input.Mouse.Mine.IsPressed();
+        public bool IsPrimaryHeld => input.Mouse.PrimaryMouse.IsPressed();
+        public bool IsSecondaryHeld => input.Mouse.SecondaryMouse.IsPressed();
         public Vector2 MousePos => input.Mouse.Position.ReadValue<Vector2>();
         
         public event Action<int> OnHotbarSelected;

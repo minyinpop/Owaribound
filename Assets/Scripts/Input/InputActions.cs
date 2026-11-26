@@ -318,9 +318,19 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             ""id"": ""d06a1aec-5263-40f9-8967-55bfaad45752"",
             ""actions"": [
                 {
-                    ""name"": ""Mine"",
+                    ""name"": ""Primary Mouse"",
                     ""type"": ""Button"",
                     ""id"": ""66f45f53-e04a-4f3b-925f-58efc0cf56b0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""Secondary Mouse"",
+                    ""type"": ""Button"",
+                    ""id"": ""7fd3745a-5afd-41bb-ae30-5c1c0355dbf5"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": ""Hold"",
@@ -356,7 +366,18 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Mine"",
+                    ""action"": ""Primary Mouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""efed02cc-7b5f-4051-94f4-7e07a0daab96"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Secondary Mouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -394,7 +415,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Player_Hotbar = m_Player.FindAction("Hotbar", throwIfNotFound: true);
         // Mouse
         m_Mouse = asset.FindActionMap("Mouse", throwIfNotFound: true);
-        m_Mouse_Mine = m_Mouse.FindAction("Mine", throwIfNotFound: true);
+        m_Mouse_PrimaryMouse = m_Mouse.FindAction("Primary Mouse", throwIfNotFound: true);
+        m_Mouse_SecondaryMouse = m_Mouse.FindAction("Secondary Mouse", throwIfNotFound: true);
         m_Mouse_Position = m_Mouse.FindAction("Position", throwIfNotFound: true);
         m_Mouse_Scroll = m_Mouse.FindAction("Scroll", throwIfNotFound: true);
     }
@@ -596,7 +618,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     // Mouse
     private readonly InputActionMap m_Mouse;
     private List<IMouseActions> m_MouseActionsCallbackInterfaces = new List<IMouseActions>();
-    private readonly InputAction m_Mouse_Mine;
+    private readonly InputAction m_Mouse_PrimaryMouse;
+    private readonly InputAction m_Mouse_SecondaryMouse;
     private readonly InputAction m_Mouse_Position;
     private readonly InputAction m_Mouse_Scroll;
     /// <summary>
@@ -611,9 +634,13 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         /// </summary>
         public MouseActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Mouse/Mine".
+        /// Provides access to the underlying input action "Mouse/PrimaryMouse".
         /// </summary>
-        public InputAction @Mine => m_Wrapper.m_Mouse_Mine;
+        public InputAction @PrimaryMouse => m_Wrapper.m_Mouse_PrimaryMouse;
+        /// <summary>
+        /// Provides access to the underlying input action "Mouse/SecondaryMouse".
+        /// </summary>
+        public InputAction @SecondaryMouse => m_Wrapper.m_Mouse_SecondaryMouse;
         /// <summary>
         /// Provides access to the underlying input action "Mouse/Position".
         /// </summary>
@@ -648,9 +675,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_MouseActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_MouseActionsCallbackInterfaces.Add(instance);
-            @Mine.started += instance.OnMine;
-            @Mine.performed += instance.OnMine;
-            @Mine.canceled += instance.OnMine;
+            @PrimaryMouse.started += instance.OnPrimaryMouse;
+            @PrimaryMouse.performed += instance.OnPrimaryMouse;
+            @PrimaryMouse.canceled += instance.OnPrimaryMouse;
+            @SecondaryMouse.started += instance.OnSecondaryMouse;
+            @SecondaryMouse.performed += instance.OnSecondaryMouse;
+            @SecondaryMouse.canceled += instance.OnSecondaryMouse;
             @Position.started += instance.OnPosition;
             @Position.performed += instance.OnPosition;
             @Position.canceled += instance.OnPosition;
@@ -668,9 +698,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="MouseActions" />
         private void UnregisterCallbacks(IMouseActions instance)
         {
-            @Mine.started -= instance.OnMine;
-            @Mine.performed -= instance.OnMine;
-            @Mine.canceled -= instance.OnMine;
+            @PrimaryMouse.started -= instance.OnPrimaryMouse;
+            @PrimaryMouse.performed -= instance.OnPrimaryMouse;
+            @PrimaryMouse.canceled -= instance.OnPrimaryMouse;
+            @SecondaryMouse.started -= instance.OnSecondaryMouse;
+            @SecondaryMouse.performed -= instance.OnSecondaryMouse;
+            @SecondaryMouse.canceled -= instance.OnSecondaryMouse;
             @Position.started -= instance.OnPosition;
             @Position.performed -= instance.OnPosition;
             @Position.canceled -= instance.OnPosition;
@@ -747,12 +780,19 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IMouseActions
     {
         /// <summary>
-        /// Method invoked when associated input action "Mine" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Primary Mouse" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnMine(InputAction.CallbackContext context);
+        void OnPrimaryMouse(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Secondary Mouse" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSecondaryMouse(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Position" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

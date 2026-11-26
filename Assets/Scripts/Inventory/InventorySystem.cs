@@ -31,7 +31,7 @@ namespace Inventory
             
             for (var i = 0; i < slots.Length && count > 0; i++)
             {
-                if (slots[i].item != item || slots[i].count >= item.MaxStack)
+                if (slots[i].itemConfig != item || slots[i].count >= item.MaxStack)
                     continue;
 
                 var add = Math.Min(count, item.MaxStack - slots[i].count);
@@ -46,7 +46,7 @@ namespace Inventory
                     continue;
 
                 var add = Math.Min(count, item.MaxStack);
-                slots[i] = new ItemSlotData { item = item, count = add };
+                slots[i] = new ItemSlotData { itemConfig = item, count = add };
                 count -= add;
                 OnSlotChanged?.Invoke(i);
             }
@@ -70,7 +70,7 @@ namespace Inventory
 
             for (var i = slots.Length - 1; i >= 0 && count > 0; i--)
             {
-                if (slots[i].item != item)
+                if (slots[i].itemConfig != item)
                     continue;
 
                 var remove = Math.Min(count, slots[i].count);
@@ -116,7 +116,7 @@ namespace Inventory
         {
             var total = 0;
             foreach (var slot in slots)
-                if (slot.item == item)
+                if (slot.itemConfig == item)
                     total += slot.count;
             return total;
         }
