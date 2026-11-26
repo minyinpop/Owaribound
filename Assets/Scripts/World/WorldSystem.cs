@@ -81,6 +81,9 @@ namespace World
 
         public event Action<Vector3Int, BlockConfig> OnBlockBroken;
         public event Action<Vector3Int, BlockConfig> OnBlockPlaced;
+
+        public event Action<Vector3Int, BlockConfig> OnWallBroken;
+        public event Action<Vector3Int, BlockConfig> OnWallPlaced;
         
         private void Start()
         {
@@ -89,14 +92,25 @@ namespace World
         }
         
         /// <summary>
-        /// 用來查詢這一格是什麼方塊，如果是空氣或是地圖外，就會回傳 null
+        /// 用來查詢這一格是什麼方塊
         /// </summary>
         /// <param name="cell"> 要被查詢的位置 </param>
-        /// <returns> 回傳該位置個方塊資料，如果是空氣或是地圖外，將會回傳 null </returns>
+        /// <returns> 回傳該位置的方塊資料，如果是空氣或是地圖外，將會回傳 null </returns>
         public BlockConfig GetBlockConfig(Vector3Int cell)
         {
             if (!WorldData.InBounds(cell.x, cell.y)) return null;
             return BlockConfigs.GetValueOrDefault(WorldData.Blocks[cell.x, cell.y]);
+        }
+
+        /// <summary>
+        /// 用來查詢這一格的背景牆是什麼
+        /// </summary>
+        /// <param name="cell"> 要被查詢的位置 </param>
+        /// <returns> 回傳該位置的背景牆資料，如果是空氣或是地圖外，將會回傳 null </returns>
+        public BlockConfig GetWallConfig(Vector3Int cell)
+        {
+            if (!WorldData.InBounds(cell.x, cell.y)) return null;
+            return WallConfigs.GetValueOrDefault(WorldData.Walls[cell.x, cell.y]);
         }
 
         /// <summary>
@@ -117,7 +131,24 @@ namespace World
         }
 
         /// <summary>
-        /// 專焚負責處裡要被放置的方塊
+        /// 專門負責處裡要被破壞掉的背景牆
+        /// </summary>
+        /// <param name="cell"> 要被破壞的位置 </param>
+        /// <returns> 回傳是否成功破壞 </returns>
+        public bool TryBreakWall(Vector3Int cell)
+        {
+            var config = GetWallConfig(cell);
+            if (!config) return false;
+
+            WorldData.Walls[cell.x, cell.y] = WallType.Air;
+            wallTilemap.SetTile(cell, null);
+            
+            OnWallBroken?.Invoke(cell, config);
+            return true;
+        }
+
+        /// <summary>
+        /// 專門負責處裡要被放置的方塊
         /// </summary>
         /// <param name="cell"> 要被放置的位置 </param>
         /// <param name="blockConfig"> 要被放置的方塊 </param>
@@ -140,6 +171,29 @@ namespace World
         }
 
         /// <summary>
+        /// 專門負責處裡要被放置的背景牆
+        /// </summary>
+        /// <param name="cell"> 要被放置的位置 </param>
+        /// <param name="blockConfig"> 要被放置的背景牆 </param>
+        /// <returns> 回傳是否放置成功 </returns>
+        public bool TryPlaceWall(Vector3Int cell, BlockConfig blockConfig)
+        {
+            if (!blockConfig) return false;
+            if (blockConfig.WallType == WallType.Air) return false;
+            if (!blockConfig.WallTile) return false;
+            if (!WorldData.InBounds(cell.x, cell.y)) return false;
+            if (WorldData.Walls[cell.x, cell.y] != WallType.Air) return false;
+            if (IsSolid(cell)) return false;
+            if (!HasWallSupport(cell)) return false;
+
+            WorldData.Walls[cell.x, cell.y] = blockConfig.WallType;
+            wallTilemap.SetTile(cell, blockConfig.WallTile);
+
+            OnWallPlaced?.Invoke(cell, blockConfig);
+            return true;
+        }
+
+        /// <summary>
         /// 用於檢查格子的周圍以及背景是否有支撐點
         /// </summary>
         /// <param name="cell"> 要被檢查的位置 </param>
@@ -155,6 +209,21 @@ namespace World
         }
 
         /// <summary>
+        /// 用於檢查格子與背景牆周圍是否有支撐點
+        /// </summary>
+        /// <param name="cell"> 要被檢查的位置 </param>
+        /// <returns> 回傳是否有支撐點 </returns>
+        private bool HasWallSupport(Vector3Int cell)
+        {
+            foreach (var dir in new[] { Vector3Int.up, Vector3Int.down, Vector3Int.left, Vector3Int.right })
+            {
+                var neighbor = cell + dir;
+                if (IsSolid(neighbor) || HasWall(neighbor)) return true;
+            }
+            return false;
+        }
+
+        /// <summary>
         /// 檢查格子是否已經有方塊了
         /// </summary>
         /// <param name="cell"> 要被檢查的格子 </param>
@@ -164,6 +233,17 @@ namespace World
             if (!WorldData.InBounds(cell.x, cell.y)) return false;
             if (WorldData.Blocks[cell.x, cell.y] == BlockType.Air) return false;
             return true;
+        }
+
+        /// <summary>
+        /// 檢查格子是否已經有背景牆了
+        /// </summary>
+        /// <param name="cell"> 要被檢查的格子 </param>
+        /// <returns> 回傳是否有背景牆 </returns>
+        private bool HasWall(Vector3Int cell)
+        {
+            if (!WorldData.InBounds(cell.x, cell.y)) return false;
+            return WorldData.Walls[cell.x, cell.y] != WallType.Air;
         }
 
         /// <summary>
