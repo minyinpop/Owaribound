@@ -131,7 +131,7 @@ namespace World
         }
 
         /// <summary>
-        /// 專門負責處裡要被破壞掉的背景牆
+        /// 專門負責處理要被破壞掉的背景牆
         /// </summary>
         /// <param name="cell"> 要被破壞的位置 </param>
         /// <returns> 回傳是否成功破壞 </returns>
@@ -139,6 +139,7 @@ namespace World
         {
             var config = GetWallConfig(cell);
             if (!config) return false;
+            if (IsSolid(cell)) return false;
 
             WorldData.Walls[cell.x, cell.y] = WallType.Air;
             wallTilemap.SetTile(cell, null);
@@ -148,7 +149,7 @@ namespace World
         }
 
         /// <summary>
-        /// 專門負責處裡要被放置的方塊
+        /// 專門負責處理要被放置的方塊
         /// </summary>
         /// <param name="cell"> 要被放置的位置 </param>
         /// <param name="blockConfig"> 要被放置的方塊 </param>
@@ -171,7 +172,7 @@ namespace World
         }
 
         /// <summary>
-        /// 專門負責處裡要被放置的背景牆
+        /// 專門負責處理要被放置的背景牆
         /// </summary>
         /// <param name="cell"> 要被放置的位置 </param>
         /// <param name="blockConfig"> 要被放置的背景牆 </param>
