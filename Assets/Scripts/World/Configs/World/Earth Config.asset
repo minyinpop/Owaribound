@@ -17,7 +17,8 @@ MonoBehaviour:
   baseHeight: 60
   amplitude: 20
   frequency: 0.05
-  dirtDepth: 5
+  dirtDepthRange: {x: 3, y: 10}
+  dirtFrequency: 0.1
   spawnFlatRadius: 12
   spawnBlendWidth: 20
   spawnFlatness: 0.1
@@ -30,7 +31,7 @@ MonoBehaviour:
   entranceLength: 80
   entranceRadius: 1.5
   entranceSlope: {x: 15, y: 75}
-  entranceWobble: 15
+  entranceWobble: 45
   caveScale: 0.08
   caveThreshold: 0.65
-  caveStartDepth: 8
+  caveStartDepth: 16

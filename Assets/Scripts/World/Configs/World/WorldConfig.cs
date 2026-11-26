@@ -15,7 +15,7 @@ namespace World.Configs.World
                                 public int Width => width;
                                 
         [field: Tooltip("世界的總高度")]
-        [field: SerializeField] private int height = 100;
+        [field: SerializeField] private int height = 200;
                                 public int Height => height;
         
         [field: Tooltip("世界地表平均高度")]
