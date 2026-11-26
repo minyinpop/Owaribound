@@ -146,7 +146,7 @@ namespace World
         /// <returns> 回傳是否有支撐點 </returns>
         private bool HasSupport(Vector3Int cell)
         {
-            if (WorldData.Walls[cell.x, cell.y] != WallType.Air) return false;
+            if (WorldData.Walls[cell.x, cell.y] != WallType.Air) return true;
             if (IsSolid(cell + Vector3Int.up)) return true;
             if (IsSolid(cell + Vector3Int.down)) return true;
             if (IsSolid(cell + Vector3Int.left)) return true;
