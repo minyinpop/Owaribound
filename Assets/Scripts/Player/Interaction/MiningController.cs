@@ -23,6 +23,8 @@ namespace Player.Interaction
         private InventoryController inventoryController;
         private CursorController cursorController;
 
+        private bool waitForRelease;
+
         private void Awake()
         {
             playerController = GetComponent<PlayerController>();
@@ -32,8 +34,19 @@ namespace Player.Interaction
 
         private void Update()
         {
-            if (!playerController.Input.IsPrimaryHeld) return;
-            if (inventoryController.IsHoldingPlaceable) return;
+            if (!playerController.Input.IsPrimaryHeld)
+            {
+                waitForRelease = false;
+                return;
+            }
+
+            if (inventoryController.IsHoldingPlaceable)
+            {
+                waitForRelease = true;
+                return;
+            }
+
+            if (waitForRelease) return;
             if (!cursorController.InReach) return;
 
             worldSystem.WorldDamageSystem.ApplyDamage(cursorController.Cell, miningPower * Time.deltaTime);
