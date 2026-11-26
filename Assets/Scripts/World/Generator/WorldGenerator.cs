@@ -18,7 +18,7 @@ namespace World.Generator
             
             GenerateSurface(new System.Random(world.WorldSeed));
             
-            FillLayers();
+            FillLayers(new System.Random(world.WorldSeed + 4));
             
             CarveCaves(new System.Random(world.WorldSeed + 1));
             
