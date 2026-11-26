@@ -15,4 +15,3 @@ MonoBehaviour:
   displayName: "\u9285\u7926\u77F3"
   icon: {fileID: -182792044, guid: 53ae20f8451c33a4c9b1ee04bd433825, type: 3}
   maxStack: 64
-  placeBlock: {fileID: 11400000, guid: 73dd9bc61f1ace54ea6c942de33c7c91, type: 2}

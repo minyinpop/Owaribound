@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 238487996}
   - component: {fileID: 238487997}
   - component: {fileID: 238487998}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::World.WorldSystem
   worldGenerator: {fileID: 288021477}
   worldDamageSystem: {fileID: 288021476}
-  worldItemDropSystem: {fileID: 0}
+  worldItemDropSystem: {fileID: 288021479}
   worldConfig: {fileID: 11400000, guid: 4011c272991e825418fbedc62123b75d, type: 2}
   blockTilemap: {fileID: 1714780757}
   wallTilemap: {fileID: 72005180}
@@ -871,7 +871,7 @@ MonoBehaviour:
   recoverDelay: 3
   placeBlockingLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 456
 --- !u!114 &288021479
 MonoBehaviour:
   m_ObjectHideFlags: 0
