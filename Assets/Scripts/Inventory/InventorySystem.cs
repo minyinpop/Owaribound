@@ -55,10 +55,10 @@ namespace Inventory
         }
         
         /// <summary>
-        /// 嘗試移除物品
+        /// 從背包中移除特定的物品
         /// </summary>
-        /// <param name="item"> 物品資料 </param>
-        /// <param name="count"> 物品數量 </param>
+        /// <param name="item"> 要移除的物品資料 </param>
+        /// <param name="count"> 要移除的數量 </param>
         /// <returns> 回傳是否移除成功（數量不夠就直接回傳 false） </returns>
         public bool TryRemove(ItemConfig item, int count)
         {
@@ -85,12 +85,33 @@ namespace Inventory
 
             return true;
         }
+        
+        /// <summary>
+        /// 從指定的格子裡移除特定數量的物品
+        /// </summary>
+        /// <param name="index"> 格子的索引 </param>
+        /// <param name="count"> 要移除的數量 </param>
+        /// <returns> 回傳是否移除成功 </returns>
+        public bool TryRemoveAt(int index, int count)
+        {
+            if (index < 0 || index >= slots.Length) return false;
+            if (count <= 0) return false;
+            if (slots[index].IsEmpty) return false;
+            if (slots[index].count < count) return false;
 
+            slots[index].count -= count;
+            if (slots[index].count <= 0)
+                slots[index] = ItemSlotData.Empty;
+            
+            OnSlotChanged?.Invoke(index);
+            return true;
+        }
+        
         /// <summary>
         /// 這個儲存空間有幾種這個物品
         /// </summary>
         /// <param name="item"> 物品資料 </param>
-        /// <returns> 返回相關物品的總數 </returns>
+        /// <returns> 回傳相關物品的總數 </returns>
         public int CountOf(ItemConfig item)
         {
             var total = 0;

@@ -857,6 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::World.WorldSystem
   worldGenerator: {fileID: 288021477}
   worldDamageSystem: {fileID: 288021476}
+  worldItemDropSystem: {fileID: 0}
   worldConfig: {fileID: 11400000, guid: 4011c272991e825418fbedc62123b75d, type: 2}
   blockTilemap: {fileID: 1714780757}
   wallTilemap: {fileID: 72005180}
@@ -868,6 +869,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 317c9051e03cec6429d76b954ce993e0, type: 2}
   - {fileID: 11400000, guid: 6d52fc4ad9a1b324c8f2b0f66c95e437, type: 2}
   recoverDelay: 3
+  placeBlockingLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &288021479
 MonoBehaviour:
   m_ObjectHideFlags: 0

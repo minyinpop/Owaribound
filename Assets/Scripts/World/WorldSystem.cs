@@ -11,39 +11,68 @@ namespace World
 {
     [RequireComponent(typeof(WorldGenerator))]
     [RequireComponent(typeof(WorldDamageSystem))]
+    [RequireComponent(typeof(WorldItemDropSystem))]
     public sealed class WorldSystem : MonoBehaviour
     {
         [field: Header("自身系統")]
+        [field: Tooltip("世界生成器")]
         [field: SerializeField] private WorldGenerator worldGenerator;
                                 public WorldGenerator WorldGenerator => worldGenerator;
+                                
+        [field: Tooltip("挖掘方塊系統")]
         [field: SerializeField] private WorldDamageSystem worldDamageSystem;
                                 public WorldDamageSystem WorldDamageSystem => worldDamageSystem;
         
-        [field: Header("世界設定")]
+        [field: Tooltip("掉落物系統")]
+        [field: SerializeField] private WorldItemDropSystem worldItemDropSystem;
+                                public WorldItemDropSystem WorldItemDropSystem => worldItemDropSystem;
+        
+        // ================================
+        
+        [field: Header("世界參數")]
         [field: SerializeField] private WorldConfig worldConfig;
                                 public WorldConfig WorldConfig => worldConfig;
                                 
-        [field: Header("Rename")]
+        // ================================
+                                
+        [field: Header("圖層設定")]
         [field: SerializeField] private Tilemap blockTilemap;
                                 public Tilemap BlockTilemap => blockTilemap;
         [field: SerializeField] private Tilemap wallTilemap;
                                 public Tilemap WallTilemap => wallTilemap;
         
+        // ================================
+                                
         [field: Header("世界種子碼")]
         [field: SerializeField] private int worldSeed;
                                 public int WorldSeed => worldSeed;
         
+        // ================================
+                                
         [field: Header("玩家設定")]
         [field: SerializeField] private Transform player;
                                 public Transform Player => player;
         
-        [field: Header("裂痕設定")]
+        // ================================
+                                
+        [field: Header("方塊裂痕設定")]
+        [field: Tooltip("裂痕的圖層位置")]
         [field: SerializeField] private Tilemap crackTilemap;
                                 public Tilemap CrackTilemap => crackTilemap;
+        
+        [field: Tooltip("裂痕的紋理素材")]
         [field: SerializeField] private TileBase[] crackTiles;
                                 public TileBase[] CrackTiles => crackTiles;
+        
+        [field: Tooltip("方塊多久會自己回到完整的狀態")]
         [field: SerializeField] private float recoverDelay = 3;
                                 public float RecoverDelay => recoverDelay;
+                                
+        // ================================
+        
+        [field: Header("放置設定")]
+        [field: Tooltip("那些圖層會阻擋玩家的放置")]
+        [field: SerializeField] private LayerMask placeBlockingLayer;
                                 
         public WorldData WorldData { get; private set; }
 
@@ -51,6 +80,7 @@ namespace World
         public readonly Dictionary<WallType, BlockConfig> WallConfigs = new();
 
         public event Action<Vector3Int, BlockConfig> OnBlockBroken;
+        public event Action<Vector3Int, BlockConfig> OnBlockPlaced;
         
         private void Start()
         {
@@ -58,14 +88,22 @@ namespace World
             WorldGenerator.Generator();
         }
         
-        // 查詢：某一格是什麼方塊，空氣或地圖外回傳 null
+        /// <summary>
+        /// 用來查詢這一格是什麼方塊，如果是空氣或是地圖外，就會回傳 null
+        /// </summary>
+        /// <param name="cell"> 要被查詢的位置 </param>
+        /// <returns> 回傳該位置個方塊資料，如果是空氣或是地圖外，將會回傳 null </returns>
         public BlockConfig GetBlockConfig(Vector3Int cell)
         {
             if (!WorldData.InBounds(cell.x, cell.y)) return null;
             return BlockConfigs.GetValueOrDefault(WorldData.Blocks[cell.x, cell.y]);
         }
 
-        // 修改：挖掉一格方塊（所有挖掉方塊的方式都走這裡）
+        /// <summary>
+        /// 專門負責處理要被破壞掉的方塊
+        /// </summary>
+        /// <param name="cell"> 要被破壞的位置 </param>
+        /// <returns> 回傳是否成功破壞 </returns>
         public bool TryBreakBlock(Vector3Int cell)
         {
             var config = GetBlockConfig(cell);
@@ -76,6 +114,80 @@ namespace World
             
             OnBlockBroken?.Invoke(cell, config);
             return true;
+        }
+
+        /// <summary>
+        /// 專焚負責處裡要被放置的方塊
+        /// </summary>
+        /// <param name="cell"> 要被放置的位置 </param>
+        /// <param name="blockConfig"> 要被放置的方塊 </param>
+        /// <returns> 回傳是否放置成功 </returns>
+        public bool TryPlaceBlock(Vector3Int cell, BlockConfig blockConfig)
+        {
+            if (!blockConfig) return false;
+            if (!WorldData.InBounds(cell.x, cell.y)) return false;
+            if (WorldData.Blocks[cell.x, cell.y] != BlockType.Air) return false;
+            if (!HasSupport(cell)) return false;
+            if (IsOccupied(cell)) return false;
+
+            WorldData.Blocks[cell.x, cell.y] = blockConfig.BlockType;
+            blockTilemap.SetTile(cell, blockConfig.BlockTile);
+            
+            CoverGrass(cell + Vector3Int.down);
+            
+            OnBlockPlaced?.Invoke(cell, blockConfig);
+            return true;
+        }
+
+        /// <summary>
+        /// 用於檢查格子的周圍以及背景是否有支撐點
+        /// </summary>
+        /// <param name="cell"> 要被檢查的位置 </param>
+        /// <returns> 回傳是否有支撐點 </returns>
+        private bool HasSupport(Vector3Int cell)
+        {
+            if (WorldData.Walls[cell.x, cell.y] != WallType.Air) return false;
+            if (IsSolid(cell + Vector3Int.up)) return true;
+            if (IsSolid(cell + Vector3Int.down)) return true;
+            if (IsSolid(cell + Vector3Int.left)) return true;
+            if (IsSolid(cell + Vector3Int.right)) return true;
+            return false;
+        }
+
+        /// <summary>
+        /// 檢查格子是否已經有方塊了
+        /// </summary>
+        /// <param name="cell"> 要被檢查的格子 </param>
+        /// <returns> 回傳是否有方塊 </returns>
+        private bool IsSolid(Vector3Int cell)
+        {
+            if (!WorldData.InBounds(cell.x, cell.y)) return false;
+            if (WorldData.Blocks[cell.x, cell.y] == BlockType.Air) return false;
+            return true;
+        }
+
+        /// <summary>
+        /// 檢查格子是否有實體擋住
+        /// </summary>
+        /// <param name="cell"> 要被檢查的格子 </param>
+        /// <returns> 回傳是否被擋住 </returns>
+        private bool IsOccupied(Vector3Int cell)
+        {
+            var center = blockTilemap.GetCellCenterWorld(cell);
+            if (Physics2D.OverlapBox(center, Vector2.one * .9f, 0, placeBlockingLayer)) return true;
+            return false;
+        }
+
+        /// <summary>
+        /// 檢查是否有草地，如果有，就把草地變成泥土方塊
+        /// </summary>
+        /// <param name="cell"> 要被檢查的格子 </param>
+        private void CoverGrass(Vector3Int cell)
+        {
+            if (!WorldData.InBounds(cell.x, cell.y)) return;
+            if (WorldData.Blocks[cell.x, cell.y] != BlockType.Grass) return;
+            WorldData.Blocks[cell.x, cell.y] = BlockType.Dirt;
+            blockTilemap.SetTile(cell, BlockConfigs[BlockType.Dirt].BlockTile);
         }
     }
 }
