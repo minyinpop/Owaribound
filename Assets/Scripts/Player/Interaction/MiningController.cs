@@ -24,7 +24,8 @@ namespace Player.Interaction
         private InventoryController inventoryController;
         private CursorController cursorController;
 
-        private bool waitForRelease;
+        private bool waitPrimaryRelease;
+        private bool waitSecondaryRelease;
 
         private void Awake()
         {
@@ -35,7 +36,13 @@ namespace Player.Interaction
 
         private void Update()
         {
-            if (!playerController.Input.IsPrimaryHeld)
+            TryMine(playerController.Input.IsPrimaryHeld, ref waitPrimaryRelease, WorldLayer.Block);
+            TryMine(playerController.Input.IsSecondaryHeld, ref waitSecondaryRelease, WorldLayer.Wall);
+        }
+
+        private void TryMine(bool isHeld, ref bool waitForRelease, WorldLayer layer)
+        {
+            if (!isHeld)
             {
                 waitForRelease = false;
                 return;
@@ -50,7 +57,7 @@ namespace Player.Interaction
             if (waitForRelease) return;
             if (!cursorController.InReach) return;
 
-            worldSystem.WorldDamageSystem.ApplyDamage(cursorController.Cell, WorldLayer.Block, miningPower * Time.deltaTime);
+            worldSystem.WorldDamageSystem.ApplyDamage(cursorController.Cell, layer, miningPower * Time.deltaTime);
         }
     }
 }

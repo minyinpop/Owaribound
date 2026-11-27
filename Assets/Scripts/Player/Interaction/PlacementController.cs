@@ -34,13 +34,21 @@ namespace Player.Interaction
 
         private void Update()
         {
-            if (!playerController.Input.IsPrimaryHeld) return;
             if (!inventoryController.IsHoldingPlaceable) return;
             if (!cursorController.InReach) return;
             if (Time.time < nextPlaceTime) return;
 
-            var item = inventoryController.SelectedSlot.itemConfig;
-            if (!worldSystem.TryPlaceBlock(cursorController.Cell, item.PlaceBlock)) return;
+            var cell = cursorController.Cell;
+            var block = inventoryController.SelectedSlot.itemConfig.PlaceBlock;
+
+            var placed = false;
+            
+            if (playerController.Input.IsPrimaryHeld)
+                placed = worldSystem.TryPlaceBlock(cell, block);
+            else if (playerController.Input.IsSecondaryHeld)
+                placed = worldSystem.TryPlaceWall(cell, block);
+
+            if (placed) return;
 
             inventoryController.InventorySystem.TryRemoveAt(inventoryController.SelectedIndex, 1);
             nextPlaceTime = Time.time + placeCooldown;

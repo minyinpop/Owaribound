@@ -13,15 +13,17 @@ namespace World
 
         private void OnEnable()
         {
-            worldSystem.OnBlockBroken += BlockBroken;
+            worldSystem.OnBlockBroken += SpawnDrop;
+            worldSystem.OnWallBroken += SpawnDrop;
         }
 
         private void OnDisable()
         {
-            worldSystem.OnBlockBroken -= BlockBroken;
+            worldSystem.OnBlockBroken -= SpawnDrop;
+            worldSystem.OnWallBroken -= SpawnDrop;
         }
 
-        private void BlockBroken(Vector3Int cell, BlockConfig blockConfig)
+        private void SpawnDrop(Vector3Int cell, BlockConfig blockConfig)
         {
             if (!blockConfig.DropItem) return;
             Spawn(blockConfig.DropItem, blockConfig.DropAmount, worldSystem.BlockTilemap.GetCellCenterWorld(cell));
