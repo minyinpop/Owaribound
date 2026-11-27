@@ -15,7 +15,7 @@ namespace Player
         
         public InventorySystem InventorySystem { get; private set; }
 
-        private const int HotbarSize = 10;
+        public static int HotbarSize => 10;
         
         public int SelectedIndex { get; private set; }
         public ItemSlotData SelectedSlot => InventorySystem[SelectedIndex];
@@ -25,6 +25,10 @@ namespace Player
 
         public event Action<int> OnSelectedChanged;
         public event Action<bool> OnOpenChanged;
+
+        private ItemSlotData heldSlot;
+        public ItemSlotData HeldSlot => heldSlot;
+        public event Action OnHeldChanged;
 
         private void Awake()
         {
@@ -71,6 +75,12 @@ namespace Player
         private void ToggleOpen()
         {
             SetOpen(!IsOpen);
+        }
+
+        public void ClickSlot(int index)
+        {
+            InventorySystem.ClickSlot(index, ref heldSlot);
+            OnHeldChanged?.Invoke();
         }
     }
 }

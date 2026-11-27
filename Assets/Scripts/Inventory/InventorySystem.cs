@@ -120,5 +120,46 @@ namespace Inventory
                     total += slot.count;
             return total;
         }
+
+        /// <summary>
+        /// 物品與格子之間的互動
+        /// </summary>
+        /// <param name="index"> 格子的索引 </param>
+        /// <param name="heldItem"> 正在拖曳的物品 </param>
+        public void ClickSlot(int index, ref ItemSlotData heldItem)
+        {
+            if (index < 0) return;
+            if (index >= slots.Length) return;
+
+            ref var slot = ref slots[index];
+
+            if (heldItem.IsEmpty)
+            {
+                if (slot.IsEmpty) return;
+                heldItem = slot;
+                slot = ItemSlotData.Empty;
+            }
+            else if (slot.IsEmpty)
+            {
+                slot = heldItem;
+                heldItem = ItemSlotData.Empty;
+            }
+            else if (slot.itemConfig == heldItem.itemConfig)
+            {
+                var space = slot.itemConfig.MaxStack - slot.count;
+                var move = Math.Min(space, heldItem.count);
+                slot.count += move;
+                heldItem.count -= move;
+                
+                if (heldItem.count <= 0)
+                    heldItem = ItemSlotData.Empty;
+            }
+            else
+            {
+                (slot, heldItem) = (heldItem, slot);
+            }
+            
+            OnSlotChanged?.Invoke(index);
+        }
     }
 }

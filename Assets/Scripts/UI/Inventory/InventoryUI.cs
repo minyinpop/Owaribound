@@ -43,7 +43,7 @@ namespace UI.Inventory
             inventorySystem = inventoryController.InventorySystem;
             
             for (var i = 0; i < itemSlotUIs.Length; i ++)
-                itemSlotUIs[i].SetNumber(i < 10 ? (i + 1) % 10 : -1);
+                itemSlotUIs[i].SetNumber(i < InventoryController.HotbarSize ? (i + 1) % 10 : -1);
 
             started = true;
             OnEnable();
