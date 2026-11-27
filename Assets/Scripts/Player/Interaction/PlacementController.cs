@@ -48,7 +48,7 @@ namespace Player.Interaction
             else if (playerController.Input.IsSecondaryHeld)
                 placed = worldSystem.TryPlaceWall(cell, block);
 
-            if (placed) return;
+            if (!placed) return;
 
             inventoryController.InventorySystem.TryRemoveAt(inventoryController.SelectedIndex, 1);
             nextPlaceTime = Time.time + placeCooldown;
