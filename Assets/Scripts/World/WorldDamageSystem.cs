@@ -43,6 +43,7 @@ namespace World
                 ? worldSystem.GetBlockConfig(cell)
                 : worldSystem.GetWallConfig(cell);
             if (!config) return false;
+            if (layer == WorldLayer.Wall && worldSystem.GetBlockConfig(cell)) return false;
 
             var key = (cell, layer);
             damaged.TryGetValue(key, out var damage);
@@ -52,7 +53,16 @@ namespace World
             if (damage.Amount >= config.MiningTime)
             {
                 Clear(key);
-                worldSystem.TryBreakBlock(cell);
+                
+                if (layer == WorldLayer.Block)
+                {
+                    worldSystem.TryBreakBlock(cell);
+                }
+                else
+                {
+                    worldSystem.TryBreakWall(cell);
+                }
+                
                 return true;
             }
 
