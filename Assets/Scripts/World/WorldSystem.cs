@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 using World.Configs.Block;
 using World.Configs.World;
@@ -56,9 +57,8 @@ namespace World
         // ================================
                                 
         [field: Header("方塊裂痕設定")]
-        [field: Tooltip("裂痕的圖層位置")]
-        [field: SerializeField] private Tilemap crackTilemap;
-                                public Tilemap CrackTilemap => crackTilemap;
+        [field: SerializeField] private Tilemap blockCrackTilemap;
+        [field: SerializeField] private Tilemap wallCrackTilemap;
         
         [field: Tooltip("裂痕的紋理素材")]
         [field: SerializeField] private TileBase[] crackTiles;
@@ -67,7 +67,12 @@ namespace World
         [field: Tooltip("方塊多久會自己回到完整的狀態")]
         [field: SerializeField] private float recoverDelay = 3;
                                 public float RecoverDelay => recoverDelay;
-                                
+        
+        public Tilemap GetCrackTilemap(WorldLayer layer)
+        {
+            return layer == WorldLayer.Block ? blockCrackTilemap : wallCrackTilemap;
+        }
+        
         // ================================
         
         [field: Header("放置設定")]

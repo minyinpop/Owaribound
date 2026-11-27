@@ -1,77 +1,77 @@
 using System.Collections.Generic;
 using UnityEngine;
+using World.Data;
 
 namespace World
 {
     [RequireComponent(typeof(WorldSystem))]
     public sealed class WorldDamageSystem : MonoBehaviour
     {
-        private WorldSystem world;
+        private WorldSystem worldSystem;
         
         private struct Damage
         {
-            public float Amount;      // 累積的傷害（以秒計）
-            public float LastHitTime; // 最後一次被打的時間
+            public float Amount;
+            public float LastHitTime;
         }
 
-        private readonly Dictionary<Vector3Int, Damage> damaged = new();
-        private readonly List<Vector3Int> toRecover = new();
+        private readonly Dictionary<(Vector3Int cell, WorldLayer layer), Damage> damaged = new();
+        private readonly List<(Vector3Int cell, WorldLayer layer)> toRecover = new();
         
         private void Awake()
         {
-            world = GetComponent<WorldSystem>();
+            worldSystem = GetComponent<WorldSystem>();
         }
 
         private void Update()
         {
-            // 找出太久沒被打的格子
             toRecover.Clear();
-            foreach (var (cell, damage) in damaged)
+            foreach (var (key, damage) in damaged)
             {
-                if (Time.time - damage.LastHitTime > world.RecoverDelay)
-                    toRecover.Add(cell);
+                if (Time.time - damage.LastHitTime > worldSystem.RecoverDelay)
+                    toRecover.Add(key);
             }
 
-            // 迴圈跑完才刪，跑 foreach 時不能修改 Dictionary
-            foreach (var cell in toRecover)
-                Clear(cell);
+            foreach (var key in toRecover)
+                Clear(key);
         }
         
         // 對一格造成傷害，挖掉回傳 true
-        public bool ApplyDamage(Vector3Int cell, float amount)
+        public bool ApplyDamage(Vector3Int cell, WorldLayer layer, float amount)
         {
-            var blockConfig = world.GetBlockConfig(cell);
-            if (!blockConfig)
-                return false;   // 空氣或地圖外
+            var config = layer == WorldLayer.Block
+                ? worldSystem.GetBlockConfig(cell)
+                : worldSystem.GetWallConfig(cell);
+            if (!config) return false;
 
-            damaged.TryGetValue(cell, out var damage);
+            var key = (cell, layer);
+            damaged.TryGetValue(key, out var damage);
             damage.Amount += amount;
             damage.LastHitTime = Time.time;
 
-            // 傷害夠了 → 挖掉
-            if (damage.Amount >= blockConfig.MiningTime)
+            if (damage.Amount >= config.MiningTime)
             {
-                Clear(cell);
-                world.TryBreakBlock(cell);
+                Clear(key);
+                worldSystem.TryBreakBlock(cell);
                 return true;
             }
 
-            damaged[cell] = damage;
-            UpdateCrack(cell, damage.Amount / blockConfig.MiningTime);
+            damaged[key] = damage;
+            UpdateCrack(key, damage.Amount / config.MiningTime);
             return false;
         }
 
-        private void UpdateCrack(Vector3Int cell, float ratio)
+        private void UpdateCrack((Vector3Int cell, WorldLayer layer) key, float ratio)
         {
             // 0.25 → 0，0.5 → 1，0.75 → 2，不到 0.25 → -1
-            var stage = Mathf.Min(Mathf.FloorToInt(ratio * 4) - 1, world.CrackTiles.Length - 1);
-            world.CrackTilemap.SetTile(cell, stage >= 0 ? world.CrackTiles[stage] : null);
+            var stage = Mathf.Min(Mathf.FloorToInt(ratio * 4) - 1, worldSystem.CrackTiles.Length - 1);
+            worldSystem.GetCrackTilemap(key.layer).SetTile(key.cell, stage >= 0 ? worldSystem.CrackTiles[stage] : null);
         }
 
-        private void Clear(Vector3Int cell)
+        private void Clear((Vector3Int cell, WorldLayer layer) key)
         {
-            damaged.Remove(cell);
-            world.CrackTilemap.SetTile(cell, null);
+            damaged.Remove(key);
+            worldSystem.GetCrackTilemap(key.layer).SetTile(key.cell, null);
         }
         
         

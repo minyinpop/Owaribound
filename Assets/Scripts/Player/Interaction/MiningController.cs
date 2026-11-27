@@ -1,5 +1,6 @@
 using UnityEngine;
 using World;
+using World.Data;
 
 namespace Player.Interaction
 {
@@ -49,7 +50,7 @@ namespace Player.Interaction
             if (waitForRelease) return;
             if (!cursorController.InReach) return;
 
-            worldSystem.WorldDamageSystem.ApplyDamage(cursorController.Cell, miningPower * Time.deltaTime);
+            worldSystem.WorldDamageSystem.ApplyDamage(cursorController.Cell, WorldLayer.Block, miningPower * Time.deltaTime);
         }
     }
 }
