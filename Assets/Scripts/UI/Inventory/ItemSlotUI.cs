@@ -39,8 +39,10 @@ namespace UI.Inventory
 
         public void SetNumber(int number)
         {
-            slotNumber.text = number.ToString();
-            slotNumber.gameObject.SetActive(true);
+            var show = number >= 0;
+            slotNumber.gameObject.SetActive(show);
+            if (show)
+                slotNumber.text = number.ToString();
         }
 
         public void SetSelected(bool selected)
