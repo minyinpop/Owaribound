@@ -15,7 +15,7 @@ namespace Player
         
         public InventorySystem InventorySystem { get; private set; }
 
-        public static int HotbarSize => 10;
+        public const int HotbarSize = 10;
         
         public int SelectedIndex { get; private set; }
         public ItemSlotData SelectedSlot => InventorySystem[SelectedIndex];
