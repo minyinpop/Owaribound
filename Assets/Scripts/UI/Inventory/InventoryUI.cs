@@ -9,8 +9,15 @@ namespace UI.Inventory
         [field: Header("玩家組件")]
         [field: SerializeField] private InventoryController inventoryController;
         
+        // ================================
+        
         [field: Header("格子組件")]
         [field: SerializeField] private ItemSlotUI[] itemSlotUIs;
+        
+        // ================================
+        
+        [field: Header("")]
+        [field: SerializeField] private GameObject expandedRows;
 
         private InventorySystem inventorySystem;
 
@@ -22,8 +29,10 @@ namespace UI.Inventory
             
             inventorySystem.OnSlotChanged += RefreshSlot;
             inventoryController.OnSelectedChanged += RefreshSelected;
+            inventoryController.OnOpenChanged += RefreshOpen;
             
             RefreshSelected(inventoryController.SelectedIndex);
+            RefreshOpen(inventoryController.IsOpen);
             
             for (var i = 0; i < itemSlotUIs.Length; i ++)
                 itemSlotUIs[i].Refresh(inventorySystem[i]);
@@ -46,6 +55,7 @@ namespace UI.Inventory
             
             inventorySystem.OnSlotChanged -= RefreshSlot;
             inventoryController.OnSelectedChanged -= RefreshSelected;
+            inventoryController.OnOpenChanged -= RefreshOpen;
         }
 
         private void RefreshSlot(int index)
@@ -58,6 +68,11 @@ namespace UI.Inventory
         {
             for (var i = 0; i < itemSlotUIs.Length; i ++)
                 itemSlotUIs[i].SetSelected(i == index);
+        }
+
+        private void RefreshOpen(bool open)
+        {
+            expandedRows.SetActive(open);
         }
     }
 }

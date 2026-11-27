@@ -37,7 +37,7 @@
                     "priority": 0
                 },
                 {
-                    "name": "Backpack",
+                    "name": "Inventory",
                     "type": "Button",
                     "id": "a01520eb-0946-4539-82fd-ac755ae3f742",
                     "expectedControlType": "",
@@ -242,7 +242,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Backpack",
+                    "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

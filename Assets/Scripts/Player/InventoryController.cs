@@ -21,8 +21,10 @@ namespace Player
         public ItemSlotData SelectedSlot => InventorySystem[SelectedIndex];
         
         public bool IsHoldingPlaceable => !SelectedSlot.IsEmpty && SelectedSlot.itemConfig.CanPlace;
+        public bool IsOpen { get; private set; }
 
         public event Action<int> OnSelectedChanged;
+        public event Action<bool> OnOpenChanged;
 
         private void Awake()
         {
@@ -35,12 +37,14 @@ namespace Player
         {
             playerCo.Input.OnHotbarSelected += Select;
             playerCo.Input.OnMouseScrolled += Scroll;
+            playerCo.Input.OnInventoryToggled += ToggleOpen;
         }
 
         private void OnDisable()
         {
             playerCo.Input.OnHotbarSelected -= Select;
             playerCo.Input.OnMouseScrolled -= Scroll;
+            playerCo.Input.OnInventoryToggled -= ToggleOpen;
         }
 
         private void Select(int index)
@@ -55,6 +59,18 @@ namespace Player
         private void Scroll(int direction)
         {
             Select((SelectedIndex + direction + HotbarSize) % HotbarSize);
+        }
+
+        public void SetOpen(bool open)
+        {
+            if (IsOpen == open) return;
+            IsOpen = open;
+            OnOpenChanged?.Invoke(open);
+        }
+
+        private void ToggleOpen()
+        {
+            SetOpen(!IsOpen);
         }
     }
 }

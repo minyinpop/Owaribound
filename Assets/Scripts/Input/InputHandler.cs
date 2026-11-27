@@ -19,6 +19,8 @@ namespace Input
         
         public event Action<int> OnHotbarSelected;
         public event Action<int> OnMouseScrolled;
+
+        public event Action OnInventoryToggled;
         
         private void Awake()
         {
@@ -30,6 +32,7 @@ namespace Input
             input.Player.Jump.performed += JumpPerformed;
             input.Player.Hotbar.performed += HotbarSelected;
             input.Mouse.Scroll.performed += MouseScrolled;
+            input.Player.Inventory.performed += InventoryToggled;
             
             input.Enable();
         }
@@ -41,6 +44,7 @@ namespace Input
             input.Player.Jump.performed -= JumpPerformed;
             input.Player.Hotbar.performed -= HotbarSelected;
             input.Mouse.Scroll.performed -= MouseScrolled;
+            input.Player.Inventory.performed -= InventoryToggled;
         }
 
         private void OnDestroy()
@@ -64,6 +68,11 @@ namespace Input
             var y = ctx.ReadValue<float>();
             if (y != 0)
                 OnMouseScrolled?.Invoke(y > 0 ? -1 : 1);
+        }
+
+        private void InventoryToggled(InputAction.CallbackContext ctx)
+        {
+            OnInventoryToggled?.Invoke();
         }
     }
 }
