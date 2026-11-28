@@ -134,5 +134,11 @@ namespace Player
             heldSlot = ItemSlotData.Empty;
             OnHeldChanged?.Invoke();
         }
+
+        public void RightClickSlot(int index)
+        {
+            InventorySystem.RightClickSlot(index, ref heldSlot);
+            OnHeldChanged?.Invoke();
+        }
     }
 }

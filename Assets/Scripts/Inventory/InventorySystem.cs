@@ -161,5 +161,55 @@ namespace Inventory
             
             OnSlotChanged?.Invoke(index);
         }
+
+        /// <summary>
+        /// 當按下右鍵時，一次拿起物品或是放下一個物品
+        /// </summary>
+        /// <param name="index"> 格子的索引 </param>
+        /// <param name="heldItem"> 正在被拖曳的物品 </param>
+        public void RightClickSlot(int index, ref ItemSlotData heldItem)
+        {
+            if (index < 0) return;
+            if (index >= slots.Length) return;
+
+            ref var slot = ref slots[index];
+
+            if (heldItem.IsEmpty)
+            {
+                if (slot.IsEmpty) return;
+
+                heldItem = new ItemSlotData
+                {
+                    itemConfig = slot.itemConfig,
+                    count = 1
+                };
+                slot.count--;
+                if (slot.count <= 0)
+                    slot = ItemSlotData.Empty;
+            }
+            else if (slot.IsEmpty)
+            {
+                slot = new ItemSlotData
+                {
+                    itemConfig = heldItem.itemConfig,
+                    count = 1
+                };
+                heldItem.count--;
+            }
+            else if (slot.itemConfig == heldItem.itemConfig && slot.count < slot.itemConfig.MaxStack)
+            {
+                slot.count++;
+                heldItem.count--;
+            }
+            else
+            {
+                return;
+            }
+
+            if (heldItem.count <= 0)
+                heldItem = ItemSlotData.Empty;
+
+            OnSlotChanged?.Invoke(index);
+        }
     }
 }

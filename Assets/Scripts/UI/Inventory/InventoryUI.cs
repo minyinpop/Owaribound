@@ -85,16 +85,22 @@ namespace UI.Inventory
 
         private void HandleSlotClicked(int index, PointerEventData.InputButton button)
         {
-            if (button != PointerEventData.InputButton.Left) return;
-
             if (!inventoryController.IsOpen)
             {
-                if (index < InventoryController.HotbarSize)
+                if (button == PointerEventData.InputButton.Left && index < InventoryController.HotbarSize)
                     inventoryController.Select(index);
                 return;
             }
-            
-            inventoryController.ClickSlot(index);
+
+            switch (button)
+            {
+                case PointerEventData.InputButton.Left:
+                    inventoryController.ClickSlot(index);
+                    break;
+                case PointerEventData.InputButton.Right:
+                    inventoryController.RightClickSlot(index);
+                    break;
+            }
         }
     }
 }
