@@ -869,6 +869,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.InventoryController
   size: 50
+  dropSystem: {fileID: 288021479}
+  throwForce: 5
+  throwPickupDelay: 1.5
 --- !u!114 &238487998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1930,8 +1933,8 @@ MonoBehaviour:
   IgnoreTimeScale: 0
   WorldUpOverride: {fileID: 0}
   ChannelMask: -1
-  UpdateMethod: 0
-  BlendUpdateMethod: 0
+  UpdateMethod: 1
+  BlendUpdateMethod: 1
   LensModeOverride:
     Enabled: 0
     DefaultMode: 2

@@ -9,6 +9,7 @@ namespace Item
         [field: Header("自身組件")]
         [field: SerializeField] private SpriteRenderer spr;
         [field: SerializeField] private Rigidbody2D rig;
+                                public Rigidbody2D Rig => rig;
         
         [field: Header("屬性設定")]
         [field: Tooltip("物品掉落時的跳躍力道")]

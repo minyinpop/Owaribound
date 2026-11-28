@@ -14,7 +14,10 @@ namespace Input
         public event Action OnJumpPerformed;
         
         public bool IsPrimaryHeld => input.Mouse.PrimaryMouse.IsPressed();
+        public bool IsPrimaryPressed => input.Mouse.PrimaryMouse.WasPressedThisFrame();
         public bool IsSecondaryHeld => input.Mouse.SecondaryMouse.IsPressed();
+        public bool IsSecondaryPressed => input.Mouse.SecondaryMouse.WasPressedThisFrame();
+        
         public Vector2 MousePos => input.Mouse.Position.ReadValue<Vector2>();
         
         public event Action<int> OnHotbarSelected;

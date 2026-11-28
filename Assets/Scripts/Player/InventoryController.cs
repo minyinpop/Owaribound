@@ -60,6 +60,7 @@ namespace Player
         private void Awake()
         {
             playerCo = GetComponent<PlayerController>();
+            cursorController = GetComponent<CursorController>();
             
             InventorySystem = new InventorySystem(size);
         }
@@ -74,7 +75,7 @@ namespace Player
         private void Update()
         {
             if (!IsHolding) return;
-            if (!playerCo.Input.IsPrimaryHeld) return;
+            if (!playerCo.Input.IsPrimaryPressed && !playerCo.Input.IsSecondaryPressed) return;
             if (cursorController.IsOverUI) return;
 
             DropHeld();
@@ -125,8 +126,13 @@ namespace Player
 
             var origin = transform.position + Vector3.up;
             var dir = Mathf.Sign(cursorController.MouseWorldPos.x - origin.x);
-            
-            // TODO 從這裡繼續寫
+
+            var drop = dropSystem.Spawn(heldSlot.itemConfig, heldSlot.count, origin);
+            drop.Rig.linearVelocity = new Vector2(dir, .5f) * throwForce;
+            drop.SetPickupDelay(throwPickupDelay);
+
+            heldSlot = ItemSlotData.Empty;
+            OnHeldChanged?.Invoke();
         }
     }
 }

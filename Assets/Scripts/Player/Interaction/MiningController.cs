@@ -53,7 +53,13 @@ namespace Player.Interaction
                 waitForRelease = true;
                 return;
             }
-            
+
+            if (inventoryController.IsHolding)
+            {
+                waitForRelease = true;
+                return;
+            }
+
             if (inventoryController.IsHoldingPlaceable)
             {
                 waitForRelease = true;
