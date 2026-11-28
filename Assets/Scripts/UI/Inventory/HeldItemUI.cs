@@ -28,6 +28,7 @@ namespace UI.Inventory
         private void OnEnable()
         {
             inventoryController.OnHeldChanged += Refresh;
+            Refresh();
         }
 
         private void Update()

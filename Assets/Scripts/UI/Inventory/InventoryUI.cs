@@ -36,7 +36,11 @@ namespace UI.Inventory
             RefreshOpen(inventoryController.IsOpen);
             
             for (var i = 0; i < itemSlotUIs.Length; i ++)
+            {
+                itemSlotUIs[i].Index = i;
+                itemSlotUIs[i].OnClicked += HandleSlotClicked;
                 itemSlotUIs[i].Refresh(inventorySystem[i]);
+            }
         }
         
         private void Start()
@@ -44,12 +48,7 @@ namespace UI.Inventory
             inventorySystem = inventoryController.InventorySystem;
             
             for (var i = 0; i < itemSlotUIs.Length; i ++)
-            {
                 itemSlotUIs[i].SetNumber(i < InventoryController.HotbarSize ? (i + 1) % 10 : -1);
-
-                itemSlotUIs[i].Index = i;
-                itemSlotUIs[i].OnClicked += HandleSlotClicked;
-            }
 
             started = true;
             OnEnable();

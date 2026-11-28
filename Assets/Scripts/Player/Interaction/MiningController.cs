@@ -42,13 +42,18 @@ namespace Player.Interaction
 
         private void TryMine(bool isHeld, ref bool waitForRelease, WorldLayer layer)
         {
-            if (cursorController.IsOverUI) return;
             if (!isHeld)
             {
                 waitForRelease = false;
                 return;
             }
-
+            
+            if (cursorController.IsOverUI)
+            {
+                waitForRelease = true;
+                return;
+            }
+            
             if (inventoryController.IsHoldingPlaceable)
             {
                 waitForRelease = true;
