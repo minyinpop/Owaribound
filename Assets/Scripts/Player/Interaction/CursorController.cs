@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using World;
 
 namespace Player.Interaction
@@ -30,6 +31,8 @@ namespace Player.Interaction
 
         private PlayerController playerCo;
         private Camera cam;
+        
+        public bool IsOverUI { get; private set; }
 
         private void Awake()
         {
@@ -39,6 +42,11 @@ namespace Player.Interaction
 
         private void Update()
         {
+            #region 方塊互動游標在格子上就不顯示
+                IsOverUI = EventSystem.current && EventSystem.current.IsPointerOverGameObject();
+                cursorRenderer.enabled = !IsOverUI;
+            #endregion
+            
             var worldPos = cam.ScreenToWorldPoint(playerCo.Input.MousePos);
             worldPos.z = 0;
             

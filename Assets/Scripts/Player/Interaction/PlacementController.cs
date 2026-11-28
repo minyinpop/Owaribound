@@ -34,6 +34,7 @@ namespace Player.Interaction
 
         private void Update()
         {
+            if (cursorController.IsOverUI) return;
             if (!inventoryController.IsHoldingPlaceable) return;
             if (!cursorController.InReach) return;
             if (Time.time < nextPlaceTime) return;

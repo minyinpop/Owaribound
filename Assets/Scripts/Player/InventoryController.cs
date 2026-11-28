@@ -51,7 +51,7 @@ namespace Player
             playerCo.Input.OnInventoryToggled -= ToggleOpen;
         }
 
-        private void Select(int index)
+        public void Select(int index)
         {
             if (index < 0) return;
             if (index >= HotbarSize) return;

@@ -1,6 +1,7 @@
 using Inventory;
 using Player;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace UI.Inventory
 {
@@ -43,7 +44,12 @@ namespace UI.Inventory
             inventorySystem = inventoryController.InventorySystem;
             
             for (var i = 0; i < itemSlotUIs.Length; i ++)
+            {
                 itemSlotUIs[i].SetNumber(i < InventoryController.HotbarSize ? (i + 1) % 10 : -1);
+
+                itemSlotUIs[i].Index = i;
+                itemSlotUIs[i].OnClicked += HandleSlotClicked;
+            }
 
             started = true;
             OnEnable();
@@ -56,6 +62,9 @@ namespace UI.Inventory
             inventorySystem.OnSlotChanged -= RefreshSlot;
             inventoryController.OnSelectedChanged -= RefreshSelected;
             inventoryController.OnOpenChanged -= RefreshOpen;
+            
+            foreach (var t in itemSlotUIs)
+                t.OnClicked -= HandleSlotClicked;
         }
 
         private void RefreshSlot(int index)
@@ -73,6 +82,20 @@ namespace UI.Inventory
         private void RefreshOpen(bool open)
         {
             expandedRows.SetActive(open);
+        }
+
+        private void HandleSlotClicked(int index, PointerEventData.InputButton button)
+        {
+            if (button != PointerEventData.InputButton.Left) return;
+
+            if (!inventoryController.IsOpen)
+            {
+                if (index < InventoryController.HotbarSize)
+                    inventoryController.Select(index);
+                return;
+            }
+            
+            inventoryController.ClickSlot(index);
         }
     }
 }
