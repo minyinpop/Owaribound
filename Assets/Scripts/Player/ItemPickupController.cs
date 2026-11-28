@@ -37,6 +37,7 @@ namespace Player
             foreach (var hit in hits)
             {
                 if (!hit.TryGetComponent(out ItemDrop dropItem)) continue;
+                if (!dropItem.CanPickup) continue;
 
                 var left = inventoryController.InventorySystem.TryAdd(dropItem.ItemConfig, dropItem.Count);
                 

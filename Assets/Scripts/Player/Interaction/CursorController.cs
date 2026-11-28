@@ -28,11 +28,12 @@ namespace Player.Interaction
         
         public Vector3Int Cell { get; private set; }
         public bool InReach { get; private set; }
-
+        
         private PlayerController playerCo;
         private Camera cam;
         
         public bool IsOverUI { get; private set; }
+        public Vector3 MouseWorldPos { get; private set; }
 
         private void Awake()
         {
@@ -49,6 +50,8 @@ namespace Player.Interaction
             
             var worldPos = cam.ScreenToWorldPoint(playerCo.Input.MousePos);
             worldPos.z = 0;
+            
+            MouseWorldPos = worldPos;
             
             Cell = worldSystem.BlockTilemap.WorldToCell(worldPos);
             var cellCenter = worldSystem.BlockTilemap.GetCellCenterWorld(Cell);

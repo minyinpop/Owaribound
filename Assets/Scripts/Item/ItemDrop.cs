@@ -16,6 +16,9 @@ namespace Item
         
         public ItemConfig ItemConfig { get; private set; }
         public int Count { get; private set; }
+        
+        public float PickupableTime { get; private set; }
+        public bool CanPickup => Time.time >= PickupableTime;
 
         public void Initialize(ItemConfig itemConfig, int count)
         {
@@ -29,6 +32,11 @@ namespace Item
         public void SetCount(int count)
         {
             Count = count;
+        }
+
+        public void SetPickupDelay(float delay)
+        {
+            PickupableTime = Time.time + delay;
         }
     }
 }
